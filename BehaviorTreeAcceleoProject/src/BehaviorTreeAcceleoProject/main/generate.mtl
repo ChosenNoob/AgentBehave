@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/behaviorModel')]
+
+
+[template public generateElement(aSubtree : Subtree)]
+[comment @main/]
+[file ('test.txt', false, 'UTF-8')]
+Hello world!
+[/file]
+[/template]

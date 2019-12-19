@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="behaviorModel" nsURI="http://www.example.org/behaviorModel"
+    nsPrefix="behaviorModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Subtree">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sdfhy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtree" upperBound="-1"
+        eType="#//Subtree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositenode" upperBound="-1"
+        eType="#//CompositeNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decoratornode" upperBound="-1"
+        eType="#//DecoratorNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionnode" upperBound="-1"
+        eType="#//ActionNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtree" lowerBound="1"
+        eType="#//Subtree" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNode">
+    <eOperations name="operation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionnode" lowerBound="1"
+        upperBound="-1" eType="#//ActionNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionnode" upperBound="-1"
+        eType="#//ConditionNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtree" upperBound="-1"
+        eType="#//Subtree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceNode" eSuperTypes="#//CompositeNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FallbackNode" eSuperTypes="#//CompositeNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionDefinition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionResult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecoratorNode">
+    <eOperations name="modify"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionnode" eType="#//ActionNode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtree" eType="#//Subtree"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
