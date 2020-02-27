@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated behaviorTreeMetamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="behaviorTreeMetamodel.presentation.BehaviorTreeMetamodelModelWizardID"
+            name="%_UI_BehaviorTreeMetamodelModelWizard_label"
+            class="behaviorTreeMetamodel.presentation.BehaviorTreeMetamodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BehaviorTreeMetamodelModelFile.gif">
+         <description>%_UI_BehaviorTreeMetamodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated behaviorTreeMetamodel -->
+      <editor
+            id="behaviorTreeMetamodel.presentation.BehaviorTreeMetamodelEditorID"
+            name="%_UI_BehaviorTreeMetamodelEditor_label"
+            icon="icons/full/obj16/BehaviorTreeMetamodelModelFile.gif"
+            extensions="behaviortreemetamodel"
+            class="behaviorTreeMetamodel.presentation.BehaviorTreeMetamodelEditor"
+            contributorClass="behaviorTreeMetamodel.presentation.BehaviorTreeMetamodelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
