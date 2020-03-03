@@ -1,4 +1,0 @@
-Dummy text file
-
-This is added because git doesn't add empty directories.
-But Eclipse requires a src/ folder. 

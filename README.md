@@ -1,4 +1,10 @@
-Folder descriptions:
+Download Eclipse from https://www.eclipse.org/downloads/packages/release/2019-06/r/eclipse-ide-eclipse-committers
+
+Install Sirius and EcoreTools from Eclipse Marketplace (Sirius resides in Obeo section, EcoreTools resides in Eclipse section)
+
+After downloading and installing packages, select your Eclipse Workspace as .../49x-agentbehave/eclipse-workspace/
+
+To use metamodel, run the metamodel as an Eclipse instance. It uses .../49x-agentbehave/runtime-EclipseApplication/ as its workspace.
 
 *The following files should reside in eclipse-workspace:*
 
@@ -12,16 +18,4 @@ behaviorTreeMetamodel.editor -> Generated from behaviorModel (maybe we should ad
 
 behaviorTreeSample -> **An example model**
 
-behaviorTreeMetamodel.design -> **Current viewpoint specification project**
-
-
-
-BehaviorTreeExport.zip -> Packaged version of metaModel. Acceleo needs this package installed in order to generate from metamodel
-
-BehaviorTreeFeatureProject -> Feature Project for metamodel (required for generating BehaviorTreeExport.zip)
-
-BehaviorTreeUpdateSiteProject -> UpdateSite Project for metamodel (required for generating BehaviorTreeExport.zip)
-
-BehaviorTreeModellingProject -> An example BehaviorTree model (used by acceleo) **Requires update**
-
-BehaviorTreeAcceleoProject -> Acceleo Project for generation (requires installing BehaviorTreeExport.zip to another eclipse instance)
+behaviorTreeMetamodel.design -> **Current viewpoint specification project** 

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:metamodel="http://www.example.org/metamodel" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_DSPPgF18EeqcDJEfg-s26w" selectedViews="_wcKE4F18EeqcDJEfg-s26w" version="14.1.0.201810161215">
+    <semanticResources>model.metamodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_wcKE4F18EeqcDJEfg-s26w">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HzVmsV19EeqcDJEfg-s26w" name="new model" repPath="#_HzO5AF19EeqcDJEfg-s26w">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']"/>
+        <target xmi:type="metamodel:Root" href="model.metamodel#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_HzO5AF19EeqcDJEfg-s26w" name="new model">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_HzUYnl19EeqcDJEfg-s26w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_HzUYn119EeqcDJEfg-s26w"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_HzWNwF19EeqcDJEfg-s26w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_HzWNwV19EeqcDJEfg-s26w" type="Sirius" element="_HzO5AF19EeqcDJEfg-s26w" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_HzWNw119EeqcDJEfg-s26w" type="2001" element="_HzQuMF19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzW00F19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzW00V19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzafMl19EeqcDJEfg-s26w" type="3016" element="_HzQuMV19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzafM119EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzafNF19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzWNxF19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzWNxV19EeqcDJEfg-s26w" x="515" y="24" width="121" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzW00l19EeqcDJEfg-s26w" type="2001" element="_HzQuM119EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzW01V19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzW01l19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzafNV19EeqcDJEfg-s26w" type="3016" element="_HzQuNF19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzafNl19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzafN119EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzW00119EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzW01F19EeqcDJEfg-s26w" x="444" y="120" width="121" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzW01119EeqcDJEfg-s26w" type="2001" element="_HzRVQF19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzXb4F19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzXb4V19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzbGQF19EeqcDJEfg-s26w" type="3016" element="_HzRVQV19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbGQV19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbGQl19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzW02F19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzW02V19EeqcDJEfg-s26w" x="635" y="108" width="121" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzXb4l19EeqcDJEfg-s26w" type="2001" element="_HzRVQ119EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzXb5V19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzXb5l19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzbGQ119EeqcDJEfg-s26w" type="3003" element="_HzRVRF19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbGRF19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbGRV19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzXb4119EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzXb5F19EeqcDJEfg-s26w" x="348" y="216" width="121" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzXb5119EeqcDJEfg-s26w" type="2001" element="_HzRVRl19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzXb6l19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzXb6119EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzbGRl19EeqcDJEfg-s26w" type="3003" element="_HzRVR119EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbGR119EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbGSF19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzXb6F19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzXb6V19EeqcDJEfg-s26w" x="732" y="204" width="121" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzYC8F19EeqcDJEfg-s26w" type="2001" element="_HzR8UV19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzYqAF19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzYqAV19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzbtUF19EeqcDJEfg-s26w" type="3002" element="_HzR8Ul19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbtUV19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbtUl19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzYC8V19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzYC8l19EeqcDJEfg-s26w" x="132" y="360" width="133" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzYqAl19EeqcDJEfg-s26w" type="2001" element="_HzR8VF19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzZREF19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzZREV19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzbtU119EeqcDJEfg-s26w" type="3002" element="_HzR8VV19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbtVF19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbtVV19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzYqA119EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzYqBF19EeqcDJEfg-s26w" x="336" y="360" width="133" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzZREl19EeqcDJEfg-s26w" type="2001" element="_HzR8V119EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzZRFV19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzZRFl19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzbtVl19EeqcDJEfg-s26w" type="3002" element="_HzR8WF19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbtV119EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbtWF19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzZRE119EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzZRFF19EeqcDJEfg-s26w" x="503" y="360" width="133" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzZ4IF19EeqcDJEfg-s26w" type="2001" element="_HzSjYV19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzZ4I119EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzZ4JF19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzcUYF19EeqcDJEfg-s26w" type="3002" element="_HzSjYl19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzcUYV19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzcUYl19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzZ4IV19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzZ4Il19EeqcDJEfg-s26w" x="888" y="360" width="133" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HzZ4JV19EeqcDJEfg-s26w" type="2001" element="_HzSjZF19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzafMF19EeqcDJEfg-s26w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HzafMV19EeqcDJEfg-s26w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzcUY119EeqcDJEfg-s26w" type="3002" element="_HzSjZV19EeqcDJEfg-s26w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzcUZF19EeqcDJEfg-s26w" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzcUZV19EeqcDJEfg-s26w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HzZ4Jl19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzZ4J119EeqcDJEfg-s26w" x="672" y="372" width="133" height="30"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_HzWNwl19EeqcDJEfg-s26w"/>
+        <edges xmi:type="notation:Edge" xmi:id="_Hzc7cF19EeqcDJEfg-s26w" type="4001" element="_HzSjZ119EeqcDJEfg-s26w" source="_HzWNw119EeqcDJEfg-s26w" target="_HzW00l19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_Hzc7dF19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzc7dV19EeqcDJEfg-s26w" x="-47" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzc7dl19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzc7d119EeqcDJEfg-s26w" x="16" y="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzc7eF19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzc7eV19EeqcDJEfg-s26w" x="7" y="-7"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Hzc7cV19EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Hzc7cl19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Hzc7c119EeqcDJEfg-s26w" points="[-6, 5, 97, -96]$[-103, 101, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzdigF19EeqcDJEfg-s26w" id="(0.3884297520661157,0.8333333333333334)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzdigV19EeqcDJEfg-s26w" id="(0.12396694214876033,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Hzdigl19EeqcDJEfg-s26w" type="4001" element="_HzTKcl19EeqcDJEfg-s26w" source="_HzWNw119EeqcDJEfg-s26w" target="_HzW01119EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_Hzdihl19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzdih119EeqcDJEfg-s26w" x="-17" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzdiiF19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzdiiV19EeqcDJEfg-s26w" x="74" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzdiil19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzdii119EeqcDJEfg-s26w" x="17" y="7"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Hzdig119EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzdihF19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzdihV19EeqcDJEfg-s26w" points="[31, 30, -89, -84]$[120, 114, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzdijF19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzdijV19EeqcDJEfg-s26w" id="(0.12396694214876033,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HzeJkF19EeqcDJEfg-s26w" type="4001" element="_HzTKd119EeqcDJEfg-s26w" source="_HzW00l19EeqcDJEfg-s26w" target="_HzXb4l19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzeJlF19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzeJlV19EeqcDJEfg-s26w" x="20" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzeJll19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzeJl119EeqcDJEfg-s26w" x="8" y="-6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzeJmF19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzeJmV19EeqcDJEfg-s26w" x="-16" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HzeJkV19EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzeJkl19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzeJk119EeqcDJEfg-s26w" points="[-15, 19, 81, -107]$[-96, 126, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzeJml19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzeJm119EeqcDJEfg-s26w" id="(0.12396694214876033,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HzeJnF19EeqcDJEfg-s26w" type="4001" element="_HzTxgF19EeqcDJEfg-s26w" source="_HzW01119EeqcDJEfg-s26w" target="_HzXb5119EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzeJoF19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzeJoV19EeqcDJEfg-s26w" x="-54"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzeJol19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzeJo119EeqcDJEfg-s26w" x="28" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzeJpF19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzeJpV19EeqcDJEfg-s26w" x="4" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HzeJnV19EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzeJnl19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzeJn119EeqcDJEfg-s26w" points="[23, 30, -74, -96]$[97, 126, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzewoF19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzewoV19EeqcDJEfg-s26w" id="(0.12396694214876033,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Hzewol19EeqcDJEfg-s26w" type="4001" element="_HzTxhV19EeqcDJEfg-s26w" source="_HzXb4l19EeqcDJEfg-s26w" target="_HzYC8F19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_Hzewpl19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzewp119EeqcDJEfg-s26w" x="-81" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzewqF19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzewqV19EeqcDJEfg-s26w" x="87" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzewql19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzewq119EeqcDJEfg-s26w" x="16" y="-2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Hzewo119EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzewpF19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzewpV19EeqcDJEfg-s26w" points="[-15, 23, 98, -151]$[-113, 174, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzewrF19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzewrV19EeqcDJEfg-s26w" id="(0.8872180451127819,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Hzewrl19EeqcDJEfg-s26w" type="4001" element="_HzTxil19EeqcDJEfg-s26w" source="_HzXb4l19EeqcDJEfg-s26w" target="_HzYqAl19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_Hzewsl19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzews119EeqcDJEfg-s26w" x="-29" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzewtF19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzewtV19EeqcDJEfg-s26w" x="9" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzewtl19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzewt119EeqcDJEfg-s26w" x="9" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Hzewr119EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzewsF19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzewsV19EeqcDJEfg-s26w" points="[15, 30, -76, -144]$[91, 174, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzfXsF19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzfXsV19EeqcDJEfg-s26w" id="(0.8872180451127819,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HzfXsl19EeqcDJEfg-s26w" type="4001" element="_HzTxj119EeqcDJEfg-s26w" source="_HzXb4l19EeqcDJEfg-s26w" target="_HzZREl19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzfXtl19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzfXt119EeqcDJEfg-s26w" x="-7" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzf-wF19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzf-wV19EeqcDJEfg-s26w" x="138" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzf-wl19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzf-w119EeqcDJEfg-s26w" x="8" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HzfXs119EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzfXtF19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzfXtV19EeqcDJEfg-s26w" points="[44, 30, -214, -144]$[258, 174, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hzgl0F19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hzgl0V19EeqcDJEfg-s26w" id="(0.8872180451127819,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Hzgl0l19EeqcDJEfg-s26w" type="4001" element="_HzUYlF19EeqcDJEfg-s26w" source="_HzXb5119EeqcDJEfg-s26w" target="_HzZ4IF19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_Hzgl1l19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzgl1119EeqcDJEfg-s26w" x="-8" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzgl2F19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzgl2V19EeqcDJEfg-s26w" x="89" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hzgl2l19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hzgl2119EeqcDJEfg-s26w" x="5" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Hzgl0119EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Hzgl1F19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Hzgl1V19EeqcDJEfg-s26w" points="[41, 30, -218, -156]$[259, 186, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzhM4F19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzhM4V19EeqcDJEfg-s26w" id="(0.8872180451127819,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HzhM4l19EeqcDJEfg-s26w" type="4001" element="_HzUYmV19EeqcDJEfg-s26w" source="_HzXb5119EeqcDJEfg-s26w" target="_HzZ4JV19EeqcDJEfg-s26w">
+          <children xmi:type="notation:Node" xmi:id="_HzhM5l19EeqcDJEfg-s26w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzhM5119EeqcDJEfg-s26w" x="-14" y="-5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzhM6F19EeqcDJEfg-s26w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzhM6V19EeqcDJEfg-s26w" x="145" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HzhM6l19EeqcDJEfg-s26w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzhM6119EeqcDJEfg-s26w" x="10" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HzhM4119EeqcDJEfg-s26w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HzhM5F19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HzhM5V19EeqcDJEfg-s26w" points="[6, 30, -37, -168]$[43, 198, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzhM7F19EeqcDJEfg-s26w" id="(0.12396694214876033,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HzhM7V19EeqcDJEfg-s26w" id="(0.8872180451127819,1.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzQuMF19EeqcDJEfg-s26w" name="Application" outgoingEdges="_HzSjZ119EeqcDJEfg-s26w _HzTKcl19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0"/>
+      <semanticElements xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_HzQuMV19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzQuM119EeqcDJEfg-s26w" name="Keep Alive" outgoingEdges="_HzTKd119EeqcDJEfg-s26w" incomingEdges="_HzSjZ119EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0/@subtree.0"/>
+      <semanticElements xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0/@subtree.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_HzQuNF19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzRVQF19EeqcDJEfg-s26w" name="Patrol" outgoingEdges="_HzTxgF19EeqcDJEfg-s26w" incomingEdges="_HzTKcl19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0/@subtree.1"/>
+      <semanticElements xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0/@subtree.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_HzRVQV19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzRVQ119EeqcDJEfg-s26w" name="?" outgoingEdges="_HzTxhV19EeqcDJEfg-s26w _HzTxil19EeqcDJEfg-s26w _HzTxj119EeqcDJEfg-s26w" incomingEdges="_HzTKd119EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0"/>
+      <semanticElements xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_HzRVRF19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="217,196,215">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='SequenceNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='SequenceNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzRVRl19EeqcDJEfg-s26w" name="?" outgoingEdges="_HzUYlF19EeqcDJEfg-s26w _HzUYmV19EeqcDJEfg-s26w" incomingEdges="_HzTxgF19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0"/>
+      <semanticElements xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_HzRVR119EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="217,196,215">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='SequenceNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='SequenceNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzR8UV19EeqcDJEfg-s26w" name="Energy level is low" incomingEdges="_HzTxhV19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:ConditionNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0/@conditionChild.0"/>
+      <semanticElements xmi:type="metamodel:ConditionNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0/@conditionChild.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_HzR8Ul19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" backgroundColor="204,242,166">
+        <description xmi:type="style:DotDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ConditionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ConditionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzR8VF19EeqcDJEfg-s26w" name="Move to energy source" incomingEdges="_HzTxil19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0/@actionChild.0"/>
+      <semanticElements xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0/@actionChild.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_HzR8VV19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" backgroundColor="253,206,137">
+        <description xmi:type="style:DotDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzR8V119EeqcDJEfg-s26w" name="Recharge battery" incomingEdges="_HzTxj119EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0/@actionChild.1"/>
+      <semanticElements xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0/@actionChild.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_HzR8WF19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" backgroundColor="253,206,137">
+        <description xmi:type="style:DotDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzSjYV19EeqcDJEfg-s26w" name="goToA" incomingEdges="_HzUYlF19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0/@actionChild.0"/>
+      <semanticElements xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0/@actionChild.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_HzSjYl19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" backgroundColor="253,206,137">
+        <description xmi:type="style:DotDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HzSjZF19EeqcDJEfg-s26w" name="goToB" incomingEdges="_HzUYmV19EeqcDJEfg-s26w" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0/@actionChild.1"/>
+      <semanticElements xmi:type="metamodel:ActionNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0/@actionChild.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Dot" uid="_HzSjZV19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" backgroundColor="253,206,137">
+        <description xmi:type="style:DotDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='ActionNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzSjZ119EeqcDJEfg-s26w" sourceNode="_HzQuMF19EeqcDJEfg-s26w" targetNode="_HzQuM119EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzSjaF19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTotree']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzSjaV19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTotree']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzTKcl19EeqcDJEfg-s26w" sourceNode="_HzQuMF19EeqcDJEfg-s26w" targetNode="_HzRVQF19EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzTKc119EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTotree']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzTKdF19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTotree']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzTKd119EeqcDJEfg-s26w" sourceNode="_HzQuM119EeqcDJEfg-s26w" targetNode="_HzRVQ119EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0/@subtree.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzTKeF19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTosequence']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzTKeV19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTosequence']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzTxgF19EeqcDJEfg-s26w" sourceNode="_HzRVQF19EeqcDJEfg-s26w" targetNode="_HzRVRl19EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:Tree" href="model.metamodel#//@tree.0/@subtree.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzTxgV19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTosequence']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzTxgl19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='treeTosequence']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzTxhV19EeqcDJEfg-s26w" sourceNode="_HzRVQ119EeqcDJEfg-s26w" targetNode="_HzR8UV19EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzTxhl19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceTocondition']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzTxh119EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceTocondition']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzTxil19EeqcDJEfg-s26w" sourceNode="_HzRVQ119EeqcDJEfg-s26w" targetNode="_HzR8VF19EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzTxi119EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzTxjF19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzTxj119EeqcDJEfg-s26w" sourceNode="_HzRVQ119EeqcDJEfg-s26w" targetNode="_HzR8V119EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.0/@compositeChild.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzUYkF19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzUYkV19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzUYlF19EeqcDJEfg-s26w" sourceNode="_HzRVRl19EeqcDJEfg-s26w" targetNode="_HzSjYV19EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzUYlV19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzUYll19EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HzUYmV19EeqcDJEfg-s26w" sourceNode="_HzRVRl19EeqcDJEfg-s26w" targetNode="_HzSjZF19EeqcDJEfg-s26w">
+      <target xmi:type="metamodel:SequenceNode" href="model.metamodel#//@tree.0/@subtree.1/@compositeChild.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HzUYml19EeqcDJEfg-s26w" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HzUYm119EeqcDJEfg-s26w" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@edgeMappings[name='sequenceToaction']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_HzO5AV19EeqcDJEfg-s26w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer"/>
+    <target xmi:type="metamodel:Root" href="model.metamodel#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

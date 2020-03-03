@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/BehaviorTreeFeatureProject_1.0.0.201912191237.jar" id="BehaviorTreeFeatureProject" version="1.0.0.201912191237">
-      <category name="BehaviorTree"/>
-   </feature>
-   <category-def name="BehaviorTree" label="BehaviorTree"/>
-</site>
