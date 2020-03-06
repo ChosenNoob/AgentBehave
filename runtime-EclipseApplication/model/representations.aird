@@ -20,9 +20,9 @@
           <children xmi:type="notation:Node" xmi:id="_HzW00F19EeqcDJEfg-s26w" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_HzW00V19EeqcDJEfg-s26w" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_HzafMl19EeqcDJEfg-s26w" type="3016" element="_HzQuMV19EeqcDJEfg-s26w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzafM119EeqcDJEfg-s26w" fontName="Ubuntu"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzafNF19EeqcDJEfg-s26w"/>
+          <children xmi:type="notation:Node" xmi:id="_yd81wF-mEeqqAdZHRILZqA" type="3016" element="_ybRVMF-mEeqqAdZHRILZqA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yd81wV-mEeqqAdZHRILZqA" fontName="Microsoft PhagsPa"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yd81wl-mEeqqAdZHRILZqA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_HzWNxF19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzWNxV19EeqcDJEfg-s26w" x="515" y="24" width="121" height="30"/>
@@ -31,9 +31,9 @@
           <children xmi:type="notation:Node" xmi:id="_HzW01V19EeqcDJEfg-s26w" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_HzW01l19EeqcDJEfg-s26w" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_HzafNV19EeqcDJEfg-s26w" type="3016" element="_HzQuNF19EeqcDJEfg-s26w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzafNl19EeqcDJEfg-s26w" fontName="Ubuntu"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzafN119EeqcDJEfg-s26w"/>
+          <children xmi:type="notation:Node" xmi:id="_yd9c0F-mEeqqAdZHRILZqA" type="3016" element="_ybSjUl-mEeqqAdZHRILZqA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yd9c0V-mEeqqAdZHRILZqA" fontName="Microsoft PhagsPa"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yd9c0l-mEeqqAdZHRILZqA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_HzW00119EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzW01F19EeqcDJEfg-s26w" x="444" y="120" width="121" height="30"/>
@@ -42,9 +42,9 @@
           <children xmi:type="notation:Node" xmi:id="_HzXb4F19EeqcDJEfg-s26w" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_HzXb4V19EeqcDJEfg-s26w" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_HzbGQF19EeqcDJEfg-s26w" type="3016" element="_HzRVQV19EeqcDJEfg-s26w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_HzbGQV19EeqcDJEfg-s26w" fontName="Ubuntu"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzbGQl19EeqcDJEfg-s26w"/>
+          <children xmi:type="notation:Node" xmi:id="_yd9c01-mEeqqAdZHRILZqA" type="3016" element="_ybTxcF-mEeqqAdZHRILZqA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yd9c1F-mEeqqAdZHRILZqA" fontName="Microsoft PhagsPa"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yd9c1V-mEeqqAdZHRILZqA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_HzW02F19EeqcDJEfg-s26w" fontName="Ubuntu" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HzW02V19EeqcDJEfg-s26w" x="635" y="108" width="121" height="30"/>
@@ -279,7 +279,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_HzQuMV19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_ybRVMF-mEeqqAdZHRILZqA" labelSize="12" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']"/>
@@ -290,7 +290,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_HzQuNF19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_ybSjUl-mEeqqAdZHRILZqA" labelSize="12" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']"/>
@@ -301,7 +301,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_HzRVQV19EeqcDJEfg-s26w" labelSize="12" labelPosition="node" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_ybTxcF-mEeqqAdZHRILZqA" labelSize="12" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/metamodel.design/description/metamodel.odesign#//@ownedViewpoints[name='metamodel']/@ownedRepresentations[name='metamodel']/@defaultLayer/@nodeMappings[name='Tree']"/>
