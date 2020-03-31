@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree">
+  <entryPoint name="Entry Point">
+    <children xsi:type="behaviortree:ConditionNode" name="Condition Node 1">
+      <children xsi:type="behaviortree:ActionNode" name="Action Node 2"/>
+    </children>
+    <children xsi:type="behaviortree:TreeSkeleton" name="Tree Skeleton 1">
+      <children xsi:type="behaviortree:ActionNode" name="Action Node 1"/>
+    </children>
+  </entryPoint>
+</behaviortree:BehaviorTree>

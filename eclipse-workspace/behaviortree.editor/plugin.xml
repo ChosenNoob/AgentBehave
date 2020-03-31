@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated behaviortree -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="behaviortree.presentation.BehaviortreeModelWizardID"
+            name="%_UI_BehaviortreeModelWizard_label"
+            class="behaviortree.presentation.BehaviortreeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BehaviortreeModelFile.gif">
+         <description>%_UI_BehaviortreeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated behaviortree -->
+      <editor
+            id="behaviortree.presentation.BehaviortreeEditorID"
+            name="%_UI_BehaviortreeEditor_label"
+            icon="icons/full/obj16/BehaviortreeModelFile.gif"
+            extensions="behaviortree"
+            class="behaviortree.presentation.BehaviortreeEditor"
+            contributorClass="behaviortree.presentation.BehaviortreeActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

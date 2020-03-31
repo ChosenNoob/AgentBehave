@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="behaviortree" nsURI="http://www.example.org/behaviortree" nsPrefix="behaviortree">
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorTree">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" eType="#//EntryPoint"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNode" eSuperTypes="#//ActionNodeChild #//ConditionNodeChild #//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" eType="#//ActionNodeChild"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionNode" eSuperTypes="#//ConditionNodeChild #//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//ConditionNodeChild" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//SequenceNodeChild" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FallbackNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//FallbackNodeChild" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNodeChild" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionNodeChild" abstract="true"
+      interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceNodeChild" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FallbackNodeChild" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeSkeleton" eSuperTypes="#//ConditionNodeChild #//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Node" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
