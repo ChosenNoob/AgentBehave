@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree">
+  <root name="root">
+    <children xsi:type="behaviortree:TreeSkeleton" name="Tree Skeleton">
+      <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 3">
+        <children xsi:type="behaviortree:ConditionNode" name="Condition Node 2"/>
+        <children xsi:type="behaviortree:ActionNode" name="Action Node 2"/>
+      </children>
+    </children>
+    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 1">
+      <children xsi:type="behaviortree:ActionNode" name="Action Node 1"/>
+      <children xsi:type="behaviortree:ConditionNode" name="Condition Node 1"/>
+    </children>
+    <children xsi:type="behaviortree:SequenceNode" name="Sequence Node">
+      <children xsi:type="behaviortree:ActionNode" name="Action Node 3"/>
+      <children xsi:type="behaviortree:TreeSkeleton" name="Tree Skeleton 2">
+        <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 2">
+          <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 3">
+            <children xsi:type="behaviortree:ActionNode" name="Action Node 5"/>
+            <children xsi:type="behaviortree:ActionNode" name="Action Node 6"/>
+          </children>
+          <children xsi:type="behaviortree:ActionNode" name="Action Node 4"/>
+        </children>
+      </children>
+    </children>
+  </root>
+</behaviortree:BehaviorTree>
