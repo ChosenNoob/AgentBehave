@@ -11,5 +11,3 @@ To use metamodel, run the metamodel as an Eclipse instance. In that instance, op
 behaviortree -> metamodel project
 
 behaviortree.design -> viewpoint project
-
-sample -> a sample behavior tree model to test

@@ -10,33 +10,17 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Behaviortree" disposableProviderFactory="true" ecorePackage="behaviortree.ecore#/">
     <genClasses ecoreClass="behaviortree.ecore#//BehaviorTree">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//BehaviorTree/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//BehaviorTree/entryPoint"/>
     </genClasses>
     <genClasses ecoreClass="behaviortree.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//Node/children"/>
     </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//ActionNode">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//ActionNode/children"/>
-    </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//EntryPoint">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//EntryPoint/children"/>
-    </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//ConditionNode">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//ConditionNode/children"/>
-    </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//SequenceNode">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//SequenceNode/children"/>
-    </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//FallbackNode">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//FallbackNode/children"/>
-    </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//ActionNodeChild"/>
-    <genClasses ecoreClass="behaviortree.ecore#//ConditionNodeChild"/>
-    <genClasses ecoreClass="behaviortree.ecore#//SequenceNodeChild"/>
-    <genClasses ecoreClass="behaviortree.ecore#//FallbackNodeChild"/>
-    <genClasses ecoreClass="behaviortree.ecore#//TreeSkeleton">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//TreeSkeleton/children"/>
-    </genClasses>
+    <genClasses ecoreClass="behaviortree.ecore#//ActionNode"/>
+    <genClasses ecoreClass="behaviortree.ecore#//EntryPoint"/>
+    <genClasses ecoreClass="behaviortree.ecore#//ConditionNode"/>
+    <genClasses ecoreClass="behaviortree.ecore#//SequenceNode"/>
+    <genClasses ecoreClass="behaviortree.ecore#//FallbackNode"/>
+    <genClasses ecoreClass="behaviortree.ecore#//TreeSkeleton"/>
   </genPackages>
 </genmodel:GenModel>
