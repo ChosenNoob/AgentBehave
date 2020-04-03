@@ -4,7 +4,9 @@ Install Sirius and EcoreTools from Eclipse Marketplace (Sirius resides in Obeo s
 
 After downloading and installing packages, select your Eclipse Workspace wherever you want. Just open the `behaviortree` project with it. 
 
-To use metamodel, run the metamodel as an Eclipse instance. In that instance, open `behaviortree.design` and `sample` projects. 
+To use metamodel, run the metamodel as an Eclipse instance. In that instance, open `behaviortree.design` projects. 
+
+Use a local modeling project to test the viewpoint project
 
 
 
