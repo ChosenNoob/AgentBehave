@@ -15,15 +15,14 @@
         </ownedRules>
       </validationSet>
       <diagramInitialisation>
-        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-          <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::EntryPoint" referenceName="entryPoint" variableName="entryPointInstance">
-            <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Entry Point"/>
-          </subModelOperations>
+        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::EntryPoint)">
+          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Entry Point"/>
+          <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::EntryPoint" referenceName="entryPoint" variableName="entryPointInstance"/>
         </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
         <nodeMappings name="Action Node" deletionDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20Node%20Delete']" domainClass="behaviortree::ActionNode">
-          <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -64,15 +63,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="Children" sourceMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']" targetMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton']" targetFinderExpression="aql:self.children" reconnections="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnect']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="action2action" sourceMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']" targetMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']" targetFinderExpression="aql:self.children">
+        <edgeMappings name="Children" sourceMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']" targetMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton']" targetFinderExpression="aql:self.children">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -85,7 +76,7 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:createActionNode()">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::ActionNode)">
                 <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Action Node '+container.eAllContents()->filter(behaviortree::ActionNode)->size()"/>
               </firstModelOperations>
             </initialOperation>
@@ -94,10 +85,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::ConditionNode" referenceName="children">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Condition Node '+container.eAllContents()->filter(behaviortree::ConditionNode)->size()"/>
-                </subModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::ConditionNode)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Condition Node '+container.eAllContents()->filter(behaviortree::ConditionNode)->size()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -105,10 +94,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.entryPoint">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::SequenceNode" referenceName="children">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Sequence Node '+container.eAllContents()->filter(behaviortree::SequenceNode)->size()"/>
-                </subModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::SequenceNode)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Sequence Node '+container.eAllContents()->filter(behaviortree::SequenceNode)->size()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -116,10 +103,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.entryPoint">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::FallbackNode" referenceName="children">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Fallback Node '+container.eAllContents()->filter(behaviortree::FallbackNode)->size()"/>
-                </subModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::FallbackNode)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Fallback Node '+container.eAllContents()->filter(behaviortree::FallbackNode)->size()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -145,10 +130,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::EntryPoint" referenceName="entryPoint" variableName="entryPointInstance">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Entry Point"/>
-                </subModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::EntryPoint)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Entry Point"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -156,10 +139,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.entryPoint">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::TreeSkeleton" referenceName="children">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Tree Skeleton '+container.eAllContents()->filter(behaviortree::TreeSkeleton)->size()"/>
-                </subModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::EntryPoint)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Tree Skeleton '+container.eAllContents()->filter(behaviortree::TreeSkeleton)->size()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -171,49 +152,12 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source">
-                <subModelOperations xsi:type="tool:SetValue" featureName="children" valueExpression="aql:target"/>
-              </firstModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setChild(target)"/>
             </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="reconnect">
-            <source name="source"/>
-            <target name="target"/>
-            <sourceView name="sourceView"/>
-            <targetView name="targetView"/>
-            <element name="element"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:element">
-                <subModelOperations xsi:type="tool:SetValue" featureName="children" valueExpression="aql:target"/>
-              </firstModelOperations>
-            </initialOperation>
-            <edgeView name="edgeView"/>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerDropDescription">
-            <oldContainer name="oldSemanticContainer"/>
-            <newContainer name="newSemanticContainer"/>
-            <element name="element"/>
-            <newViewContainer name="newContainerView"/>
-            <initialOperation/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
       <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-    </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="TreeSkeleton Representation" domainClass="behaviortree::TreeSkeleton" enablePopupBars="true">
-      <metamodel href="http://www.example.org/behaviortree#/"/>
-      <defaultLayer name="Default">
-        <nodeMappings name="action" domainClass="behaviortree::ActionNode"/>
-        <nodeMappings name="tree" domainClass="behaviortree::TreeSkeleton"/>
-        <edgeMappings name="child" sourceMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='TreeSkeleton%20Representation']/@defaultLayer/@nodeMappings[name='tree']" targetMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='TreeSkeleton%20Representation']/@defaultLayer/@nodeMappings[name='action']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-      </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="behaviortree.design.Services"/>
   </ownedViewpoints>

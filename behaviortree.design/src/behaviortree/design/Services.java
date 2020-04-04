@@ -1,5 +1,6 @@
  package behaviortree.design;
 
+import java.awt.print.Printable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,9 +69,10 @@ public class Services {
     // Example of creating a node
     // By calling this in context change menu and returning the new node,
     // i can set its features in the design diagram after it is created
-    public ActionNode createActionNode(Node container)
+    public Node createNode(Node container, EClass className)
     {
-    	ActionNode newNode = behaviortree.BehaviortreeFactory.eINSTANCE.createActionNode();
+//    	ActionNode newNode = behaviortree.BehaviortreeFactory.eINSTANCE.createActionNode();
+    	Node newNode = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(className);
     	setChild(container, newNode);
     	return newNode;
     }
@@ -137,8 +139,11 @@ public class Services {
 		return false;
     }
     
-    public static boolean canBeChild(Node parent, Node child)
+    public boolean canBeChild(Node parent, Node child)
     {
+    	if (parent == child) {
+			return false;
+		}
     	String parentClassName = parent.eClass().getName();
     	String childClassName = child.eClass().getName();
     	if (parentClassName == "EntryPoint" || 
