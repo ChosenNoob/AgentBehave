@@ -1,4 +1,4 @@
-package behaviortree.design;
+ package behaviortree.design;
 
 import java.awt.print.Printable;
 import java.lang.reflect.Array;
@@ -21,6 +21,8 @@ import javax.swing.UIManager;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 
 import behaviortree.ActionNode;
 import behaviortree.BehaviorTree;
@@ -47,13 +49,13 @@ public class Services {
     public static final String[] conditionNodeChildTypes = {"ActionNode", "ConditionNode"};
     public static final String[] decoratorNodeChildTypes = {"ActionNode", "ConditionNode"};
     public static final String[] fallbackNodeChildTypes = {"ActionNode", "ConditionNode"};
-
+    
     public String debugger(EObject self)
     {	
     	// Called by validate diagram option in the right click menu
     	// This prints to the Problems View (into the Info section)
     	// Set returnVal to whatever you want to print
-   	Object returnVal = null;
+    	Object returnVal = null;
     	return "Debugger: " + returnVal.toString();
     }
     
@@ -69,6 +71,7 @@ public class Services {
     // i can set its features in the design diagram after it is created
     public Node createNode(Node container, EClass className)
     {
+//    	ActionNode newNode = behaviortree.BehaviortreeFactory.eINSTANCE.createActionNode();
     	Node newNode = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(className);
     	setChild(container, newNode);
     	return newNode;
