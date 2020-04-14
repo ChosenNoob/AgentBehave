@@ -19,6 +19,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -45,10 +46,12 @@ public class Services {
 	// Each of your custom services require the first parameter to be EObject self
 
 	// These represents each node types' possible children types
-    public static final String[] actionNodeChildTypes = {"ConditionNode"};
-    public static final String[] conditionNodeChildTypes = {"ActionNode", "ConditionNode"};
+    public static final String[] actionNodeChildTypes = {};
+    public static final String[] conditionNodeChildTypes = {};
     public static final String[] decoratorNodeChildTypes = {"ActionNode", "ConditionNode"};
-    public static final String[] fallbackNodeChildTypes = {"ActionNode", "ConditionNode"};
+    public static final String[] fallbackNodeChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
+    public static final String[] sequenceNodeChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
+    public static final String[] treeSkeletonChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
     
     public String debugger(EObject self)
     {	
@@ -166,8 +169,26 @@ public class Services {
     	childRelations.put("ConditionNode",  Arrays.asList(Services.conditionNodeChildTypes));
     	childRelations.put("DecoratorNode",  Arrays.asList(Services.decoratorNodeChildTypes));
     	childRelations.put("FallbackNode",  Arrays.asList(Services.fallbackNodeChildTypes));
+    	childRelations.put("SequenceNode",  Arrays.asList(Services.sequenceNodeChildTypes));
+    	childRelations.put("TreeSkeleton",  Arrays.asList(Services.treeSkeletonChildTypes));
     	return childRelations;
     }
+    
+    public List<EObject> treeSkeletonChildrenList(EObject self, EObject element)
+    {   
+        List<EObject> resultList = new ArrayList<>();
+        TreeIterator<EObject> iterator = element.eAllContents();
+        while(iterator.hasNext()) {
+            EObject obj = iterator.next();
+            print(obj.eContainer().eClass().getName());
+            if(obj.eContainer().eClass().getName() == "TreeSkeleton") {
+                resultList.add(obj);
+                obj.eAllContents().forEachRemaining(a -> {resultList.add(a);});
+            }
+        }
+        return resultList;
+    }
+    
     
     public void print(Object obj)
     {
