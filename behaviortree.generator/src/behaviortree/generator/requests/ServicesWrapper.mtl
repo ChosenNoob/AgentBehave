@@ -1,0 +1,14 @@
+[comment encoding = Cp1252 /]
+[**
+ * The documentation of the module.
+ */]
+[module ServicesWrapper('http://www.example.org/behaviortree')/]
+
+[**
+ * The documentation of the query
+ * @param arg0
+ */]
+[query public generate(arg0 : BehaviorTree) : String
+	= invoke('behaviortree.generator.main.Services', 'generate(behaviortree.BehaviorTree)', Sequence{arg0})
+/]
+

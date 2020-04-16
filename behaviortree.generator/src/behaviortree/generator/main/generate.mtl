@@ -4,14 +4,14 @@
  */]
 [module generate('http://www.example.org/behaviortree')]
 
-
+[import behaviortree::generator::requests::ServicesWrapper /]
 [**
  * The documentation of the template generateElement.
  * @param aBehaviorTree
  */]
 [template public generateElement(aBehaviorTree : BehaviorTree)]
 [comment @main/]
-[file (aBehaviorTree.name, false, 'UTF-8')]
-Hello World!
+[file ('generated.txt', false, 'UTF-8')]
+[generate(aBehaviorTree)/]
 [/file]
 [/template]
