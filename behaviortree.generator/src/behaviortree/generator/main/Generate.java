@@ -24,6 +24,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
+import behaviortree.BehaviorTree;
+
 /**
  * Entry point of the 'Generate' generation module.
  *
@@ -83,11 +85,13 @@ public class Generate extends AbstractAcceleoGenerator {
      * @throws IOException
      *             This can be thrown in three scenarios : the module cannot be found, it cannot be loaded, or
      *             the model cannot be loaded.
-     * @generated
+     * @generated NOT
      */
     public Generate(URI modelURI, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
+        BehaviorTree model = (BehaviorTree) this.model;
+        model.setModelPath(this.targetFolder.toString());
     }
 
     /**
@@ -116,7 +120,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param args
      *            Arguments of the generation.
-     * @generated
+     * @generated 
      */
     public static void main(String[] args) {
         try {
@@ -152,11 +156,11 @@ public class Generate extends AbstractAcceleoGenerator {
                  * The behavior of the properties loader service is explained in the Acceleo documentation
                  * (Help -> Help Contents).
                  */
-                 
+
                 for (int i = 2; i < args.length; i++) {
                     generator.addPropertiesFile(args[i]);
+                    System.out.println(args[i]);
                 }
-                
                 generator.doGenerate(new BasicMonitor());
             }
         } catch (IOException e) {

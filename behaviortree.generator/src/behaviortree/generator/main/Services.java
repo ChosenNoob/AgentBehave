@@ -5,7 +5,7 @@ import behaviortree.BehaviorTree;
 public class Services {
 	public String generate(BehaviorTree behaviortree){
 		String generatedCode;
-		generatedCode = "Hello World!";
+		generatedCode = behaviortree.getModelPath();
 		return generatedCode;
 	}
 }

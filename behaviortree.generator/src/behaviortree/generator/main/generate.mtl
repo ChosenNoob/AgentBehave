@@ -12,6 +12,8 @@
 [template public generateElement(aBehaviorTree : BehaviorTree)]
 [comment @main/]
 [file ('generated.txt', false, 'UTF-8')]
+
+[comment] Wrapped Java call[/comment]
 [generate(aBehaviorTree)/]
 [/file]
 [/template]
