@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="behaviortree" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="behaviortree" version="12.0.0.2017041100">
   <ownedViewpoints name="behaviortree" modelFileExtension="behaviortree">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Tree Representation" initialisation="true" showOnStartup="true" domainClass="behaviortree::BehaviorTree" enablePopupBars="true">
       <metamodel href="http://www.example.org/behaviortree#/"/>
@@ -21,14 +21,14 @@
         </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
-        <nodeMappings name="Action Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.2/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" domainClass="behaviortree::ActionNode">
+        <nodeMappings name="Action Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" domainClass="behaviortree::ActionNode">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Condition Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.2/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" domainClass="behaviortree::ConditionNode">
+        <nodeMappings name="Condition Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" domainClass="behaviortree::ConditionNode">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -49,14 +49,14 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Tree Skeleton" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Navigation%20to%20Tree%20Skeleton']" domainClass="behaviortree::TreeSkeleton">
+        <nodeMappings name="Tree Skeleton" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.4/@ownedTools[name='Navigation%20to%20Tree%20Skeleton']" domainClass="behaviortree::TreeSkeleton">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:'Double Click to inspect (contains '+self.eAllContents()->size()+' nodes)'" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Entry Point" domainClass="behaviortree::EntryPoint">
+        <nodeMappings name="Entry Point" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='']" domainClass="behaviortree::EntryPoint">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -71,6 +71,52 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <toolSections name="Double Click Properties Dialog">
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" mappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                  <initialOperation/>
+                </buttons>
+                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                  <initialOperation/>
+                </buttons>
+                <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='']/@initialOperation/@firstModelOperations/@groups.0 //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='']/@initialOperation/@firstModelOperations/@groups.1"/>
+                <groups name="Default Group" labelExpression="Group" domainClass="behaviortree::EntryPoint" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
+                <groups name="Simulation Parameters" labelExpression="Simulation Parameters" domainClass="behaviortree::EntryPoint">
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint agentName" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('agentName')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('agentName'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('agentName').changeable" valueExpression="aql:self.agentName">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="agentName" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint agentPositions" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('agentPositions')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('agentPositions'))" isEnabledExpression="aql:self.randomPlacement = false" valueExpression="aql:self.agentPositions">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="agentPositions" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                  <controls xsi:type="properties:CheckboxDescription" name="behaviortree::EntryPoint randomPlacement" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('randomPlacement'))" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('randomPlacement'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('randomPlacement').changeable" valueExpression="aql:self.randomPlacement">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="randomPlacement" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint agentCount" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('agentCount')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('agentCount'))" isEnabledExpression="aql:self.randomPlacement = true" valueExpression="aql:self.agentCount">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="agentCount" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
         <toolSections name="Create Nodes">
           <ownedTools xsi:type="tool_1:NodeCreationDescription" name="ActionNodeCreation" label="Create a Action Node" nodeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']">
             <variable name="container"/>
@@ -139,7 +185,7 @@
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setChild(target)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:PasteDescription" name="Copy&amp;Cut / Paste">
+          <ownedTools xsi:type="tool:PasteDescription" name="Copy&amp;Cut / Paste" forceRefresh="true">
             <container name="container"/>
             <containerView name="containerView"/>
             <copiedView name="copiedView"/>
@@ -190,7 +236,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Tree Skeleton" semanticCandidatesExpression="service:treeSkeletonChildrenList(element)" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Navigation%20to%20Tree%20Skeleton']" domainClass="behaviortree::TreeSkeleton">
+        <nodeMappings name="Tree Skeleton" semanticCandidatesExpression="service:treeSkeletonChildrenList(element)" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.4/@ownedTools[name='Navigation%20to%20Tree%20Skeleton']" domainClass="behaviortree::TreeSkeleton">
           <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
