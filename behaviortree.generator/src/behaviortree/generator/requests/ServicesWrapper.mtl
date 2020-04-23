@@ -12,3 +12,11 @@
 	= invoke('behaviortree.generator.main.Services', 'generate(behaviortree.BehaviorTree)', Sequence{arg0})
 /]
 
+[query public getProjectName(arg0 : BehaviorTree) : String
+	= invoke('behaviortree.generator.main.Services', 'getProjectName(behaviortree.BehaviorTree)', Sequence{arg0})
+/]
+
+[query public getClassName(arg0 : EntryPoint) : String
+	= invoke('behaviortree.generator.main.Services', 'getClassName(behaviortree.EntryPoint)', Sequence{arg0})
+/]
+

@@ -31,10 +31,15 @@ public class [getProjectName(bt)/] implements ContextBuilder<Object> {
 
 		Grid<Object> grid = gridFactory.createGrid("grid", context,
 				new GridBuilderParameters<Object>(new WrapAroundBorders(),
-						new SimpleGridAdder<Object>(), false, [bt.gridSize/], [bt.gridSize/]));
-		
+						new SimpleGridAdder<Object>(), false, [bt.gridLength/], [bt.gridHeight/]));
+
 [comment] Random Agent Placement [/comment]
-		[setFillerAgentCount(bt)/]
+		[for (entryPoint : EntryPoint | bt.children->filter(EntryPoint))]
+		for (int i = 0; i < [entryPoint.agentCount/]; i++) {
+			[getClassName(entryPoint)/]	
+		}
+		[/for]
+[comment]		[setFillerAgentCount(bt)/]
 		[for (entryPoint : EntryPoint | bt.children->filter(EntryPoint))]
 		int [entryPoint.agentName.toLower()/]Left = [entryPoint.agentCount/];
 		[/for]
@@ -52,11 +57,7 @@ public class [getProjectName(bt)/] implements ContextBuilder<Object> {
 					[entryPoint.agentName.toLower()/]Left--;
 				}
 				[/for]
-				[/let]
-				
-			}
-		}
-		
+				[/let][/comment]
 		return context;
 	}
 }

@@ -10,8 +10,9 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Behaviortree" disposableProviderFactory="true" ecorePackage="behaviortree.ecore#/">
     <genClasses ecoreClass="behaviortree.ecore#//BehaviorTree">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//BehaviorTree/entryPoint"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//BehaviorTree/projectPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//BehaviorTree/gridLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//BehaviorTree/gridHeight"/>
     </genClasses>
     <genClasses ecoreClass="behaviortree.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/name"/>

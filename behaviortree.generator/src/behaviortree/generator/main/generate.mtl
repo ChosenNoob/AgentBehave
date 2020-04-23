@@ -5,6 +5,7 @@
 [module generate('http://www.example.org/behaviortree')]
 
 [import behaviortree::generator::requests::ServicesWrapper /]
+[import behaviortree::generator::files::generateGrid /]
 [**
  * The documentation of the template generateElement.
  * @param aBehaviorTree
@@ -12,8 +13,6 @@
 [template public generateElement(aBehaviorTree : BehaviorTree)]
 [comment @main/]
 [file ('generated.txt', false, 'UTF-8')]
-
-[comment] Wrapped Java call[/comment]
-[generate(aBehaviorTree)/]
+[generateGrid(aBehaviorTree)/]
 [/file]
 [/template]

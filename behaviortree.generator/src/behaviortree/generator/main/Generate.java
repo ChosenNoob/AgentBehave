@@ -91,7 +91,7 @@ public class Generate extends AbstractAcceleoGenerator {
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
         BehaviorTree model = (BehaviorTree) this.model;
-        model.setModelPath(this.targetFolder.toString());
+        model.setProjectPath(this.targetFolder.getParent().toString());
     }
 
     /**
@@ -156,11 +156,11 @@ public class Generate extends AbstractAcceleoGenerator {
                  * The behavior of the properties loader service is explained in the Acceleo documentation
                  * (Help -> Help Contents).
                  */
-
+                 
                 for (int i = 2; i < args.length; i++) {
                     generator.addPropertiesFile(args[i]);
-                    System.out.println(args[i]);
                 }
+                
                 generator.doGenerate(new BasicMonitor());
             }
         } catch (IOException e) {

@@ -17,7 +17,6 @@
       <diagramInitialisation>
         <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::EntryPoint)">
           <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Root"/>
-          <subModelOperations xsi:type="tool:CreateInstance" typeName="behaviortree::EntryPoint" referenceName="entryPoint" variableName="entryPointInstance"/>
         </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
@@ -156,7 +155,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Tools">
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" documentation="Create an Entry Point (There can only exist one, it should generate when you create the viewpoint)&#xD;&#xA;" name="EntryPointCreation" label="Create an Entry Point" precondition="aql:container.entryPoint = null" nodeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" documentation="Create an Entry Point (There can only exist one, it should generate when you create the viewpoint)&#xD;&#xA;" name="EntryPointCreation" label="Create an Entry Point" nodeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
