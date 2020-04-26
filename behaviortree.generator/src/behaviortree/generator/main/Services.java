@@ -19,7 +19,7 @@ public class Services {
 		String projectName = getProjectName(behaviorTree);
 		
 		// Package 		
-		gridCode += "package " + projectName + "\n";
+		gridCode += "package " + projectName + ";" + "\n";
 		gridCode += "\n";
 		
 		// Imports
@@ -35,7 +35,7 @@ public class Services {
 		gridCode += "\n";
 		
 		// Class Body
-		gridCode += "public class " + projectName + " implements ContextBuilder<Object> {" + "\n";
+		gridCode += "public class GridGoL implements ContextBuilder<Object> {" + "\n";
 		gridCode += "\n";
 		
 		// build method open
@@ -43,6 +43,8 @@ public class Services {
 		
 		// Grid creation
 		gridCode += "		context.setId(\"" + projectName + "\");" + "\n";
+		gridCode += "\n";
+		gridCode += "		GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);" + "\n";
 		gridCode += "\n";
 		gridCode += "		Grid<Object> grid = gridFactory.createGrid(\"grid\", context," + "\n";
 		gridCode += "				new GridBuilderParameters<Object>(new WrapAroundBorders()," + "\n";
@@ -56,10 +58,11 @@ public class Services {
 				
 			// Agent Positions
 			gridCode += "		int[][] " + agentVarName + "AgentPos = {" + "\n";
-			for (int[] pos: agentPositions) {
-				gridCode += "			{" + pos[0] + ", " + pos[1] + "}" + "\n";
+			for (int i = 0; i < agentPositions.size() - 1; i++) {
+				gridCode += "			{" + agentPositions.get(i)[0] + ", " + agentPositions.get(i)[1] + "}," + "\n";
 			}
-			gridCode += "		}" + "\n";
+			gridCode += "			{" + agentPositions.get(agentPositions.size() - 1)[0] + ", " + agentPositions.get(agentPositions.size() - 1)[1] + "}" + "\n";
+			gridCode += "		};" + "\n";
 			
 			// Agent Placement
 			gridCode += "		for (int[] pos : " + agentVarName + "AgentPos) {" + "\n";

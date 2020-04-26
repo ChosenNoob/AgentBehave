@@ -96,11 +96,6 @@
                       <firstModelOperations xsi:type="tool:SetValue" featureName="agentName" valueExpression="var:newValue"/>
                     </initialOperation>
                   </controls>
-                  <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint agentPositions" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('agentPositions')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('agentPositions'))" isEnabledExpression="aql:self.randomPlacement = false" valueExpression="aql:self.agentPositions">
-                    <initialOperation>
-                      <firstModelOperations xsi:type="tool:SetValue" featureName="agentPositions" valueExpression="var:newValue"/>
-                    </initialOperation>
-                  </controls>
                   <controls xsi:type="properties:CheckboxDescription" name="behaviortree::EntryPoint randomPlacement" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('randomPlacement'))" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('randomPlacement'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('randomPlacement').changeable" valueExpression="aql:self.randomPlacement">
                     <initialOperation>
                       <firstModelOperations xsi:type="tool:SetValue" featureName="randomPlacement" valueExpression="var:newValue"/>
@@ -109,6 +104,16 @@
                   <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint agentCount" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('agentCount')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('agentCount'))" isEnabledExpression="aql:self.randomPlacement = true" valueExpression="aql:self.agentCount">
                     <initialOperation>
                       <firstModelOperations xsi:type="tool:SetValue" featureName="agentCount" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::EntryPoint agentPositions" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('agentPositions')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('agentPositions'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('agentPositions').changeable" valueExpression="aql:self.agentPositions">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="agentPositions" valueExpression="aql:newValue"/>
+                    </initialOperation>
+                  </controls>
+                  <controls xsi:type="properties:ButtonDescription">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.runAgentPlacer()"/>
                     </initialOperation>
                   </controls>
                 </groups>

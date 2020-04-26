@@ -1,39 +1,19 @@
  package behaviortree.design;
 
-import java.awt.print.Printable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Set;
-import java.util.concurrent.locks.Condition;
 import java.util.Map;
 
-import javax.sound.midi.Sequence;
-import javax.swing.JFileChooser;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
-
-import behaviortree.ActionNode;
+import agentPlacer.AgentPlacer;
 import behaviortree.BehaviorTree;
-import behaviortree.BehaviortreePackage;
-import behaviortree.ConditionNode;
-import behaviortree.FallbackNode;
+import behaviortree.EntryPoint;
 import behaviortree.Node;
-import behaviortree.SequenceNode;
-import behaviortree.TreeSkeleton;
-import behaviortree.impl.ActionNodeImpl;
 
 /**
  * The services class used by VSM.
@@ -61,7 +41,7 @@ public class Services {
     	Object returnVal = null;
     	return "Debugger: " + returnVal.toString();
     }
-    
+
     // Example of connecting a child
     // Does NOT checks the type of child    
     public void setChild(Node parent, Node child)

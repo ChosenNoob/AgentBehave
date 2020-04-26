@@ -11,7 +11,7 @@
  */]
 [template public generateElement(aBehaviorTree : BehaviorTree)]
 [comment @main/]
-[file ('grid.java', false, 'UTF-8')]
+[file ('GridGoL.java', false, 'UTF-8')]
 [generateGridCode(aBehaviorTree)/]
 [/file]
 [/template]
