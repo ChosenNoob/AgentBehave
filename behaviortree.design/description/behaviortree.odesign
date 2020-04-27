@@ -113,7 +113,7 @@
                   </controls>
                   <controls xsi:type="properties:ButtonDescription">
                     <initialOperation>
-                      <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.runAgentPlacer()"/>
+                      <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.runAgentSelect()"/>
                     </initialOperation>
                   </controls>
                 </groups>

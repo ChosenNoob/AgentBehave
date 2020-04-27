@@ -70,9 +70,7 @@ public class Services {
 			gridCode += "			context.add(agent);" + "\n";
 			gridCode += "			grid.moveTo(agent, pos[0], pos[1]);" + "\n";
 			gridCode += "		}" + "\n";
-			gridCode += "\n";
-			
-			
+			gridCode += "\n";	
 		}
 		
 		// build method close
@@ -83,6 +81,42 @@ public class Services {
 		gridCode += "}" + "\n";
 		
 		return gridCode;
+	}
+	
+	public String generateAgentCode(EntryPoint entryPoint)
+	{
+		String agentCode = "";
+
+		String projectName = getProjectName((BehaviorTree) entryPoint.eContainer());
+		String agentClassName = getClassName(entryPoint); 
+		// Package 		
+		agentCode += "package " + projectName + ";" + "\n";
+		agentCode += "\n";
+		
+		// Imports
+		agentCode += "import repast.simphony.context.Context;" + "\n";
+		agentCode += "import repast.simphony.engine.schedule.ScheduledMethod;" + "\n";
+		agentCode += "import repast.simphony.query.space.grid.MooreQuery;" + "\n"; 
+		agentCode += "import repast.simphony.space.grid.Grid;" + "\n";
+		agentCode += "import repast.simphony.space.grid.GridPoint;" + "\n";
+		agentCode += "import repast.simphony.util.ContextUtils;" + "\n";
+		agentCode += "\n";
+		
+		// Class Body
+		agentCode += "public class " + agentClassName + " {" + "\n";
+		agentCode += "\n";
+		
+		// Constructor
+		agentCode += "	private Grid<Object> grid;" + "\n";
+		agentCode += "	public " + agentClassName + "(Grid<Object> grid) {" + "\n";
+		agentCode += "		this.grid = grid;" + "\n";
+		agentCode += "	}" + "\n";
+		agentCode += "" + "\n";
+		
+		// Class Body Close
+		agentCode += "}" + "\n";
+		
+		return agentCode;
 	}
 	
 	public List<EObject> filter(EObject parent, String eClassName)

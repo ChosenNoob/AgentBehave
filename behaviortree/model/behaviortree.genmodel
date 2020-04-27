@@ -17,6 +17,8 @@
     <genClasses ecoreClass="behaviortree.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviortree.ecore#//Node/children"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/y"/>
     </genClasses>
     <genClasses ecoreClass="behaviortree.ecore#//ActionNode"/>
     <genClasses ecoreClass="behaviortree.ecore#//EntryPoint">

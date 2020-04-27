@@ -11,3 +11,6 @@
 [query public generateGridCode(arg0 : BehaviorTree) : String
 	= invoke('behaviortree.generator.main.Services', 'generateGridCode(behaviortree.BehaviorTree)', Sequence{arg0})
 /]
+[query public generateAgentCode(arg0 : EntryPoint) : String
+	= invoke('behaviortree.generator.main.Services', 'generateAgentCode(behaviortree.EntryPoint)', Sequence{arg0})
+/]
