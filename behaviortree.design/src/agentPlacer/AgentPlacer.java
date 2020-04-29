@@ -53,12 +53,24 @@ public class AgentPlacer {
 		}
 		return false;
 	}
+	
+	private boolean myContains(List<int[]> list, int[] item)
+	{
+		for (int[] i : list) {
+			if (i[0] == item[0] && i[1] == item[1]) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean remove(int[] pos)
 	{
-		if (agentList.contains(pos)) {
+		if (myContains(agentList, pos)) {
 			try {
 				agentList.remove(pos);
 				entryPoint.setAgentPositions(listToString(agentList));
+				return true;
 			} catch (Exception e) {
 				return false;
 			}

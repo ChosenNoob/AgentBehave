@@ -53,14 +53,17 @@ public class ColorGrid extends JPanel {
 	   for (int i = 0; i < height; i++) {
 		   for (int j = 0; j < length; j++) {
 			if (label == myLabels[i][j]) {
-				   int[] pos = {i, j};
 				   if (label.getBackground() == Color.black) {
+					   int[] pos = {i, j};
 					   if (agentPlacer.add(pos)) {
 						   label.setBackground(Color.green);
 					   }
 				   }
 				   else if (label.getBackground() == Color.green) {
+					   int[] pos = {i, j};
+					   System.out.println(pos);
 					   if (agentPlacer.remove(pos)) {
+						   System.out.println("dude");
 						   label.setBackground(Color.black);
 					   }
 				   }				
