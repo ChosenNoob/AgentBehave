@@ -185,6 +185,40 @@
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.placeAgents()"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Set Grid Variables">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                  <initialOperation/>
+                </buttons>
+                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                  <initialOperation/>
+                </buttons>
+                <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.2/@ownedTools[name='Set%20Grid%20Variables']/@initialOperation/@firstModelOperations/@groups.0 //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.2/@ownedTools[name='Set%20Grid%20Variables']/@initialOperation/@firstModelOperations/@groups.1"/>
+                <groups name="Default Group" labelExpression="Group" domainClass="behaviortree::BehaviorTree" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::BehaviorTree name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
+                <groups name="Simulation Parameters" labelExpression="Simulation Parameters" domainClass="behaviortree::BehaviorTree">
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::BehaviorTree gridLength" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('gridLength')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('gridLength'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('gridLength').changeable" valueExpression="aql:self.gridLength">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="gridLength" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::BehaviorTree gridHeight" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('gridHeight')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('gridHeight'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('gridHeight').changeable" valueExpression="aql:self.gridHeight">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="gridHeight" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Connect Nodes">
           <ownedTools xsi:type="tool_1:EdgeCreationDescription" documentation="First, select the node that is going to be parent, then select the node that is going to be children&#xD;&#xA;" name="Set Children" precondition="service:canBeChild(preTarget)" edgeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']">
