@@ -14,31 +14,15 @@ import behaviortree.EntryPoint;
 import behaviortree.Node;
 
 public class AgentPlacer {
-	private static AgentPlacer instance;
+
 	private List<int[]> agentList; 
 	private EntryPoint entryPoint; 
 	
-	protected AgentPlacer() {
-		
-	}
-	public static AgentPlacer getInstance(EntryPoint entryPoint) {
-		if (instance == null) {
-			instance = new AgentPlacer();
-			instance.setAgentList(entryPoint);
-		}
-		return instance;
-	}
-	
-	public static void closeInstance()
-	{
-		instance = null;
-	}
-	// Public API	
-	public void setAgentList(EntryPoint entryPoint)
-	{
+	public AgentPlacer(EntryPoint entryPoint) {
 		this.agentList = stringToList(entryPoint.getAgentPositions());
 		this.entryPoint = entryPoint;
 	}
+	
 	public String getAgentString()
 	{
 		for (int[] is : agentList) {
@@ -46,6 +30,7 @@ public class AgentPlacer {
 		}
 		return listToString(agentList);
 	}
+
 	public void run()
 	{
 		SwingUtilities.invokeLater(new Runnable() {
@@ -55,18 +40,49 @@ public class AgentPlacer {
 	      });
 	}
 	
+	public boolean add(int[] pos)
+	{
+		if (!agentList.contains(pos)) {
+			try {
+				agentList.add(pos);
+				entryPoint.setAgentPositions(listToString(agentList));
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		return false;
+	}
+	public boolean remove(int[] pos)
+	{
+		if (agentList.contains(pos)) {
+			try {
+				agentList.remove(pos);
+				entryPoint.setAgentPositions(listToString(agentList));
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		return false;
+	}
+	
 	// Utility methods for converting between agent list and agent string	
 	public static List<int[]> stringToList(String string)
 	{
 		List<int[]> list = new ArrayList<int[]>();
-		String[] positionStringArray = string.split(",");
-		for (String posString: positionStringArray) {
-			int[] pos= new int[2];
-			pos[0] = Integer.parseInt(posString.split(":")[0]);
-			pos[1] = Integer.parseInt(posString.split(":")[1]);
-			list.add(pos);
+		try {
+			String[] positionStringArray = string.split(",");
+			for (String posString: positionStringArray) {
+				int[] pos= new int[2];
+				pos[0] = Integer.parseInt(posString.split(":")[0]);
+				pos[1] = Integer.parseInt(posString.split(":")[1]);
+				list.add(pos);
+			}
+			return list;	
+		} catch (Exception e) {
+			return list;
 		}
-		return list;
+		
 	}
 	
 	public static String listToString(List<int[]> list)
@@ -82,9 +98,9 @@ public class AgentPlacer {
 	private void createAndShowGui()
 	{
 		BehaviorTree behaviorTree = (BehaviorTree) this.entryPoint.eContainer();
-	    int cellWidth = 20;
-	    ColorGrid mainPanel = new ColorGrid(behaviorTree.getGridHeight(), behaviorTree.getGridLength(), cellWidth);
-	    mainPanel.agentList = agentList;
+		int cellWidth = 20;
+	    ColorGrid mainPanel = new ColorGrid(behaviorTree.getGridHeight(), behaviorTree.getGridLength(), cellWidth, this);
+	    
 	    int colorVal = 0xFFFFFF;
 	    int colorDelta = 0x000040;
 	    int agentCount = 0;

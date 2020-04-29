@@ -13,13 +13,15 @@ import behaviortree.EntryPoint;
 
 @SuppressWarnings("serial")
 public class ColorGrid extends JPanel {
+	private AgentPlacer agentPlacer;
    private JLabel[][] myLabels;
    private int length;
    private int height;
-   public List<int[]> agentList;
-   public ColorGrid(int rows, int cols, int cellWidth) {
+   
+   public ColorGrid(int rows, int cols, int cellWidth, AgentPlacer agentPlacer) {
 	   length = cols;
 	   height = rows;
+	   this.agentPlacer = agentPlacer;
       myLabels = new JLabel[rows][cols];
 
       MyMouseListener myListener = new MyMouseListener(this);
@@ -51,20 +53,16 @@ public class ColorGrid extends JPanel {
 	   for (int i = 0; i < height; i++) {
 		   for (int j = 0; j < length; j++) {
 			if (label == myLabels[i][j]) {
+				   int[] pos = {i, j};
 				   if (label.getBackground() == Color.black) {
-					   label.setBackground(Color.green);
-					   int[] pos = {i, j};
-					   if (!agentList.contains(pos)) {
-						   agentList.add(pos);
+					   if (agentPlacer.add(pos)) {
+						   label.setBackground(Color.green);
 					   }
 				   }
 				   else if (label.getBackground() == Color.green) {
-					   label.setBackground(Color.black);
-					   int[] pos = {i, j};
-					   if (agentList.contains(pos)) {
-						   agentList.remove(pos);
+					   if (agentPlacer.remove(pos)) {
+						   label.setBackground(Color.black);
 					   }
-					   
 				   }				
 			}
 		}

@@ -42,9 +42,12 @@ public class Services {
     	return "Debugger: " + returnVal.toString();
     }
 
-    public void runAgentSelect(EntryPoint entryPoint) {
-		AgentPlacer.getInstance(entryPoint).run();
-	}
+    public void placeAgents(EObject obj)
+    {
+    	AgentPlacer agentPlacer = new AgentPlacer((EntryPoint) obj);
+    	agentPlacer.run();
+    }
+    
     // Example of connecting a child
     // Does NOT checks the type of child    
     public void setChild(Node parent, Node child)
