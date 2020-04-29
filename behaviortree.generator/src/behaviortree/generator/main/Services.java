@@ -4,6 +4,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -11,16 +12,18 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import behaviortree.BehaviorTree;
 import behaviortree.BehaviortreePackage;
 import behaviortree.EntryPoint;
+import behaviortree.Node;
 import behaviortree.impl.BehaviortreeFactoryImpl;
 import behaviortree.impl.BehaviortreePackageImpl;
 
@@ -133,10 +136,20 @@ public class Services {
 		agentCode += "	}" + "\n";
 		agentCode += "" + "\n";
 		
+		genNodeCode(entryPoint);
+		
 		// Class Body Close
 		agentCode += "}" + "\n";
 		
 		return agentCode;
+	}
+	
+	public String genNodeCode(Node node)
+	{
+		EList<Node> children = node.getChildren();
+		ECollections.sort(children, new NodeComparator());
+		
+		return null;
 	}
 	
 	public List<EObject> filter(EObject parent, String eClassName)
@@ -202,4 +215,15 @@ public class Services {
 		Integer[] dummy = {1,2,3,4};
 		return dummy;
 	}
+}
+
+class NodeComparator implements Comparator<Node> {
+
+	@Override
+	public int compare(Node a, Node b) {
+		Integer x = a.getX();
+		Integer y = b.getX();
+		return Integer.compare(x, y);
+	}
+	
 }

@@ -34,9 +34,9 @@ public class PriorityDetector {
 				Node layoutNode = findLayoutWithChildren(document, childrenNode);
 				currentContent.setX(Integer.parseInt(getAttrVal(layoutNode, "x")));
 				currentContent.setY(Integer.parseInt(getAttrVal(layoutNode, "y")));
-				System.out.println(currentContent.getName());
-				System.out.println(getAttrVal(layoutNode, "x"));
-				System.out.println(getAttrVal(layoutNode, "y"));
+//				System.out.println(currentContent.getName());
+//				System.out.println(getAttrVal(layoutNode, "x"));
+//				System.out.println(getAttrVal(layoutNode, "y"));
 			}
 			
 
