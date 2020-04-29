@@ -12,6 +12,7 @@ package behaviortree.generator.main;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,7 +92,7 @@ public class Generate extends AbstractAcceleoGenerator {
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
         BehaviorTree model = (BehaviorTree) this.model;
-        model.setProjectPath(this.targetFolder.toString());
+        model.setProjectPath(Paths.get(modelURI.toFileString()).getParent().toString());
     }
 
     /**

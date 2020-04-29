@@ -1,19 +1,39 @@
 package behaviortree.generator.main;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import behaviortree.BehaviorTree;
+import behaviortree.BehaviortreePackage;
 import behaviortree.EntryPoint;
+import behaviortree.impl.BehaviortreeFactoryImpl;
+import behaviortree.impl.BehaviortreePackageImpl;
 
 public class Services {
+	
 	public String generateGridCode(BehaviorTree behaviorTree) {
+		try {
+			PriorityDetector.setNodeCoors(behaviorTree);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		String gridCode = "";
 
 		String projectName = getProjectName(behaviorTree);
