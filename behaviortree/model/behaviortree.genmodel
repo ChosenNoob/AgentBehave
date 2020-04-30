@@ -20,7 +20,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//Node/y"/>
     </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//ActionNode"/>
+    <genClasses ecoreClass="behaviortree.ecore#//ActionNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//ActionNode/actionName"/>
+    </genClasses>
     <genClasses ecoreClass="behaviortree.ecore#//EntryPoint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//EntryPoint/agentName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//EntryPoint/agentPositions"/>

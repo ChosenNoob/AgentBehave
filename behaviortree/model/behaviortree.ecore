@@ -18,7 +18,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//Node">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentPositions" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>

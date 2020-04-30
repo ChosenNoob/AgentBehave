@@ -14,3 +14,6 @@
 [query public generateAgentCode(arg0 : EntryPoint) : String
 	= invoke('behaviortree.generator.main.Services', 'generateAgentCode(behaviortree.EntryPoint)', Sequence{arg0})
 /]
+[query public generateAgentBaseClass(arg0 : BehaviorTree) : String
+	= invoke('behaviortree.generator.main.Services', 'generateAgentBaseClass(behaviortree.BehaviorTree)', Sequence{arg0})
+/]

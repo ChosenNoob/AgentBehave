@@ -42,7 +42,7 @@ public class AgentPlacer {
 	
 	public boolean add(int[] pos)
 	{
-		if (!agentList.contains(pos)) {
+		if (!myContains(agentList, pos)) {
 			try {
 				agentList.add(pos);
 				entryPoint.setAgentPositions(listToString(agentList));

@@ -81,15 +81,18 @@ public class Services {
 				
 			// Agent Positions
 			gridCode += "		int[][] " + agentVarName + "AgentPos = {" + "\n";
-			for (int i = 0; i < agentPositions.size() - 1; i++) {
-				gridCode += "			{" + agentPositions.get(i)[0] + ", " + agentPositions.get(i)[1] + "}," + "\n";
+			if (agentPositions.size() != 0) {
+				for (int i = 0; i < agentPositions.size() - 1; i++) {
+					gridCode += "			{" + agentPositions.get(i)[0] + ", " + agentPositions.get(i)[1] + "}," + "\n";
+				}
+				gridCode += "			{" + agentPositions.get(agentPositions.size() - 1)[0] + ", " + agentPositions.get(agentPositions.size() - 1)[1] + "}" + "\n";
+					
 			}
-			gridCode += "			{" + agentPositions.get(agentPositions.size() - 1)[0] + ", " + agentPositions.get(agentPositions.size() - 1)[1] + "}" + "\n";
 			gridCode += "		};" + "\n";
-			
 			// Agent Placement
 			gridCode += "		for (int[] pos : " + agentVarName + "AgentPos) {" + "\n";
 			gridCode += "			" + agentClassName + " agent = new " + agentClassName + "(grid);" + "\n";
+			gridCode += "			agent.x = pos[0]; agent.y = pos[1];" + "\n";
 			gridCode += "			context.add(agent);" + "\n";
 			gridCode += "			grid.moveTo(agent, pos[0], pos[1]);" + "\n";
 			gridCode += "		}" + "\n";
@@ -98,6 +101,49 @@ public class Services {
 		
 		// build method close
 		gridCode += "		return context;" + "\n";
+		gridCode += "	}" + "\n";
+		
+		// Class Body Close
+		gridCode += "}" + "\n";
+		
+		return gridCode;
+	}
+	
+	public String generateAgentBaseClass(BehaviorTree behaviorTree)
+	{
+		String gridCode = "";
+
+		String projectName = getProjectName(behaviorTree);
+		
+		// Package 		
+		gridCode += "package " + projectName + ";" + "\n";
+		gridCode += "\n";
+		
+		// Imports
+		gridCode += "import repast.simphony.context.Context;" + "\n";
+		gridCode += "import repast.simphony.context.space.grid.GridFactory;" + "\n";
+		gridCode += "import repast.simphony.context.space.grid.GridFactoryFinder;" + "\n"; 
+		gridCode += "import repast.simphony.dataLoader.ContextBuilder;" + "\n";
+		gridCode += "import repast.simphony.random.RandomHelper;" + "\n";
+		gridCode += "import repast.simphony.space.grid.Grid;" + "\n";
+		gridCode += "import repast.simphony.space.grid.GridBuilderParameters;" + "\n";
+		gridCode += "import repast.simphony.space.grid.SimpleGridAdder;" + "\n";
+		gridCode += "import repast.simphony.space.grid.WrapAroundBorders;" + "\n";
+		gridCode += "\n";
+		
+		// Class Body
+		gridCode += "public class Agent {" + "\n";
+		gridCode += "" + "\n";
+		
+		// Properties		
+		gridCode += "	public Grid<Object> grid;" + "\n";
+		gridCode += "	public int x;" + "\n";
+		gridCode += "	public int y;" + "\n";
+		gridCode += "" + "\n";
+		
+		// Constructor
+		gridCode += "	public Agent(Grid<Object> grid) {" + "\n";
+		gridCode += "		this.grid = grid;" + "\n";
 		gridCode += "	}" + "\n";
 		
 		// Class Body Close
@@ -126,13 +172,12 @@ public class Services {
 		agentCode += "\n";
 		
 		// Class Body
-		agentCode += "public class " + agentClassName + " {" + "\n";
+		agentCode += "public class " + agentClassName + " extends Agent {" + "\n";
 		agentCode += "\n";
 		
 		// Constructor
-		agentCode += "	private Grid<Object> grid;" + "\n";
 		agentCode += "	public " + agentClassName + "(Grid<Object> grid) {" + "\n";
-		agentCode += "		this.grid = grid;" + "\n";
+		agentCode += "		super(grid);" + "\n";
 		agentCode += "	}" + "\n";
 		agentCode += "" + "\n";
 		
@@ -187,14 +232,19 @@ public class Services {
 	public List<int[]> getAgentPositions(EntryPoint entryPoint) {
 		List<int[]> agentPos = new ArrayList<int[]>();
 		
-		String[] positionStringArray= entryPoint.getAgentPositions().split(",");
-		for (String posString: positionStringArray) {
-			int[] pos= new int[2];
-			pos[0] = Integer.parseInt(posString.split(":")[0]);
-			pos[1] = Integer.parseInt(posString.split(":")[1]);
-			agentPos.add(pos);
+		try {
+			String[] positionStringArray= entryPoint.getAgentPositions().split(",");
+			for (String posString: positionStringArray) {
+				int[] pos= new int[2];
+				pos[0] = Integer.parseInt(posString.split(":")[0]);
+				pos[1] = Integer.parseInt(posString.split(":")[1]);
+				agentPos.add(pos);
+			}
+			return agentPos;			
+		} catch (Exception e) {
+			return agentPos;
 		}
-		return agentPos;
+		
 	}
 	public String getXCoor(EntryPoint entryPoint, int index)
 	{

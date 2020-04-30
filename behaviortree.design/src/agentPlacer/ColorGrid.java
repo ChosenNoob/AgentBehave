@@ -63,7 +63,6 @@ public class ColorGrid extends JPanel {
 					   int[] pos = {i, j};
 					   System.out.println(pos);
 					   if (agentPlacer.remove(pos)) {
-						   System.out.println("dude");
 						   label.setBackground(Color.black);
 					   }
 				   }				
