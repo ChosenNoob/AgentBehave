@@ -20,6 +20,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 
+import behaviortree.ActionNode;
 import behaviortree.BehaviorTree;
 import behaviortree.BehaviortreePackage;
 import behaviortree.EntryPoint;
@@ -181,7 +182,7 @@ public class Services {
 		agentCode += "	}" + "\n";
 		agentCode += "" + "\n";
 		
-		genNodeCode(entryPoint);
+		agentCode += genNodeCode(entryPoint);
 		
 		// Class Body Close
 		agentCode += "}" + "\n";
@@ -194,9 +195,31 @@ public class Services {
 		EList<Node> children = node.getChildren();
 		ECollections.sort(children, new NodeComparator());
 		
-		return null;
+		String nodeCode = "";
+		for (Node child : children) {
+			switch (child.eClass().getName()) {
+			case "ActionNode":
+				nodeCode += genActionCode((ActionNode) child);
+				break;
+
+			default:
+				break;
+			}
+		}
+		return nodeCode;
 	}
-	
+	public String genActionCode(ActionNode node)
+	{
+		String nodeCode = "";
+		
+		nodeCode += "		@ScheduledMethod(start = 1, interval = 1, priority = 3)" + "\n";
+		nodeCode += "		public void step1() {" + "\n";
+		nodeCode += "			Services.moveLeft(this);" + "\n";
+		nodeCode += "		}" + "\n";
+		nodeCode += "" + "\n";
+		
+		return nodeCode;
+	}
 	public List<EObject> filter(EObject parent, String eClassName)
 	{
 		List<EObject> filteredChildren = new ArrayList<EObject>();
