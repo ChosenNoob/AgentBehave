@@ -182,7 +182,14 @@ public class Services {
 		agentCode += "	}" + "\n";
 		agentCode += "" + "\n";
 		
+		// Scheduled Methods		
+		agentCode += "	@ScheduledMethod(start = 1, interval = 1, priority = 1)" + "\n";
+		agentCode += "	public void run() {" + "\n";
+		
 		agentCode += genNodeCode(entryPoint);
+		
+		agentCode += "	}" + "\n";
+		
 		
 		// Class Body Close
 		agentCode += "}" + "\n";
@@ -208,16 +215,11 @@ public class Services {
 		}
 		return nodeCode;
 	}
+	
 	public String genActionCode(ActionNode node)
 	{
 		String nodeCode = "";
-		
-		nodeCode += "		@ScheduledMethod(start = 1, interval = 1, priority = 3)" + "\n";
-		nodeCode += "		public void step1() {" + "\n";
-		nodeCode += "			Services.moveLeft(this);" + "\n";
-		nodeCode += "		}" + "\n";
-		nodeCode += "" + "\n";
-		
+		nodeCode += "		Services." + node.getActionName() + "(this);" + "\n";
 		return nodeCode;
 	}
 	public List<EObject> filter(EObject parent, String eClassName)
