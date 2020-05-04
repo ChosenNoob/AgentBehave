@@ -23,6 +23,7 @@ import org.w3c.dom.NodeList;
 import behaviortree.ActionNode;
 import behaviortree.BehaviorTree;
 import behaviortree.BehaviortreePackage;
+import behaviortree.ConditionNode;
 import behaviortree.EntryPoint;
 import behaviortree.Node;
 import behaviortree.impl.BehaviortreeFactoryImpl;
@@ -186,7 +187,7 @@ public class Services {
 		agentCode += "	@ScheduledMethod(start = 1, interval = 1, priority = 1)" + "\n";
 		agentCode += "	public void run() {" + "\n";
 		
-		agentCode += genNodeCode(entryPoint);
+		agentCode += genNodeCode(entryPoint, 2);
 		
 		agentCode += "	}" + "\n";
 		
@@ -197,29 +198,57 @@ public class Services {
 		return agentCode;
 	}
 	
-	public String genNodeCode(Node node)
+	public String genNodeCode(Node node, int indentation)
 	{
+		// EList sorting is done by comparing x values of nodes
+		// So first item in the list has the smallest x value
+		// NodeComparator is at the end of this file
 		EList<Node> children = node.getChildren();
 		ECollections.sort(children, new NodeComparator());
-		
+				
 		String nodeCode = "";
 		for (Node child : children) {
 			switch (child.eClass().getName()) {
 			case "ActionNode":
-				nodeCode += genActionCode((ActionNode) child);
+				nodeCode += genActionCode((ActionNode) child, indentation);
 				break;
-
+			case "ConditionNode":
+				nodeCode += genConditionCode((ConditionNode) child, indentation);
+				indentation += 1;
 			default:
 				break;
 			}
 		}
+		
+		// Closes brackets opened by condition nodes. 
+		// Needs more work		
+		while (indentation-- > 2) {
+			nodeCode += tabString(indentation) + "}\n";
+		}
 		return nodeCode;
 	}
 	
-	public String genActionCode(ActionNode node)
+	// Used to get string value for tabs	
+	private String tabString(int indentation)
+	{
+		String str = "";
+		while (indentation-- > 0) {
+			str += "\t";
+		}
+		return str;
+	}
+	
+	public String genActionCode(ActionNode node, int indentation)
 	{
 		String nodeCode = "";
-		nodeCode += "		Services." + node.getActionName() + "(this);" + "\n";
+		nodeCode += tabString(indentation) + "Services." + node.getActionName() + "(this);" + "\n";
+		return nodeCode;
+	}
+	
+	public String genConditionCode(ConditionNode node, int indentation)
+	{
+		String nodeCode = "";
+		nodeCode += tabString(indentation) + "if(Services." + node.getConditionName() + "(this)) {" + "\n";
 		return nodeCode;
 	}
 	public List<EObject> filter(EObject parent, String eClassName)

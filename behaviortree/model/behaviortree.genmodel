@@ -29,7 +29,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//EntryPoint/randomPlacement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//EntryPoint/agentCount"/>
     </genClasses>
-    <genClasses ecoreClass="behaviortree.ecore#//ConditionNode"/>
+    <genClasses ecoreClass="behaviortree.ecore#//ConditionNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//ConditionNode/conditionName"/>
+    </genClasses>
     <genClasses ecoreClass="behaviortree.ecore#//SequenceNode"/>
     <genClasses ecoreClass="behaviortree.ecore#//FallbackNode"/>
     <genClasses ecoreClass="behaviortree.ecore#//TreeSkeleton">

@@ -32,6 +32,7 @@ public class PriorityDetector {
 				String uid = findUidWithAgentName(document, currentContent.getName());
 				Node childrenNode = findChildrenWithUID(document, uid);
 				Node layoutNode = findLayoutWithChildren(document, childrenNode);
+
 				currentContent.setX(Integer.parseInt(getAttrVal(layoutNode, "x")));
 				currentContent.setY(Integer.parseInt(getAttrVal(layoutNode, "y")));
 //				System.out.println(currentContent.getName());

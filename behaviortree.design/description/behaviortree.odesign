@@ -27,7 +27,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Condition Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" domainClass="behaviortree::ConditionNode">
+        <nodeMappings name="Condition Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Condition%20Node']" domainClass="behaviortree::ConditionNode">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -111,11 +111,6 @@
                       <firstModelOperations xsi:type="tool:SetValue" featureName="agentPositions" valueExpression="aql:newValue"/>
                     </initialOperation>
                   </controls>
-                  <controls xsi:type="properties:ButtonDescription">
-                    <initialOperation>
-                      <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.runAgentSelect()"/>
-                    </initialOperation>
-                  </controls>
                 </groups>
               </firstModelOperations>
             </initialOperation>
@@ -143,6 +138,35 @@
                   <controls xsi:type="properties:TextDescription" name="behaviortree::ActionNode actionName" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('actionName')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('actionName'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('actionName').changeable" valueExpression="aql:self.actionName">
                     <initialOperation>
                       <firstModelOperations xsi:type="tool:SetValue" featureName="actionName" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Condition Node" mappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                  <initialOperation/>
+                </buttons>
+                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                  <initialOperation/>
+                </buttons>
+                <page name="Default Page" labelExpression="Page" domainClass="behaviortree::ConditionNode" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Condition%20Node']/@initialOperation/@firstModelOperations/@groups.0 //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Condition%20Node']/@initialOperation/@firstModelOperations/@groups.1"/>
+                <groups name="Default Group" labelExpression="Group" domainClass="behaviortree::ConditionNode" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::ConditionNode name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+                    </initialOperation>
+                  </controls>
+                </groups>
+                <groups name="Simulation Parameters" labelExpression="aql:'Simulation Parameters'" domainClass="behaviortree::ConditionNode" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:TextDescription" name="behaviortree::ConditionNode conditionName" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('conditionName')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('conditionName'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('conditionName').changeable" valueExpression="aql:self.conditionName">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool:SetValue" featureName="conditionName" valueExpression="var:newValue"/>
                     </initialOperation>
                   </controls>
                 </groups>
@@ -220,7 +244,9 @@
             <initialOperation>
               <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
                 <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                  <initialOperation/>
+                  <initialOperation>
+                    <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self"/>
+                  </initialOperation>
                 </buttons>
                 <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                   <initialOperation/>

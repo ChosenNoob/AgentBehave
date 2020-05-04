@@ -27,7 +27,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="randomPlacement" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentCount" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConditionNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SequenceNode" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="FallbackNode" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="TreeSkeleton" eSuperTypes="#//Node">
