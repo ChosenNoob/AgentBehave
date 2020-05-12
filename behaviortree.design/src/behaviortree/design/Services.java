@@ -5,15 +5,52 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.awt.print.Printable;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.lang.reflect.Array;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Set;
+import java.util.concurrent.locks.Condition;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+
+import javax.sound.midi.Sequence;
+import javax.swing.JFileChooser;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 
 import agentPlacer.AgentPlacer;
-import behaviortree.BehaviorTree;
 import behaviortree.EntryPoint;
+import behaviortree.ActionNode;
+import behaviortree.BehaviorTree;
+import behaviortree.BehaviortreePackage;
+import behaviortree.ConditionNode;
+import behaviortree.FallbackNode;
 import behaviortree.Node;
+import behaviortree.SequenceNode;
+import behaviortree.TreeSkeleton;
+import behaviortree.impl.ActionNodeImpl;
+
 
 /**
  * The services class used by VSM.
@@ -33,13 +70,16 @@ public class Services {
     public static final String[] sequenceNodeChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
     public static final String[] treeSkeletonChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
     
+    public static Node containerBehaviorTree;	//it is the behaviorTree which is our main container
+    
     public String debugger(EObject self)
     {	
     	// Called by validate diagram option in the right click menu
     	// This prints to the Problems View (into the Info section)
     	// Set returnVal to whatever you want to print
+    	openFileChooser();																	// opens file chooser to import and export
     	Object returnVal = null;
-    	return "Debugger: " + returnVal.toString();
+    	return "Debugger: "; //+ returnVal.toString();
     }
 
     public void placeAgents(EObject obj)
@@ -60,7 +100,7 @@ public class Services {
     // i can set its features in the design diagram after it is created
     public Node createNode(Node container, EClass className)
     {
-//    	ActionNode newNode = behaviortree.BehaviortreeFactory.eINSTANCE.createActionNode();
+    	containerBehaviorTree = container;																	//This line is to set container behavior tree after a node creation
     	Node newNode = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(className);
     	setChild(container, newNode);
     	return newNode;
@@ -176,8 +216,282 @@ public class Services {
     }
     
     
-    public void print(Object obj)
+    public static void print(Object obj)
     {
     	System.out.println(obj);
     }
+    
+    
+    // IMPORT AND EXPORT IMPLEMENTATION STARTS HERE *********************************************************************************
+    public static void openFileChooser() {
+    	print("\ncreateAndShowGUI will be called.");
+	    SwingUtilities.invokeLater(new Runnable() {
+			  public void run() {
+			      //Turn off metal's use of bold fonts
+			      UIManager.put("swing.boldMetal", Boolean.FALSE); 
+			      FileChooser.createAndShowGUI();
+			  }
+	    });
+    	print("createAndShowGUI is called.\n");
+    }
+    
+    public static void readFileAndCallParser(File file) {
+    	 try  
+         {   
+             FileReader fr=new FileReader(file);   //reads the file  
+             BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream  
+             StringBuffer sb=new StringBuffer();    //constructs a string buffer with no characters  
+             String line;  
+             while((line=br.readLine())!=null)  
+             {  
+	                sb.append(line);      //appends line to string buffer  
+	                sb.append("\n");     //line feed   
+             }  
+             fr.close();    //closes the stream and release the resources  
+             //System.out.println("Contents of File: ");  
+             //System.out.println(sb.toString());   //returns a string that textually represents the object  
+         }  
+         catch(IOException ex)  
+         {  
+             ex.printStackTrace();  
+         }
+         
+         Services.xmlParser(file);	//call XML parser
+    }
+   
+    public static void xmlParser(File fXmlFile) {
+
+        try {
+	    	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	    	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	    	Document doc = dBuilder.parse(fXmlFile);
+	
+	    	System.out.println("Root element :" + doc.getDocumentElement().getNodeName());		
+	    	
+	    	NodeList nList = doc.getElementsByTagName("children");
+	    	createTreeFromXML(nList);								
+	    			
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }
+      }
+    public static void createTreeFromXML(org.w3c.dom.NodeList nList) {
+    	System.out.println(nList.getLength());
+    	print(containerBehaviorTree);
+    	if ( containerBehaviorTree == null ) {
+    		print("containerBehaviorTree is NULL!!!!!!!!!!!!!!!!!!!");
+    		return;
+    	}
+    	Node entryPoint = null;
+    	
+    	for (int i = 0; i < nList.getLength(); i++) {
+    		org.w3c.dom.Node node = nList.item(i);
+    		
+    		if (node.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+    			Element parentElement = (Element)node;														//Parent Node
+    			Node parentNode = createOneNode(parentElement);			//TRAVERSE ALL ATTRIBUTES!!!
+    			
+    			if(parentElement.getAttribute("xsi:type").equals("behaviortree:EntryPoint")) {		//add entry point to the behavior tree
+    				entryPoint = parentNode;
+    				recursiveTreeCreator(parentNode, parentElement);//this method creates remaining nodes recursively and preserves parent-child relationship
+    			}
+    			
+    		}
+    	}
+    	containerBehaviorTree.getChildren().add(entryPoint);
+    }
+    public static void recursiveTreeCreator(Node parentNode, Element parentElement) {
+    	NodeList childrenNodes = parentElement.getChildNodes();
+    	for (int j=0; j<childrenNodes.getLength(); j++) {
+			if (childrenNodes.item(j).getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+				Element tempElement = (Element)childrenNodes.item(j); 							//Child Node	
+				//print(parentElement.getAttribute("name") +"  "+tempElement.getAttribute("name") +" j:"+j + parentElement.getChildNodes().getLength());
+				Node childNode = createOneNode(tempElement);
+				recursiveTreeCreator(childNode, tempElement);
+				parentNode.getChildren().add(childNode);
+			}
+		}
+    }
+    
+    public static Node createOneNode(Element element) {
+    	Node node = null;
+    	String nodeType = element.getAttribute("xsi:type");
+    	String nodeName = element.getAttribute("name");
+    	String x = element.getAttribute("x");
+    	String y = element.getAttribute("y");
+    	switch(nodeType) {
+    	case "behaviortree:EntryPoint":
+    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POİNT);
+    		((EntryPoint)node).setAgentName(element.getAttribute("agentName"));
+    		((EntryPoint)node).setAgentPositions(element.getAttribute("agentPositions"));
+    		((EntryPoint)node).setAgentCount(Integer.parseInt(element.getAttribute("agentCount")));
+    		//((EntryPoint)node).setRandomPlacement(Boolean.parseBoolean(element.getAttribute("randomPlacement")));			getRandomPlacement() methodu yok (export ederken gerekli)!!!!!!!!!!!1
+    		break;
+    	case "behaviortree:SequenceNode":
+    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.SEQUENCE_NODE);
+    		break;
+	    case "behaviortree:FallbackNode":
+	    	node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.FALLBACK_NODE);
+	    	break;
+	    case "behaviortree:TreeSkeleton":
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.TREE_SKELETON);
+			break;
+		case "behaviortree:ActionNode":
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTİON_NODE);
+			((ActionNode)node).setActionName(element.getAttribute("actionName"));;
+			break;
+		case "behaviortree:ConditionNode":
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDİTİON_NODE);
+			((ConditionNode)node).setConditionName(element.getAttribute("conditionName"));;
+			break;
+    	}
+    	if(node != null) {
+    		node.setName(nodeName);
+    		node.setX(Integer.parseInt(x));
+    		node.setY(Integer.parseInt(y));
+    	}
+    	return node;
+    }
+    
+    public static void exportToFile(File file) {
+        String path = file.getAbsolutePath();
+
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                  new FileOutputStream(path), "utf-8"))) {
+        	
+            writer.write(transformTreeToXML());		//This line writes content to selected file
+        }
+        catch (Exception e) {
+        	print("Exception occured while exporting.");
+			e.printStackTrace();
+		}
+        System.out.println("Save as file: " + path);
+    }
+    
+    public static String transformTreeToXML() {
+    	if ( containerBehaviorTree == null ) {
+    		print("containerBehaviorTree is NULL!!!!!!!!!!!!!!!!!!!");
+    		return "";
+    	}
+    	
+    	StringBuilder XMLContent = new StringBuilder();
+    	XMLContent.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n" + 
+    			"<behaviortree:BehaviorTree xmi:version=\"2.0\" xmlns:xmi=\"http://www.omg.org/XMI\" "+
+    			"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:behaviortree=\"http://www.example.org/behaviortree\" ");
+    	XMLContent.append("projectPath=\"");
+    	XMLContent.append(((BehaviorTree)containerBehaviorTree).getProjectPath());
+		XMLContent.append("\" name=\"");
+		XMLContent.append(containerBehaviorTree.getName());
+    	XMLContent.append("\" gridHeight=\"");
+    	XMLContent.append(((BehaviorTree)containerBehaviorTree).getGridHeight());
+    	XMLContent.append("\" gridLength=\"");
+    	XMLContent.append(((BehaviorTree)containerBehaviorTree).getGridLength());
+    	XMLContent.append("\">\n");
+    	
+        TreeIterator<EObject> iterator = containerBehaviorTree.eAllContents();
+        while(iterator.hasNext()) {
+            EObject obj = iterator.next();
+            
+            //Export all the trees starting with an EntryPoint and have at least one child.
+            if ( ((Node)obj).getClass().getName().equals("behaviortree.impl.EntryPointImpl") && ((Node)obj).getChildren().size() > 0 ){
+            	XMLContent.append(recursiveChildrenXMLCreator((Node)obj,"  "));
+            }
+        }
+    	
+    	XMLContent.append("</behaviortree:BehaviorTree>");
+    	return XMLContent.toString();
+    }
+    
+    public static String recursiveChildrenXMLCreator(Node node,String indendationString) {		
+    	StringBuilder XMLContent = new StringBuilder();
+    	if (node.getChildren().size() == 0) {
+    		XMLContent.append(indendationString);
+    		XMLContent.append(transformOneNodeToChildrenTag(node));
+    		XMLContent.append("\"/>\n");
+    		return XMLContent.toString();
+    	}
+    	else {
+    		XMLContent.append(indendationString);
+    		XMLContent.append(transformOneNodeToChildrenTag(node));
+    		XMLContent.append("\">\n");
+    		List<Node> childrenNodes = node.getChildren();
+    		for(int i=0; i<childrenNodes.size(); i++) {
+    			XMLContent.append(recursiveChildrenXMLCreator(childrenNodes.get(i), indendationString+"  "));
+    		}
+    		XMLContent.append(indendationString);
+    		XMLContent.append("</children>\n");
+    		return XMLContent.toString();
+    	}
+    }
+    
+    /**
+     * This method leaves <children> tag opened. Do not forget to close manually.
+     */
+    public static String transformOneNodeToChildrenTag(Node node) {		//TRAVERSE ALL THE ATTRIBUTES !!!
+    	StringBuilder XMLContent = new StringBuilder();
+    	XMLContent.append("<children xsi:type=\"");
+		XMLContent.append(transformClassNames(node.getClass().getName()));
+		XMLContent.append("\" name=\"");
+		XMLContent.append(node.getName());
+		XMLContent.append(transformAttributesToXML(node));
+		XMLContent.append("\" x=\"");
+		XMLContent.append(node.getX());
+		XMLContent.append("\" y=\"");
+		XMLContent.append(node.getY());
+		return XMLContent.toString();
+    }
+    
+    public static String transformAttributesToXML(Node node) {
+    	String className = node.getClass().getName();
+    	StringBuilder XMLContent = new StringBuilder("");
+    	switch (className){
+    		case "behaviortree.impl.EntryPointImpl":
+    			XMLContent.append("\" agentName=\"");
+    			XMLContent.append(((EntryPoint)node).getAgentName());
+    			XMLContent.append("\" agentPositions=\"");
+    			XMLContent.append(((EntryPoint)node).getAgentPositions());
+    			XMLContent.append("\" agentCount=\"");
+    			XMLContent.append(((EntryPoint)node).getAgentCount());
+    			//XMLContent.append("\" randomPlacement=\"");
+    			//XMLContent.append(((EntryPoint)node).getRandomPlacement());					//getRandomPlacement() methodu yok !!!!!!!!!!!!!!!!!!!!!!!!!!!! setRandomPlacement() var ama
+    			break;
+    		case "behaviortree.impl.ActionNodeImpl":
+    			XMLContent.append("\" actionName=\"");
+    			XMLContent.append(((ActionNode)node).getActionName());
+    			break;
+    		case "behaviortree.impl.ConditionNodeImpl":
+    			XMLContent.append("\" conditionName=\"");
+    			XMLContent.append(((ConditionNode)node).getConditionName());
+    			break;
+    	}
+    		
+    	return XMLContent.toString();
+    }
+    
+    
+    public static String transformClassNames(String className) {
+    	String transformedName = null;
+    	switch(className) {
+    	case "behaviortree.impl.EntryPointImpl":
+    		transformedName = "behaviortree:EntryPoint";
+    		break;
+    	case "behaviortree.impl.SequenceNodeImpl":
+    		transformedName = "behaviortree:SequenceNode";
+    		break;
+	    case "behaviortree.impl.FallbackNodeImpl":
+	    	transformedName = "behaviortree:FallbackNode";
+	    	break;
+	    case "behaviortree.impl.TreeSkeletonImpl":
+	    	transformedName = "behaviortree:TreeSkeleton";
+			break;
+		case "behaviortree.impl.ActionNodeImpl":
+			transformedName = "behaviortree:ActionNode";
+			break;
+		case "behaviortree.impl.ConditionNodeImpl":
+			transformedName = "behaviortree:ConditionNode";
+			break;
+    	}
+    	return transformedName;
+    }
+    // IMPORT AND EXPORT IMPLEMENTATION ENDS HERE *********************************************************************************
 }

@@ -64,7 +64,7 @@ public class FileChooser extends JPanel
 
         //Create the log first, because the action listeners
         //need to refer to it.
-        log = new JTextArea(5,20);
+        log = new JTextArea(10,40);
         log.setMargin(new Insets(5,5,5,5));
         log.setEditable(false);
         JScrollPane logScrollPane = new JScrollPane(log);
@@ -84,13 +84,13 @@ public class FileChooser extends JPanel
 
         //Create the open button.  We use the image from the JLF
         //Graphics Repository (but we extracted it from the jar).
-        openButton = new JButton("Open a File...",
+        openButton = new JButton("Import from a File...",
                                  createImageIcon("images/Open16.gif"));
         openButton.addActionListener(this);
 
         //Create the save button.  We use the image from the JLF
         //Graphics Repository (but we extracted it from the jar).
-        saveButton = new JButton("Save a File...",
+        saveButton = new JButton("Export to a File...",
                                  createImageIcon("images/Save16.gif"));
         saveButton.addActionListener(this);
 
@@ -114,8 +114,13 @@ public class FileChooser extends JPanel
                 File file = fc.getSelectedFile();
                 //This is where a real application would open the file.
                 log.append("Opening: " + file.getName() + "." + newline);
+                
+               //************** IMPORT BEHAVIORTREE FROM XML FILE **************
+                Services.readFileAndCallParser(file);
+              //************************************************************
+
             } else {
-                log.append("Open command cancelled by user." + newline);
+                log.append("Import command cancelled by user." + newline);
             }
             log.setCaretPosition(log.getDocument().getLength());
 
@@ -124,14 +129,20 @@ public class FileChooser extends JPanel
             int returnVal = fc.showSaveDialog(FileChooser.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
+                
+                //************** EXPORT BEHAVIORTREE TO A FILE **************
+				Services.exportToFile(file);
+				//************************************************************
+
                 //This is where a real application would save the file.
                 log.append("Saving: " + file.getName() + "." + newline);
             } else {
-                log.append("Save command cancelled by user." + newline);
+                log.append("Export command cancelled by user." + newline);
             }
             log.setCaretPosition(log.getDocument().getLength());
         }
     }
+
 
     /** Returns an ImageIcon, or null if the path was invalid. */
     protected static ImageIcon createImageIcon(String path) {
@@ -151,7 +162,7 @@ public class FileChooser extends JPanel
      */
     public static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("FileChooserDemo");
+        JFrame frame = new JFrame("Choose a file to import");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         //Add content to the window.
@@ -159,6 +170,7 @@ public class FileChooser extends JPanel
 
         //Display the window.
         frame.pack();
+        frame.setLocationRelativeTo(null);					//the window is placed in the CENTER of the screen
         frame.setVisible(true);
     }
 }
