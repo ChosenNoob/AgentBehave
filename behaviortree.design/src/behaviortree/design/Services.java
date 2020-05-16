@@ -321,7 +321,7 @@ public class Services {
     	String y = element.getAttribute("y");
     	switch(nodeType) {
     	case "behaviortree:EntryPoint":
-    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POİNT);
+    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POINT);
     		((EntryPoint)node).setAgentName(element.getAttribute("agentName"));
     		((EntryPoint)node).setAgentPositions(element.getAttribute("agentPositions"));
     		((EntryPoint)node).setAgentCount(Integer.parseInt(element.getAttribute("agentCount")));
@@ -337,11 +337,11 @@ public class Services {
 			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.TREE_SKELETON);
 			break;
 		case "behaviortree:ActionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTİON_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTION_NODE);
 			((ActionNode)node).setActionName(element.getAttribute("actionName"));;
 			break;
 		case "behaviortree:ConditionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDİTİON_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDITION_NODE);
 			((ConditionNode)node).setConditionName(element.getAttribute("conditionName"));;
 			break;
     	}

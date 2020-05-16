@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree" gridLength="5" gridHeight="5">
+  <children xsi:type="behaviortree:EntryPoint" name="Living" agentName="Living" agentPositions="2:1,2:2,2:3">
+    <children xsi:type="behaviortree:ConditionNode" name="shouldDie" conditionName="shouldDie"/>
+    <children xsi:type="behaviortree:ActionNode" name="Die" actionName="die"/>
+  </children>
+  <children xsi:type="behaviortree:EntryPoint" name="Dead" agentName="Dead" agentPositions="0:0,1:0,2:0,4:0,3:0,4:1,3:1,1:1,0:1,0:2,1:2,0:3,1:3,0:4,1:4,2:4,3:4,4:4,4:3,3:3,3:2,4:2">
+    <children xsi:type="behaviortree:ConditionNode" name="shouldRevive" conditionName="shouldRevive"/>
+    <children xsi:type="behaviortree:ActionNode" name="Revive" actionName="revive"/>
+  </children>
+</behaviortree:BehaviorTree>
