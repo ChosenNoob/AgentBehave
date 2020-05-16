@@ -15,37 +15,48 @@ public class Living extends Agent {
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
 	public TickReturn FallbackNode1() {
+		TickReturn tickResult;
 
-		if(this.SequenceNode1() == TickReturn.SUCCESS) {
+		tickResult = this.SequenceNode1();
+		if(tickResult == TickReturn.SUCCESS) {
 			return TickReturn.SUCCESS;
 		}
-		if(this.SequenceNode1() == TickReturn.RUNNING) {
+		if(tickResult == TickReturn.RUNNING) {
 			return TickReturn.RUNNING;
 		}
-		if(Services.null(this) == TickReturn.SUCCESS) {
+
+		tickResult = Services.EatPills(this);
+		if(tickResult == TickReturn.SUCCESS) {
 			return TickReturn.SUCCESS;
 		}
-		if(Services.null(this) == TickReturn.RUNNING) {
+		if(tickResult == TickReturn.RUNNING) {
 			return TickReturn.RUNNING;
 		}
+
 		return TickReturn.FAILURE;
 	}
-	public TickReturn SequenceNode1() {
 
-		if(Services.null(this) == TickReturn.FAILURE) {
-			return TickReturn.FAILURE;
+	public TickReturn SequenceNode1() {
+		TickReturn tickResult;
+
+		tickResult = Services.GhostClose(this);
+		if(tickResult == TickReturn.FAILURE) {
+			return TickReturn.SUCCESS;
 		}
-		if(Services.null(this) == TickReturn.RUNNING) {
+		if(tickResult == TickReturn.RUNNING) {
 			return TickReturn.RUNNING;
 		}
-		if(Services.null(this) == TickReturn.FAILURE) {
-			return TickReturn.FAILURE;
+
+		tickResult = Services.AvoidGhost(this);
+		if(tickResult == TickReturn.FAILURE) {
+			return TickReturn.SUCCESS;
 		}
-		if(Services.null(this) == TickReturn.RUNNING) {
+		if(tickResult == TickReturn.RUNNING) {
 			return TickReturn.RUNNING;
 		}
+
 		return TickReturn.SUCCESS;
 	}
-	}
+
 }
 

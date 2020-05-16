@@ -190,8 +190,6 @@ public class Services {
 		
 		agentCode += genNodeCode(entryPoint);
 		
-		agentCode += "	}" + "\n";
-		
 		
 		// Class Body Close
 		agentCode += "}" + "\n";
@@ -209,45 +207,50 @@ public class Services {
 		String code = "";
 
 		code += "	public TickReturn " + getMethodName(node) + "() {" + "\n";
+		code += "		TickReturn tickResult;" + "\n";
 		code += "" + "\n";
-		for (Node child : children) {
+		for (Node child : children) {			
 			switch (child.eClass().getName()) {
 			case "ActionNode":
 				ActionNode actionChild = (ActionNode) child;
-				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.SUCCESS) {" + "\n";
+				code += "		tickResult = Services." + actionChild.getActionName() + "(this);" + "\n";
+				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
 				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
 
 			case "ConditionNode":
 				ConditionNode conditionChild = (ConditionNode) child;
-				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.SUCCESS) {" + "\n";
+				code += "		tickResult = Services." + conditionChild.getConditionName() + "(this);" + "\n";
+				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
 				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
 
 			case "SequenceNode":
 				SequenceNode sequenceChild = (SequenceNode) child;
-				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.SUCCESS) {" + "\n";
+				code += "		tickResult = this." + getMethodName(sequenceChild) + "();" + "\n";
+				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
 				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
 
 			case "FallbackNode":
 				FallbackNode fallbackChild = (FallbackNode) child;
-				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.SUCCESS) {" + "\n";
+				code += "		tickResult = this." + getMethodName(fallbackChild) + "();" + "\n";
+				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
 				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
@@ -255,11 +258,12 @@ public class Services {
 			default:
 				break;
 			}
-
+			code += "" + "\n";
 		}
 		
 		code += "		return TickReturn.FAILURE;" + "\n";
 		code += "	}" + "\n";
+		code += "" + "\n";
 		return code + genNodeCode(node);
 	}
 	
@@ -274,45 +278,50 @@ public class Services {
 		String code = "";
 
 		code += "	public TickReturn " + getMethodName(node) + "() {" + "\n";
+		code += "		TickReturn tickResult;" + "\n";
 		code += "" + "\n";
-		for (Node child : children) {
+		for (Node child : children) {			
 			switch (child.eClass().getName()) {
 			case "ActionNode":
 				ActionNode actionChild = (ActionNode) child;
-				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		tickResult = Services." + actionChild.getActionName() + "(this);" + "\n";
+				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
 
 			case "ConditionNode":
 				ConditionNode conditionChild = (ConditionNode) child;
-				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		tickResult = Services." + conditionChild.getConditionName() + "(this);" + "\n";
+				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
 
 			case "SequenceNode":
 				SequenceNode sequenceChild = (SequenceNode) child;
-				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		tickResult = this." + getMethodName(sequenceChild) + "();" + "\n";
+				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
 
 			case "FallbackNode":
 				FallbackNode fallbackChild = (FallbackNode) child;
-				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		tickResult = this." + getMethodName(fallbackChild) + "();" + "\n";
+				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
 				code += "		}" + "\n";
-				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
 				code += "			return TickReturn.RUNNING;" + "\n";
 				code += "		}" + "\n";
 				break;
@@ -320,11 +329,12 @@ public class Services {
 			default:
 				break;
 			}
-
+			code += "" + "\n";
 		}
 		
 		code += "		return TickReturn.SUCCESS;" + "\n";
 		code += "	}" + "\n";
+		code += "" + "\n";
 		return code + genNodeCode(node);
 	}
 	public String genNodeCode(Node node)
