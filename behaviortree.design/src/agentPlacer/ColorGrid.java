@@ -43,7 +43,7 @@ public class ColorGrid extends JPanel {
    
    public void placeAgents(EntryPoint entryPoint, Color color)
    {
-	   List<int[]> agentList = AgentPlacer.stringToList(entryPoint.getAgentPositions());
+	   List<int[]> agentList = agentPlacer.stringToList(entryPoint.getAgentPositions());
 	   for (int[] pos : agentList) {
 		   myLabels[pos[0]][pos[1]].setBackground(color);
 	   }
@@ -54,6 +54,7 @@ public class ColorGrid extends JPanel {
 		   for (int j = 0; j < length; j++) {
 			if (label == myLabels[i][j]) {
 				   if (label.getBackground() == Color.black) {
+					   
 					   int[] pos = {i, j};
 					   if (agentPlacer.add(pos)) {
 						   label.setBackground(Color.green);
@@ -61,7 +62,6 @@ public class ColorGrid extends JPanel {
 				   }
 				   else if (label.getBackground() == Color.green) {
 					   int[] pos = {i, j};
-					   System.out.println(pos);
 					   if (agentPlacer.remove(pos)) {
 						   label.setBackground(Color.black);
 					   }

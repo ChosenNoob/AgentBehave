@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import behaviortree.BehaviorTree;
 import behaviortree.EntryPoint;
 import behaviortree.Node;
+import sun.management.resources.agent;
 
 public class AgentPlacer {
 
@@ -25,9 +26,6 @@ public class AgentPlacer {
 	
 	public String getAgentString()
 	{
-		for (int[] is : agentList) {
-			System.out.println(is);	
-		}
 		return listToString(agentList);
 	}
 
@@ -40,6 +38,16 @@ public class AgentPlacer {
 	      });
 	}
 	
+	public void printList(List<int[]> list)
+	{
+		for (int[] item : list) {
+			System.out.print("[");
+			System.out.print(item[0]);
+			System.out.print(",");
+			System.out.print(item[1]);
+			System.out.print("]");
+		}
+	}
 	public boolean add(int[] pos)
 	{
 		if (!myContains(agentList, pos)) {
@@ -64,11 +72,21 @@ public class AgentPlacer {
 		return false;
 	}
 	
+	private int[] myRemove(List<int[]> list, int[] item)
+	{
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i)[0] == item[0] && list.get(i)[1] == item[1]) {
+				return list.remove(i);
+			}
+		}
+		return null;
+	}
+	
 	public boolean remove(int[] pos)
 	{
 		if (myContains(agentList, pos)) {
 			try {
-				agentList.remove(pos);
+				int[] removed = myRemove(agentList, pos);
 				entryPoint.setAgentPositions(listToString(agentList));
 				return true;
 			} catch (Exception e) {
