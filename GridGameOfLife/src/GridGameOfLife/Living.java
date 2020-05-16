@@ -14,10 +14,38 @@ public class Living extends Agent {
 	}
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
-	public void run() {
-		if(Services.shouldDie(this)) {
-			Services.die(this);
+	public TickReturn FallbackNode1() {
+
+		if(this.SequenceNode1() == TickReturn.SUCCESS) {
+			return TickReturn.SUCCESS;
 		}
+		if(this.SequenceNode1() == TickReturn.RUNNING) {
+			return TickReturn.RUNNING;
+		}
+		if(Services.null(this) == TickReturn.SUCCESS) {
+			return TickReturn.SUCCESS;
+		}
+		if(Services.null(this) == TickReturn.RUNNING) {
+			return TickReturn.RUNNING;
+		}
+		return TickReturn.FAILURE;
+	}
+	public TickReturn SequenceNode1() {
+
+		if(Services.null(this) == TickReturn.FAILURE) {
+			return TickReturn.FAILURE;
+		}
+		if(Services.null(this) == TickReturn.RUNNING) {
+			return TickReturn.RUNNING;
+		}
+		if(Services.null(this) == TickReturn.FAILURE) {
+			return TickReturn.FAILURE;
+		}
+		if(Services.null(this) == TickReturn.RUNNING) {
+			return TickReturn.RUNNING;
+		}
+		return TickReturn.SUCCESS;
+	}
 	}
 }
 

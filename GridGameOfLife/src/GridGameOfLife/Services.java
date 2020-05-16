@@ -4,6 +4,7 @@ import repast.simphony.query.space.grid.MooreQuery;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.ContextUtils;
 import repast.simphony.context.Context;
+import repast.simphony.engine.schedule.ScheduledMethod;
 
 public class Services {
 	public static void moveLeft(Agent agent)
@@ -23,26 +24,26 @@ public class Services {
 		return count;
 	}
 
-	public static int getDeadNeighborCount(Agent agent)
+	public static TickReturn EatPills(Agent agent)
 	{
-		MooreQuery<Object> query = new MooreQuery<Object>(agent.grid, agent);
-		int count = 0;
-		for (Object o : query.query()) {
-			if (o instanceof Dead) {
-				count++;
-			}
-		}
-		return count;
+		return TickReturn.SUCCESS;
 	}
-
+	
+	public static TickReturn GhostClose(Agent agent)
+	{
+		return TickReturn.SUCCESS;
+	}
+	
+	public static TickReturn AvoidGhost(Agent agent)
+	{
+		return TickReturn.SUCCESS;
+	}
 	public static boolean shouldDie(Agent agent)
 	{
 		int livingCount = getLivingNeighborCount(agent);
 		if (livingCount == 2 || livingCount == 3) {
 			return false;
 		}
-		System.out.print(agent.x);System.out.print(agent.y);
-		System.out.println(livingCount);
 		return true;
 	}
 	
@@ -50,8 +51,6 @@ public class Services {
 	{
 		int livingCount = getLivingNeighborCount(agent);
 		if (livingCount == 3) {
-			System.out.print(agent.x);System.out.print(agent.y);
-			System.out.println(livingCount);
 			return true;
 		}
 		return false;
@@ -59,23 +58,11 @@ public class Services {
 	
 	public static void die(Agent agent)
 	{
-		GridPoint gpt = agent.grid.getLocation(agent);
-		Context<Object> context = ContextUtils.getContext(agent);
-		context.remove(agent);
-
-		Dead newAgent = new Dead(agent.grid);
-		context.add(newAgent);
-		newAgent.grid.moveTo(newAgent, gpt.getX(), gpt.getY());
+		Replacer.order(agent, new Dead(agent.grid));
 	}
 	
 	public static void revive(Agent agent)
 	{
-		GridPoint gpt = agent.grid.getLocation(agent);
-		Context<Object> context = ContextUtils.getContext(agent);
-		context.remove(agent);
-
-		Living newAgent = new Living(agent.grid);
-		context.add(newAgent);
-		newAgent.grid.moveTo(newAgent, gpt.getX(), gpt.getY());
+		Replacer.order(agent, new Living(agent.grid));
 	}
 }

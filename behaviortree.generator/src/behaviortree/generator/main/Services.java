@@ -25,7 +25,9 @@ import behaviortree.BehaviorTree;
 import behaviortree.BehaviortreePackage;
 import behaviortree.ConditionNode;
 import behaviortree.EntryPoint;
+import behaviortree.FallbackNode;
 import behaviortree.Node;
+import behaviortree.SequenceNode;
 import behaviortree.impl.BehaviortreeFactoryImpl;
 import behaviortree.impl.BehaviortreePackageImpl;
 
@@ -185,9 +187,8 @@ public class Services {
 		
 		// Scheduled Methods		
 		agentCode += "	@ScheduledMethod(start = 1, interval = 1, priority = 1)" + "\n";
-		agentCode += "	public void run() {" + "\n";
 		
-		agentCode += genNodeCode(entryPoint, 2);
+		agentCode += genNodeCode(entryPoint);
 		
 		agentCode += "	}" + "\n";
 		
@@ -197,60 +198,160 @@ public class Services {
 		
 		return agentCode;
 	}
-	
-	public String genNodeCode(Node node, int indentation)
+	public String genFallbackCode(FallbackNode node)
 	{
 		// EList sorting is done by comparing x values of nodes
 		// So first item in the list has the smallest x value
 		// NodeComparator is at the end of this file
 		EList<Node> children = node.getChildren();
 		ECollections.sort(children, new NodeComparator());
-				
-		String nodeCode = "";
+		
+		String code = "";
+
+		code += "	public TickReturn " + getMethodName(node) + "() {" + "\n";
+		code += "" + "\n";
 		for (Node child : children) {
 			switch (child.eClass().getName()) {
 			case "ActionNode":
-				nodeCode += genActionCode((ActionNode) child, indentation);
+				ActionNode actionChild = (ActionNode) child;
+				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.SUCCESS) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
 				break;
+
 			case "ConditionNode":
-				nodeCode += genConditionCode((ConditionNode) child, indentation);
-				indentation += 1;
+				ConditionNode conditionChild = (ConditionNode) child;
+				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.SUCCESS) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			case "SequenceNode":
+				SequenceNode sequenceChild = (SequenceNode) child;
+				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.SUCCESS) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			case "FallbackNode":
+				FallbackNode fallbackChild = (FallbackNode) child;
+				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.SUCCESS) {" + "\n";
+				code += "			return TickReturn.SUCCESS;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			default:
+				break;
+			}
+
+		}
+		
+		code += "		return TickReturn.FAILURE;" + "\n";
+		code += "	}" + "\n";
+		return code + genNodeCode(node);
+	}
+	
+	public String genSequenceCode(SequenceNode node)
+	{
+		// EList sorting is done by comparing x values of nodes
+		// So first item in the list has the smallest x value
+		// NodeComparator is at the end of this file
+		EList<Node> children = node.getChildren();
+		ECollections.sort(children, new NodeComparator());
+		
+		String code = "";
+
+		code += "	public TickReturn " + getMethodName(node) + "() {" + "\n";
+		code += "" + "\n";
+		for (Node child : children) {
+			switch (child.eClass().getName()) {
+			case "ActionNode":
+				ActionNode actionChild = (ActionNode) child;
+				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(Services." + actionChild.getActionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			case "ConditionNode":
+				ConditionNode conditionChild = (ConditionNode) child;
+				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(Services." + conditionChild.getConditionName() + "(this) == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			case "SequenceNode":
+				SequenceNode sequenceChild = (SequenceNode) child;
+				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(this." + getMethodName(sequenceChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			case "FallbackNode":
+				FallbackNode fallbackChild = (FallbackNode) child;
+				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.FAILURE) {" + "\n";
+				code += "			return TickReturn.FAILURE;" + "\n";
+				code += "		}" + "\n";
+				code += "		if(Services." + getMethodName(fallbackChild) + "() == TickReturn.RUNNING) {" + "\n";
+				code += "			return TickReturn.RUNNING;" + "\n";
+				code += "		}" + "\n";
+				break;
+
+			default:
+				break;
+			}
+
+		}
+		
+		code += "		return TickReturn.SUCCESS;" + "\n";
+		code += "	}" + "\n";
+		return code + genNodeCode(node);
+	}
+	public String genNodeCode(Node node)
+	{
+		// EList sorting is done by comparing x values of nodes
+		// So first item in the list has the smallest x value
+		// NodeComparator is at the end of this file
+		EList<Node> children = node.getChildren();
+		ECollections.sort(children, new NodeComparator());
+		
+		String code = "";
+		for (Node child : children) {
+			switch (child.eClass().getName()) {
+			case "SequenceNode":
+				code += genSequenceCode((SequenceNode) child);
+				break;
+			case "FallbackNode":
+				code += genFallbackCode((FallbackNode) child);
+				break;
 			default:
 				break;
 			}
 		}
-		
-		// Closes brackets opened by condition nodes. 
-		// Needs more work		
-		while (indentation-- > 2) {
-			nodeCode += tabString(indentation) + "}\n";
-		}
-		return nodeCode;
+
+		return code;
 	}
 	
-	// Used to get string value for tabs	
-	private String tabString(int indentation)
-	{
-		String str = "";
-		while (indentation-- > 0) {
-			str += "\t";
-		}
-		return str;
-	}
-	
-	public String genActionCode(ActionNode node, int indentation)
-	{
-		String nodeCode = "";
-		nodeCode += tabString(indentation) + "Services." + node.getActionName() + "(this);" + "\n";
-		return nodeCode;
-	}
-	
-	public String genConditionCode(ConditionNode node, int indentation)
-	{
-		String nodeCode = "";
-		nodeCode += tabString(indentation) + "if(Services." + node.getConditionName() + "(this)) {" + "\n";
-		return nodeCode;
-	}
 	public List<EObject> filter(EObject parent, String eClassName)
 	{
 		List<EObject> filteredChildren = new ArrayList<EObject>();
@@ -265,6 +366,11 @@ public class Services {
 	public String getProjectName(BehaviorTree behaviorTree){
 		Path projectPath = Paths.get(behaviorTree.getProjectPath());
 		return projectPath.getFileName().toString();
+	}
+	
+	public String getMethodName(Node node)
+	{
+		return node.getName().replaceAll("\\s+", "");
 	}
 	
 	public String getClassName(EntryPoint entryPoint)

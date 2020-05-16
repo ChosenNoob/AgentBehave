@@ -14,10 +14,6 @@ public class Dead extends Agent {
 	}
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
-	public void run() {
-		if(Services.shouldRevive(this)) {
-			Services.revive(this);
-		}
 	}
 }
 
