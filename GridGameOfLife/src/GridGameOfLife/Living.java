@@ -25,7 +25,7 @@ public class Living extends Agent {
 			return TickReturn.RUNNING;
 		}
 
-		tickResult = Services.EatPills(this);
+		tickResult = Services.MoveRandomByOne(this);
 		if(tickResult == TickReturn.SUCCESS) {
 			return TickReturn.SUCCESS;
 		}

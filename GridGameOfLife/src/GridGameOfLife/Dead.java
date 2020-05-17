@@ -14,5 +14,19 @@ public class Dead extends Agent {
 	}
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
+	public TickReturn FallbackNode2() {
+		TickReturn tickResult;
+
+		tickResult = Services.MoveRandomByOne(this);
+		if(tickResult == TickReturn.SUCCESS) {
+			return TickReturn.SUCCESS;
+		}
+		if(tickResult == TickReturn.RUNNING) {
+			return TickReturn.RUNNING;
+		}
+
+		return TickReturn.FAILURE;
+	}
+
 }
 
