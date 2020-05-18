@@ -6,6 +6,7 @@ import java.util.List;
 
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.ContextUtils;
 
@@ -31,15 +32,16 @@ public class Replacer {
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
 	public void replace()
 	{
+		Grid grid = GridGoL.instance;
 		for (Agent[] order : orders) {
 			Agent oldAgent = order[0];
 			Agent newAgent = order[1];
-			GridPoint gpt = oldAgent.grid.getLocation(oldAgent);
+			GridPoint gpt = grid.getLocation(oldAgent);
 			Context<Object> context = ContextUtils.getContext(oldAgent);
 			context.remove(oldAgent);
 
 			context.add(newAgent);
-			newAgent.grid.moveTo(newAgent, gpt.getX(), gpt.getY());
+			grid.moveTo(newAgent, gpt.getX(), gpt.getY());
 		}
 		orders = new ArrayList<Agent[]>();
 	}

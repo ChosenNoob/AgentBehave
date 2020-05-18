@@ -34,13 +34,9 @@ import behaviortree.impl.BehaviortreePackageImpl;
 public class Services {
 	
 	public String generateGridCode(BehaviorTree behaviorTree) {
-		try {
-			PriorityDetector.setNodeCoors(behaviorTree);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
+		PriorityDetector.setNodeCoors(behaviorTree);
+				
 		String gridCode = "";
 
 		String projectName = getProjectName(behaviorTree);
@@ -65,6 +61,11 @@ public class Services {
 		gridCode += "public class GridGoL implements ContextBuilder<Object> {" + "\n";
 		gridCode += "\n";
 		
+		// Singleton Grid Instance		
+		gridCode += "	public static Grid instance = null;" + "\n";
+		gridCode += "\n";
+		
+		
 		// build method open
 		gridCode += "	public Context build(Context<Object> context) {" + "\n";
 		
@@ -76,7 +77,9 @@ public class Services {
 		gridCode += "		Grid<Object> grid = gridFactory.createGrid(\"grid\", context," + "\n";
 		gridCode += "				new GridBuilderParameters<Object>(new WrapAroundBorders()," + "\n";
 		gridCode += "						new SimpleGridAdder<Object>(), false, " + behaviorTree.getGridLength() + ", " + behaviorTree.getGridHeight() + "));" + "\n";
+		gridCode += "		instance = grid;" + "\n";
 		gridCode += "\n";
+		
 		for (EObject child: filter(behaviorTree, "EntryPoint")) {
 			EntryPoint entryPoint = (EntryPoint) child;
 			String agentClassName = getClassName(entryPoint);
@@ -93,10 +96,11 @@ public class Services {
 					
 			}
 			gridCode += "		};" + "\n";
+			gridCode += "" + "\n";
+			
 			// Agent Placement
 			gridCode += "		for (int[] pos : " + agentVarName + "AgentPos) {" + "\n";
-			gridCode += "			" + agentClassName + " agent = new " + agentClassName + "(grid);" + "\n";
-			gridCode += "			agent.x = pos[0]; agent.y = pos[1];" + "\n";
+			gridCode += "			" + agentClassName + " agent = new " + agentClassName + "();" + "\n";
 			gridCode += "			context.add(agent);" + "\n";
 			gridCode += "			grid.moveTo(agent, pos[0], pos[1]);" + "\n";
 			gridCode += "		}" + "\n";
@@ -139,16 +143,16 @@ public class Services {
 		gridCode += "public class Agent {" + "\n";
 		gridCode += "" + "\n";
 		
-		// Properties		
-		gridCode += "	public Grid<Object> grid;" + "\n";
-		gridCode += "	public int x;" + "\n";
-		gridCode += "	public int y;" + "\n";
-		gridCode += "" + "\n";
-		
-		// Constructor
-		gridCode += "	public Agent(Grid<Object> grid) {" + "\n";
-		gridCode += "		this.grid = grid;" + "\n";
-		gridCode += "	}" + "\n";
+//		// Properties		
+//		gridCode += "	public Grid<Object> grid;" + "\n";
+//		gridCode += "	public int x;" + "\n";
+//		gridCode += "	public int y;" + "\n";
+//		gridCode += "" + "\n";
+//		
+//		// Constructor
+//		gridCode += "	public Agent(Grid<Object> grid) {" + "\n";
+//		gridCode += "		this.grid = grid;" + "\n";
+//		gridCode += "	}" + "\n";
 		
 		// Class Body Close
 		gridCode += "}" + "\n";
@@ -162,6 +166,7 @@ public class Services {
 
 		String projectName = getProjectName((BehaviorTree) entryPoint.eContainer());
 		String agentClassName = getClassName(entryPoint); 
+		String agentBaseClassName = getBaseClassName(entryPoint);
 		// Package 		
 		agentCode += "package " + projectName + ";" + "\n";
 		agentCode += "\n";
@@ -176,14 +181,14 @@ public class Services {
 		agentCode += "\n";
 		
 		// Class Body
-		agentCode += "public class " + agentClassName + " extends Agent {" + "\n";
+		agentCode += "public class " + agentClassName + " extends " + agentBaseClassName +  " {" + "\n";
 		agentCode += "\n";
 		
-		// Constructor
-		agentCode += "	public " + agentClassName + "(Grid<Object> grid) {" + "\n";
-		agentCode += "		super(grid);" + "\n";
-		agentCode += "	}" + "\n";
-		agentCode += "" + "\n";
+//		// Constructor
+//		agentCode += "	public " + agentClassName + "(Grid<Object> grid) {" + "\n";
+//		agentCode += "		super(grid);" + "\n";
+//		agentCode += "	}" + "\n";
+//		agentCode += "" + "\n";
 		
 		// Scheduled Methods		
 		agentCode += "	@ScheduledMethod(start = 1, interval = 1, priority = 1)" + "\n";
@@ -196,6 +201,7 @@ public class Services {
 		
 		return agentCode;
 	}
+	
 	public String genFallbackCode(FallbackNode node)
 	{
 		// EList sorting is done by comparing x values of nodes
@@ -213,49 +219,20 @@ public class Services {
 			switch (child.eClass().getName()) {
 			case "ActionNode":
 				ActionNode actionChild = (ActionNode) child;
-				code += "		tickResult = Services." + actionChild.getActionName() + "(this);" + "\n";
-				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
+				code += genFallbackBlock(actionChild.getActionName());
 				break;
 
 			case "ConditionNode":
 				ConditionNode conditionChild = (ConditionNode) child;
-				code += "		tickResult = Services." + conditionChild.getConditionName() + "(this);" + "\n";
-				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
+				code += genFallbackBlock(conditionChild.getConditionName());
 				break;
 
 			case "SequenceNode":
-				SequenceNode sequenceChild = (SequenceNode) child;
-				code += "		tickResult = this." + getMethodName(sequenceChild) + "();" + "\n";
-				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
+				code += genFallbackBlock(getMethodName(child));
 				break;
 
 			case "FallbackNode":
-				FallbackNode fallbackChild = (FallbackNode) child;
-				code += "		tickResult = this." + getMethodName(fallbackChild) + "();" + "\n";
-				code += "		if(tickResult == TickReturn.SUCCESS) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
-				break;
-
-			default:
+				code += genFallbackBlock(getMethodName(child));
 				break;
 			}
 			code += "" + "\n";
@@ -284,49 +261,20 @@ public class Services {
 			switch (child.eClass().getName()) {
 			case "ActionNode":
 				ActionNode actionChild = (ActionNode) child;
-				code += "		tickResult = Services." + actionChild.getActionName() + "(this);" + "\n";
-				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
+				code += genSequenceBlock(actionChild.getActionName());
 				break;
 
 			case "ConditionNode":
 				ConditionNode conditionChild = (ConditionNode) child;
-				code += "		tickResult = Services." + conditionChild.getConditionName() + "(this);" + "\n";
-				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
+				code += genSequenceBlock(conditionChild.getConditionName());
 				break;
 
 			case "SequenceNode":
-				SequenceNode sequenceChild = (SequenceNode) child;
-				code += "		tickResult = this." + getMethodName(sequenceChild) + "();" + "\n";
-				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
+				code += genSequenceBlock(getMethodName(child));
 				break;
 
 			case "FallbackNode":
-				FallbackNode fallbackChild = (FallbackNode) child;
-				code += "		tickResult = this." + getMethodName(fallbackChild) + "();" + "\n";
-				code += "		if(tickResult == TickReturn.FAILURE) {" + "\n";
-				code += "			return TickReturn.SUCCESS;" + "\n";
-				code += "		}" + "\n";
-				code += "		if(tickResult == TickReturn.RUNNING) {" + "\n";
-				code += "			return TickReturn.RUNNING;" + "\n";
-				code += "		}" + "\n";
-				break;
-
-			default:
+				code += genSequenceBlock(getMethodName(child));
 				break;
 			}
 			code += "" + "\n";
@@ -337,6 +285,25 @@ public class Services {
 		code += "" + "\n";
 		return code + genNodeCode(node);
 	}
+	
+	public String genSequenceBlock(String methodName) {
+		String code = "";
+		code += "		tickResult = " + methodName + "();" + "\n";
+		code += "		if(tickResult != TickReturn.SUCCESS) {" + "\n";
+		code += "			return tickResult;" + "\n";
+		code += "		}" + "\n";
+		return code;
+	}
+	
+	public String genFallbackBlock(String methodName) {
+		String code = "";
+		code += "		tickResult = " + methodName + "();" + "\n";
+		code += "		if(tickResult != TickReturn.FAILURE) {" + "\n";
+		code += "			return tickResult;" + "\n";
+		code += "		}" + "\n";
+		return code;
+	}
+	
 	public String genNodeCode(Node node)
 	{
 		// EList sorting is done by comparing x values of nodes
@@ -371,6 +338,11 @@ public class Services {
 			}
 		}
 		return filteredChildren;
+	}
+	
+	public String getBaseClassName(EntryPoint entryPoint)
+	{
+		return entryPoint.getAgentName() + "Base";
 	}
 	
 	public String getProjectName(BehaviorTree behaviorTree){
@@ -415,25 +387,6 @@ public class Services {
 			return agentPos;
 		}
 		
-	}
-	public String getXCoor(EntryPoint entryPoint, int index)
-	{
-		String[] coordinateArray = entryPoint.getAgentPositions().split(",");
-		return coordinateArray[index].split(":")[0];
-	}
-	
-	public String getYCoor(EntryPoint entryPoint, int index)
-	{
-		String[] coordinateArray = entryPoint.getAgentPositions().split(",");
-		return coordinateArray[index].split(":")[1];
-	}
-//	public Set<Set<int>> getAgentCoordinateSet(EntrtPoint entryPoin)
-//	{
-//		return null;
-//	}
-	public Integer[] test() {
-		Integer[] dummy = {1,2,3,4};
-		return dummy;
 	}
 }
 

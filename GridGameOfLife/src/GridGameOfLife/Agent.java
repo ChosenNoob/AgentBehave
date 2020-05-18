@@ -12,12 +12,5 @@ import repast.simphony.space.grid.WrapAroundBorders;
 
 public class Agent {
 
-	public Grid<Object> grid;
-	public int x;
-	public int y;
-
-	public Agent(Grid<Object> grid) {
-		this.grid = grid;
-	}
 }
 

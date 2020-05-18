@@ -12,6 +12,8 @@ import repast.simphony.space.grid.WrapAroundBorders;
 
 public class GridGoL implements ContextBuilder<Object> {
 
+	public static Grid instance = null;
+
 	public Context build(Context<Object> context) {
 		context.setId("GridGameOfLife");
 
@@ -20,13 +22,14 @@ public class GridGoL implements ContextBuilder<Object> {
 		Grid<Object> grid = gridFactory.createGrid("grid", context,
 				new GridBuilderParameters<Object>(new WrapAroundBorders(),
 						new SimpleGridAdder<Object>(), false, 10, 10));
+		instance = grid;
 
 		int[][] livingAgentPos = {
 			{5, 4}
 		};
+
 		for (int[] pos : livingAgentPos) {
-			Living agent = new Living(grid);
-			agent.x = pos[0]; agent.y = pos[1];
+			Living agent = new Living();
 			context.add(agent);
 			grid.moveTo(agent, pos[0], pos[1]);
 		}
@@ -34,9 +37,9 @@ public class GridGoL implements ContextBuilder<Object> {
 		int[][] deadAgentPos = {
 			{4, 1}
 		};
+
 		for (int[] pos : deadAgentPos) {
-			Dead agent = new Dead(grid);
-			agent.x = pos[0]; agent.y = pos[1];
+			Dead agent = new Dead();
 			context.add(agent);
 			grid.moveTo(agent, pos[0], pos[1]);
 		}

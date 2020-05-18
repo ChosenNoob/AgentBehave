@@ -7,22 +7,15 @@ import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.ContextUtils;
 
-public class Dead extends Agent {
-
-	public Dead(Grid<Object> grid) {
-		super(grid);
-	}
+public class Dead extends DeadBase {
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
 	public TickReturn FallbackNode2() {
 		TickReturn tickResult;
 
-		tickResult = Services.MoveRandomByOne(this);
-		if(tickResult == TickReturn.SUCCESS) {
-			return TickReturn.SUCCESS;
-		}
-		if(tickResult == TickReturn.RUNNING) {
-			return TickReturn.RUNNING;
+		tickResult = MoveRandomByOne();
+		if(tickResult != TickReturn.FAILURE) {
+			return tickResult;
 		}
 
 		return TickReturn.FAILURE;
