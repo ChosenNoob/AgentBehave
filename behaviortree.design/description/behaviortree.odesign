@@ -274,6 +274,13 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Import/Export">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.showImportExportModal()"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Connect Nodes">
           <ownedTools xsi:type="tool_1:EdgeCreationDescription" documentation="First, select the node that is going to be parent, then select the node that is going to be children&#xD;&#xA;" name="Set Children" precondition="service:canBeChild(preTarget)" edgeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']">

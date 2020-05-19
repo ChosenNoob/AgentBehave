@@ -77,7 +77,6 @@ public class Services {
     	// Called by validate diagram option in the right click menu
     	// This prints to the Problems View (into the Info section)
     	// Set returnVal to whatever you want to print
-    	openFileChooser();																	// opens file chooser to import and export
     	Object returnVal = null;
     	return "Debugger: "; //+ returnVal.toString();
     }
@@ -100,7 +99,6 @@ public class Services {
     // i can set its features in the design diagram after it is created
     public Node createNode(Node container, EClass className)
     {
-    	containerBehaviorTree = container;																	//This line is to set container behavior tree after a node creation
     	Node newNode = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(className);
     	setChild(container, newNode);
     	return newNode;
@@ -223,6 +221,12 @@ public class Services {
     
     
     // IMPORT AND EXPORT IMPLEMENTATION STARTS HERE *********************************************************************************
+    public void showImportExportModal(Node container) {
+    	if (container.getClass().getName().equals("behaviortree.impl.BehaviorTreeImpl")) {
+    		containerBehaviorTree = container;																	//This line is to set container behavior tree after a node creation
+    		openFileChooser();																	// opens file chooser to import and export
+    	}
+    }
     public static void openFileChooser() {
     	print("\ncreateAndShowGUI will be called.");
 	    SwingUtilities.invokeLater(new Runnable() {
@@ -298,6 +302,8 @@ public class Services {
     			
     		}
     	}
+    	
+    	
     	containerBehaviorTree.getChildren().add(entryPoint);
     }
     public static void recursiveTreeCreator(Node parentNode, Element parentElement) {
@@ -321,7 +327,7 @@ public class Services {
     	String y = element.getAttribute("y");
     	switch(nodeType) {
     	case "behaviortree:EntryPoint":
-    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POINT);
+    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POÝNT);
     		((EntryPoint)node).setAgentName(element.getAttribute("agentName"));
     		((EntryPoint)node).setAgentPositions(element.getAttribute("agentPositions"));
     		((EntryPoint)node).setAgentCount(Integer.parseInt(element.getAttribute("agentCount")));
@@ -337,11 +343,11 @@ public class Services {
 			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.TREE_SKELETON);
 			break;
 		case "behaviortree:ActionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTION_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTÝON_NODE);
 			((ActionNode)node).setActionName(element.getAttribute("actionName"));;
 			break;
 		case "behaviortree:ConditionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDITION_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDÝTÝON_NODE);
 			((ConditionNode)node).setConditionName(element.getAttribute("conditionName"));;
 			break;
     	}
@@ -377,17 +383,8 @@ public class Services {
     	StringBuilder XMLContent = new StringBuilder();
     	XMLContent.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n" + 
     			"<behaviortree:BehaviorTree xmi:version=\"2.0\" xmlns:xmi=\"http://www.omg.org/XMI\" "+
-    			"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:behaviortree=\"http://www.example.org/behaviortree\" ");
-    	XMLContent.append("projectPath=\"");
-    	XMLContent.append(((BehaviorTree)containerBehaviorTree).getProjectPath());
-		XMLContent.append("\" name=\"");
-		XMLContent.append(containerBehaviorTree.getName());
-    	XMLContent.append("\" gridHeight=\"");
-    	XMLContent.append(((BehaviorTree)containerBehaviorTree).getGridHeight());
-    	XMLContent.append("\" gridLength=\"");
-    	XMLContent.append(((BehaviorTree)containerBehaviorTree).getGridLength());
-    	XMLContent.append("\">\n");
-    	
+    			"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:behaviortree=\"http://www.example.org/behaviortree\">\n");
+   	
         TreeIterator<EObject> iterator = containerBehaviorTree.eAllContents();
         while(iterator.hasNext()) {
             EObject obj = iterator.next();
@@ -494,4 +491,5 @@ public class Services {
     	return transformedName;
     }
     // IMPORT AND EXPORT IMPLEMENTATION ENDS HERE *********************************************************************************
+
 }
