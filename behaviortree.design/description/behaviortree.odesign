@@ -290,11 +290,11 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ToolDescription" name="Import/Export">
-            <element name="element"/>
-            <elementView name="elementView"/>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="Import/Export" nodeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.showImportExportModal()"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createDummyImportExportNode(behaviortree::FallbackNode)"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

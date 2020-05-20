@@ -290,10 +290,20 @@ public class Services {
     
     
     // IMPORT AND EXPORT IMPLEMENTATION STARTS HERE *********************************************************************************
+    public void createDummyImportExportNode(Node container, EClass className) {
+    	print(container.getName());
+    	Node newNode = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(className);
+    	newNode.setName("Remove this node to complete import/export operation.");
+    	showImportExportModal(container);
+    	setChild(container, newNode);
+    }
     public void showImportExportModal(Node container) {
     	if (container.getClass().getName().equals("behaviortree.impl.BehaviorTreeImpl")) {
     		containerBehaviorTree = container;																	//This line is to set container behavior tree after a node creation
     		openFileChooser();																	// opens file chooser to import and export
+    	}
+    	else {
+    		print("containerBehaviorTree is not set successfully");
     	}
     }
     public static void openFileChooser() {
