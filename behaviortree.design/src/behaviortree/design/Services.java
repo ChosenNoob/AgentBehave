@@ -125,46 +125,62 @@ public class Services {
 	    //print(self);
 	    //print(classType);
 	    List<EObject> resultList = new ArrayList<>();
-	    TreeIterator<EObject> iterator = self.eAllContents();
-	    print(self);
-	    while(iterator.hasNext()) {
-	        EObject obj = iterator.next();
-	        if(obj.eClass().getName() == "TreeSkeleton") {
-            	resultList.add(obj);
-		        TreeSkeleton ref = (TreeSkeleton) obj;
-		        TreeIterator<EObject> iteratorSkeleton = obj.eAllContents();
-		        if(!ref.isIsHidden())
-		        {
-		            while(iteratorSkeleton.hasNext())
-		            {
-		            	EObject obj2 = iteratorSkeleton.next();
-		            	obj = iterator.next();
-		            	if(obj2.eClass().getName() == "TreeSkeleton")
-		            	{
-		            		List<EObject> childSkeleton = isHidden(obj2);
-		            		for (int i = 0; i < childSkeleton.size(); i++) 
-		            			resultList.add(childSkeleton.get(i));
-		            		/*for (int i = 0; i < obj2.eAllContents() i++) Burada iterator'un childSkeletondaki bütün nodlar kadar ilerletilmesi gerekiyor....
-		            			iterator.next();*/
-
-		            	}
-		            	else
-		            		resultList.add(obj2);
-		            }
-		        }
-		        else
-		        {
-		            while(iteratorSkeleton.hasNext())
-		            {
-		            	iteratorSkeleton.next();
-		            	obj = iterator.next();
-		            }
-		        }
-	        }
-	        else
-	        	resultList.add(obj);
-	    }
+	    List<EObject> children = self.eContents();
+	    
+	    for (EObject child : children) {
+			if (child.eClass().getName() == "TreeSkeleton") {
+				TreeSkeleton castChild = (TreeSkeleton) child;
+				if (castChild.isIsHidden()) {
+					resultList.add(child);
+					continue;
+				}
+			}
+			resultList.add(child);
+			resultList.addAll(isHidden(child));
+		}
+	    System.out.println(resultList);
 	    return resultList;
+//	    List<EObject> resultList = new ArrayList<>();
+//	    TreeIterator<EObject> iterator = self.eAllContents();
+//	    print(self);
+//	    while(iterator.hasNext()) {
+//	        EObject obj = iterator.next();
+//	        if(obj.eClass().getName() == "TreeSkeleton") {
+//            	resultList.add(obj);
+//		        TreeSkeleton ref = (TreeSkeleton) obj;
+//		        TreeIterator<EObject> iteratorSkeleton = obj.eAllContents();
+//		        if(!ref.isIsHidden())
+//		        {
+//		            while(iteratorSkeleton.hasNext())
+//		            {
+//		            	EObject obj2 = iteratorSkeleton.next();
+//		            	obj = iterator.next();
+//		            	if(obj2.eClass().getName() == "TreeSkeleton")
+//		            	{
+//		            		List<EObject> childSkeleton = isHidden(obj2);
+//		            		for (int i = 0; i < childSkeleton.size(); i++) 
+//		            			resultList.add(childSkeleton.get(i));
+//		            		/*for (int i = 0; i < obj2.eAllContents() i++) Burada iterator'un childSkeletondaki bütün nodlar kadar ilerletilmesi gerekiyor....
+//		            			iterator.next();*/
+//
+//		            	}
+//		            	else
+//		            		resultList.add(obj2);
+//		            }
+//		        }
+//		        else
+//		        {
+//		            while(iteratorSkeleton.hasNext())
+//		            {
+//		            	iteratorSkeleton.next();
+//		            	obj = iterator.next();
+//		            }
+//		        }
+//	        }
+//	        else
+//	        	resultList.add(obj);
+//	    }
+//	    return resultList;
     }
     
     // Validation functions    

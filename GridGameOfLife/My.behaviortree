@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree" gridLength="10" gridHeight="10">
   <children xsi:type="behaviortree:EntryPoint" name="Pacman" agentName="Living" agentPositions="5:4">
-    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 1">
-      <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 1">
-        <children xsi:type="behaviortree:ConditionNode" name="Condition Node 1" conditionName="GhostClose"/>
-        <children xsi:type="behaviortree:ActionNode" name="Action Node 2" actionName="AvoidGhost"/>
-      </children>
+    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 1"/>
+  </children>
+  <children xsi:type="behaviortree:EntryPoint" name="Ghost" agentName="Dead" agentPositions="4:1"/>
+  <children xsi:type="behaviortree:TreeSkeleton" name="Tree Skeleton 1">
+    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 2"/>
+    <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 1">
+      <children xsi:type="behaviortree:ConditionNode" name="Condition Node 1" conditionName="GhostClose"/>
       <children xsi:type="behaviortree:ActionNode" name="Action Node 1" actionName="MoveRandomByOne"/>
     </children>
-  </children>
-  <children xsi:type="behaviortree:EntryPoint" name="Ghost" agentName="Dead" agentPositions="4:1">
-    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 2">
+    <children xsi:type="behaviortree:TreeSkeleton" name="Tree Skeleton 2">
       <children xsi:type="behaviortree:ActionNode" name="Action Node 3" actionName="MoveRandomByOne"/>
+      <children xsi:type="behaviortree:ActionNode" name="Action Node 2" actionName="AvoidGhost"/>
     </children>
   </children>
 </behaviortree:BehaviorTree>
