@@ -65,10 +65,10 @@ public class Services {
 	// These represents each node types' possible children types
     public static final String[] actionNodeChildTypes = {};
     public static final String[] conditionNodeChildTypes = {};
-    public static final String[] decoratorNodeChildTypes = {"ActionNode", "ConditionNode"};
-    public static final String[] fallbackNodeChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
-    public static final String[] sequenceNodeChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
-    public static final String[] treeSkeletonChildTypes = {"ActionNode", "ConditionNode","SequenceNode","FallbackNode","TreeSkeleton"};
+    public static final String[] decoratorNodeChildTypes = {"ActionNode", "ConditionNode", "SequenceNode", "FallbackNode"};
+    public static final String[] fallbackNodeChildTypes = {"ActionNode", "ConditionNode", "SequenceNode", "FallbackNode", "TreeSkeleton"};
+    public static final String[] sequenceNodeChildTypes = {"ActionNode", "ConditionNode", "SequenceNode", "FallbackNode", "TreeSkeleton"};
+    public static final String[] treeSkeletonChildTypes = {"ActionNode", "ConditionNode", "SequenceNode", "FallbackNode", "TreeSkeleton"};
     
     public static Node containerBehaviorTree;	//it is the behaviorTree which is our main container
     
@@ -88,7 +88,7 @@ public class Services {
     }
     
     // Example of connecting a child
-    // Does NOT checks the type of child    
+    // Does NOT check the type of child    
     public void setChild(Node parent, Node child)
     {
     	parent.getChildren().add(child);
@@ -117,6 +117,54 @@ public class Services {
     		else
     			setChild(bt, child);
 		}
+    }
+    
+    // Tree skeleton hiding feature
+	public List<EObject> isHidden(EObject self)
+    {
+	    //print(self);
+	    //print(classType);
+	    List<EObject> resultList = new ArrayList<>();
+	    TreeIterator<EObject> iterator = self.eAllContents();
+	    print(self);
+	    while(iterator.hasNext()) {
+	        EObject obj = iterator.next();
+	        if(obj.eClass().getName() == "TreeSkeleton") {
+            	resultList.add(obj);
+		        TreeSkeleton ref = (TreeSkeleton) obj;
+		        TreeIterator<EObject> iteratorSkeleton = obj.eAllContents();
+		        if(!ref.isIsHidden())
+		        {
+		            while(iteratorSkeleton.hasNext())
+		            {
+		            	EObject obj2 = iteratorSkeleton.next();
+		            	obj = iterator.next();
+		            	if(obj2.eClass().getName() == "TreeSkeleton")
+		            	{
+		            		List<EObject> childSkeleton = isHidden(obj2);
+		            		for (int i = 0; i < childSkeleton.size(); i++) 
+		            			resultList.add(childSkeleton.get(i));
+		            		/*for (int i = 0; i < obj2.eAllContents() i++) Burada iterator'un childSkeletondaki bÃ¼tÃ¼n nodlar kadar ilerletilmesi gerekiyor....
+		            			iterator.next();*/
+
+		            	}
+		            	else
+		            		resultList.add(obj2);
+		            }
+		        }
+		        else
+		        {
+		            while(iteratorSkeleton.hasNext())
+		            {
+		            	iteratorSkeleton.next();
+		            	obj = iterator.next();
+		            }
+		        }
+	        }
+	        else
+	        	resultList.add(obj);
+	    }
+	    return resultList;
     }
     
     // Validation functions    
@@ -178,6 +226,9 @@ public class Services {
     			parentClassName == "BehaviorTree") {
 			return true;
 		}
+    	if(parentClassName == "DecoratorNode" && parent.eContents().size() > 0)
+    		return false;
+    	
     	return childRelations.get(parentClassName).contains(childClassName);
     }
     
@@ -201,11 +252,13 @@ public class Services {
     public List<EObject> treeSkeletonChildrenList(EObject self, EObject element)
     {   
         List<EObject> resultList = new ArrayList<>();
+        print(self);
+        //print(element);
         TreeIterator<EObject> iterator = element.eAllContents();
         while(iterator.hasNext()) {
             EObject obj = iterator.next();
-            print(obj.eContainer().eClass().getName());
             if(obj.eContainer().eClass().getName() == "TreeSkeleton") {
+                //print(obj.eClass().getName());
                 resultList.add(obj);
                 obj.eAllContents().forEachRemaining(a -> {resultList.add(a);});
             }
@@ -270,7 +323,7 @@ public class Services {
 	    	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	    	Document doc = dBuilder.parse(fXmlFile);
 	
-	    	System.out.println("Root element :" + doc.getDocumentElement().getNodeName());		
+	    	//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());		
 	    	
 	    	NodeList nList = doc.getElementsByTagName("children");
 	    	createTreeFromXML(nList);								
@@ -280,8 +333,8 @@ public class Services {
         }
       }
     public static void createTreeFromXML(org.w3c.dom.NodeList nList) {
-    	System.out.println(nList.getLength());
-    	print(containerBehaviorTree);
+    	//System.out.println(nList.getLength());
+    	//print(containerBehaviorTree);
     	if ( containerBehaviorTree == null ) {
     		print("containerBehaviorTree is NULL!!!!!!!!!!!!!!!!!!!");
     		return;
@@ -327,7 +380,7 @@ public class Services {
     	String y = element.getAttribute("y");
     	switch(nodeType) {
     	case "behaviortree:EntryPoint":
-    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POÝNT);
+    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POINT);
     		((EntryPoint)node).setAgentName(element.getAttribute("agentName"));
     		((EntryPoint)node).setAgentPositions(element.getAttribute("agentPositions"));
     		((EntryPoint)node).setAgentCount(Integer.parseInt(element.getAttribute("agentCount")));
@@ -343,11 +396,11 @@ public class Services {
 			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.TREE_SKELETON);
 			break;
 		case "behaviortree:ActionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTÝON_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTION_NODE);
 			((ActionNode)node).setActionName(element.getAttribute("actionName"));;
 			break;
 		case "behaviortree:ConditionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDÝTÝON_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDITION_NODE);
 			((ConditionNode)node).setConditionName(element.getAttribute("conditionName"));;
 			break;
     	}

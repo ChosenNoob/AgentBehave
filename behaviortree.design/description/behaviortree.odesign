@@ -20,35 +20,42 @@
         </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
-        <nodeMappings name="Action Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20Node']" domainClass="behaviortree::ActionNode">
+        <nodeMappings name="Action Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" semanticCandidatesExpression="aql:self.isHidden()" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20Node']" domainClass="behaviortree::ActionNode">
           <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.name" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Condition Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Condition%20Node']" domainClass="behaviortree::ConditionNode">
+        <nodeMappings name="Condition Node" pasteDescriptions="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.3/@ownedTools[name='Copy%26Cut%20%2F%20Paste']" semanticCandidatesExpression="aql:self.isHidden()" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Condition%20Node']" domainClass="behaviortree::ConditionNode">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Sequence Node" domainClass="behaviortree::SequenceNode">
+        <nodeMappings name="Sequence Node" semanticCandidatesExpression="aql:self.isHidden()" domainClass="behaviortree::SequenceNode">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Fallback Node" domainClass="behaviortree::FallbackNode">
-          <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="Fallback Node" semanticCandidatesExpression="aql:self.isHidden()" domainClass="behaviortree::FallbackNode">
+          <style xsi:type="style:SquareDescription" labelSize="13" tooltipExpression="aql:self.name" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Tree Skeleton" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.4/@ownedTools[name='Navigation%20to%20Tree%20Skeleton']" domainClass="behaviortree::TreeSkeleton">
+        <nodeMappings name="Decorator Node" semanticCandidatesExpression="aql:self.isHidden()" domainClass="behaviortree::DecoratorNode">
+          <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:self.name" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Tree Skeleton" semanticCandidatesExpression="aql:self.isHidden()" doubleClickDescription="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@toolSections.4/@ownedTools[name='Navigation%20to%20Tree%20Skeleton']" domainClass="behaviortree::TreeSkeleton">
           <style xsi:type="style:SquareDescription" labelSize="12" tooltipExpression="aql:'Double Click to inspect (contains '+self.eAllContents()->size()+' nodes)'" sizeComputationExpression="aql:self.name.size()" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -62,7 +69,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="Children" sourceMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']" targetMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton']" targetFinderExpression="aql:self.children">
+        <edgeMappings name="Children" sourceMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Decorator%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']" targetMapping="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Decorator%20Node'] //@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Tree%20Skeleton']" targetFinderExpression="aql:self.children">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -208,6 +215,15 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::FallbackNode)">
                 <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Fallback Node '+container.eAllContents()->filter(behaviortree::FallbackNode)->size()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="DecoratorNodeCreation" label="Create a Decorator Node" inverseSelectionOrder="true" nodeMappings="//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Decorator%20Node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createNode(behaviortree::DecoratorNode)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Decorator Node '+container.eAllContents()->filter(behaviortree::DecoratorNode)->size()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

@@ -37,5 +37,6 @@
     <genClasses ecoreClass="behaviortree.ecore#//TreeSkeleton">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviortree.ecore#//TreeSkeleton/IsHidden"/>
     </genClasses>
+    <genClasses ecoreClass="behaviortree.ecore#//DecoratorNode"/>
   </genPackages>
 </genmodel:GenModel>
