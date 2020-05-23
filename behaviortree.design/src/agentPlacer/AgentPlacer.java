@@ -1,6 +1,8 @@
 package agentPlacer;
 
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 
 import behaviortree.BehaviorTree;
 import behaviortree.EntryPoint;
@@ -16,6 +21,8 @@ import sun.management.resources.agent;
 
 public class AgentPlacer {
 
+	private static AgentPlacer instance;
+	
 	private List<int[]> agentList; 
 	private EntryPoint entryPoint; 
 	
@@ -24,16 +31,17 @@ public class AgentPlacer {
 		this.entryPoint = entryPoint;
 	}
 	
-	public String getAgentString()
+	public static String getAgentString()
 	{
-		return listToString(agentList);
+		return listToString(instance.agentList);
 	}
 
-	public void run()
+	public static void run(EntryPoint entryPoint)
 	{
+		instance = new AgentPlacer(entryPoint);
 		SwingUtilities.invokeLater(new Runnable() {
 	         public void run() {
-	            createAndShowGui();
+	            instance.createAndShowGui();
 	         }
 	      });
 	}
@@ -48,12 +56,12 @@ public class AgentPlacer {
 			System.out.print("]");
 		}
 	}
+	
 	public boolean add(int[] pos)
 	{
 		if (!myContains(agentList, pos)) {
 			try {
 				agentList.add(pos);
-				entryPoint.setAgentPositions(listToString(agentList));
 				return true;
 			} catch (Exception e) {
 				return false;
@@ -87,7 +95,6 @@ public class AgentPlacer {
 		if (myContains(agentList, pos)) {
 			try {
 				int[] removed = myRemove(agentList, pos);
-				entryPoint.setAgentPositions(listToString(agentList));
 				return true;
 			} catch (Exception e) {
 				return false;
@@ -153,5 +160,26 @@ public class AgentPlacer {
 	    frame.pack();
 	    frame.setLocationByPlatform(true);
 	    frame.setVisible(true);
+	    frame.addWindowListener(new WindowAdapter() {
+	        @Override
+	        public void windowClosing(WindowEvent e) {
+//	        	printList(AgentPlacer.instance.agentList);
+	        	try {
+		        	 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(instance.entryPoint);
+		        	    domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+		        	        @Override
+		        	        protected void doExecute() {
+		        	            // Implement your write operations here,
+		        	            // for example: set a new name
+		    		        	String agentListString = listToString(AgentPlacer.instance.agentList);
+		    		        	AgentPlacer.instance.entryPoint.setAgentPositions(agentListString); 	
+		        	        }
+		        	    });	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+	        }
+	      });
 	}
 }

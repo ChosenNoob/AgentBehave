@@ -27,8 +27,7 @@ public class GridGoL implements ContextBuilder<Object> {
 		int[][] livingAgentPos = {
 			{2, 1},
 			{2, 2},
-			{2, 3},
-			{2, 4}
+			{2, 3}
 		};
 
 		for (int[] pos : livingAgentPos) {

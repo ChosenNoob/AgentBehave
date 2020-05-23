@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree" gridLength="5" gridHeight="5">
-  <children xsi:type="behaviortree:EntryPoint" name="Living" agentName="Living" agentPositions="2:1,2:2,2:3,2:4">
+  <children xsi:type="behaviortree:EntryPoint" name="Living" agentName="Living" agentPositions="2:1,2:2,2:3">
     <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 1">
       <children xsi:type="behaviortree:ConditionNode" name="ShouldDie" conditionName="ShouldDie"/>
       <children xsi:type="behaviortree:ActionNode" name="Die" actionName="Die"/>

@@ -83,8 +83,7 @@ public class Services {
 
     public void placeAgents(EObject obj)
     {
-    	AgentPlacer agentPlacer = new AgentPlacer((EntryPoint) obj);
-    	agentPlacer.run();
+    	AgentPlacer.run((EntryPoint) obj);
     }
     
     // Example of connecting a child
