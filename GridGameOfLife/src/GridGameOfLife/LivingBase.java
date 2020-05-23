@@ -5,6 +5,21 @@ import repast.simphony.space.grid.GridPoint;
 
 public class LivingBase extends Agent {
 	
+	public TickReturn ShouldDie()
+	{
+		int livingNeighborCount = Services.getLivingNeighborCount(this);
+		if (livingNeighborCount == 1 || livingNeighborCount > 3) {
+			return TickReturn.SUCCESS;
+		}
+		return TickReturn.RUNNING;
+	}
+	
+	public TickReturn Die()
+	{
+		Replacer.order(this, new Dead());
+		return TickReturn.SUCCESS;
+	}
+	
 	public TickReturn GhostClose()
 	{
 		Grid grid = GridGoL.instance;
@@ -43,6 +58,7 @@ public class LivingBase extends Agent {
 			return Services.MoveByOne(this, 2);
 		}
 	}
+	
 	public TickReturn MoveRandomByOne()
 	{
 		return Services.MoveRandomByOne(this);

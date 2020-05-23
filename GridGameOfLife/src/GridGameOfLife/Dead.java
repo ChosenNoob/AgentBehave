@@ -10,15 +10,20 @@ import repast.simphony.util.ContextUtils;
 public class Dead extends DeadBase {
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
-	public TickReturn FallbackNode2() {
+	public TickReturn SequenceNode2() {
 		TickReturn tickResult;
 
-		tickResult = MoveRandomByOne();
-		if(tickResult != TickReturn.FAILURE) {
+		tickResult = ShouldRevive();
+		if(tickResult != TickReturn.SUCCESS) {
 			return tickResult;
 		}
 
-		return TickReturn.FAILURE;
+		tickResult = Revive();
+		if(tickResult != TickReturn.SUCCESS) {
+			return tickResult;
+		}
+
+		return TickReturn.SUCCESS;
 	}
 
 }

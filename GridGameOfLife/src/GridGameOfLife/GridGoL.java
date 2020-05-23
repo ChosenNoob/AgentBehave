@@ -21,11 +21,14 @@ public class GridGoL implements ContextBuilder<Object> {
 
 		Grid<Object> grid = gridFactory.createGrid("grid", context,
 				new GridBuilderParameters<Object>(new WrapAroundBorders(),
-						new SimpleGridAdder<Object>(), false, 10, 10));
+						new SimpleGridAdder<Object>(), false, 5, 5));
 		instance = grid;
 
 		int[][] livingAgentPos = {
-			{5, 4}
+			{2, 1},
+			{2, 2},
+			{2, 3},
+			{2, 4}
 		};
 
 		for (int[] pos : livingAgentPos) {
@@ -35,7 +38,27 @@ public class GridGoL implements ContextBuilder<Object> {
 		}
 
 		int[][] deadAgentPos = {
-			{4, 1}
+			{0, 0},
+			{1, 0},
+			{2, 0},
+			{3, 0},
+			{4, 0},
+			{4, 1},
+			{3, 1},
+			{1, 1},
+			{0, 1},
+			{0, 2},
+			{1, 2},
+			{0, 3},
+			{1, 3},
+			{0, 4},
+			{1, 4},
+			{4, 3},
+			{3, 3},
+			{3, 4},
+			{4, 4},
+			{4, 2},
+			{3, 2}
 		};
 
 		for (int[] pos : deadAgentPos) {

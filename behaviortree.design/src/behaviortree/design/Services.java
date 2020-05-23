@@ -147,6 +147,7 @@ public class Services {
     	else
     		return checkLeafNodes(node.eContents()); 
     }
+    
     public boolean checkLeafNodes(List<EObject> nodeList)
     {
     	if (nodeList.size() == 1) 

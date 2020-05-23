@@ -14,6 +14,19 @@ import repast.simphony.engine.schedule.ScheduledMethod;
 
 public class Services {
 
+	public static int getLivingNeighborCount(Agent agent)
+	{
+		Grid grid = GridGoL.instance; 
+		MooreQuery<Object> query = new MooreQuery<Object>(grid, agent);
+		int count = 0;
+		for (Object o : query.query()) {
+			if (o instanceof Living) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
 	public static TickReturn MoveByOne(Agent agent, int direction)
 	{
 		GridPoint moveResult = null;
