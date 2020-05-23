@@ -117,25 +117,36 @@ public class Services {
     			setChild(bt, child);
 		}
     }
-    
     // Tree skeleton hiding feature
-	public List<EObject> isHidden(EObject self)
-    {
-	    List<EObject> resultList = new ArrayList<>();
-	    List<EObject> children = self.eContents();
-	    
-	    for (EObject child : children) {
-			if (child.eClass().getName() == "TreeSkeleton") {
-				TreeSkeleton castChild = (TreeSkeleton) child;
-				if (castChild.isIsHidden()) {
-					resultList.add(child);
-					continue;
-				}
-			}
-			resultList.add(child);
-			resultList.addAll(isHidden(child));
+//	public List<EObject> isHidden(EObject self)
+//    {
+//	    List<EObject> resultList = new ArrayList<>();
+//	    List<EObject> children = self.eContents();
+//	    
+//	    for (EObject child : children) {
+//			if (child.eClass().getName() == "TreeSkeleton") {
+//				TreeSkeleton castChild = (TreeSkeleton) child;
+//				if (castChild.isIsHidden()) {
+//					resultList.add(child);
+//					continue;
+//				}
+//			}
+//			resultList.add(child);
+//			resultList.addAll(isHidden(child));
+//		}
+//	    return resultList;
+//    }
+    // Tree skeleton hiding feature for hiding with filters
+    public boolean shouldHide(EObject node) {
+    	EObject parent = node.eContainer();
+    	if (parent.eClass().getName() == "BehaviorTree") {
+    		return false;
 		}
-	    return resultList;
+    	if (parent.eClass().getName() == "TreeSkeleton") {
+    		TreeSkeleton ref = (TreeSkeleton) parent; 
+    		return ref.isIsHidden();
+    	}
+    	return false || shouldHide(node.eContainer()) ;
     }
     
     // Validation functions    
