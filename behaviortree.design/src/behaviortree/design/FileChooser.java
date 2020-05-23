@@ -37,6 +37,14 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.filechooser.*;
 
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+
+import agentPlacer.AgentPlacer;
+import behaviortree.BehaviorTree;
+import behaviortree.EntryPoint;
+
 /*
  * FileChooserDemo.java uses these files:
  *   images/Open16.gif
@@ -48,6 +56,10 @@ public class FileChooser extends JPanel
     JButton openButton, saveButton;
     JTextArea log;
     JFileChooser fc;
+    
+    private static FileChooser instance;
+    private BehaviorTree containerTree;
+    private boolean isImport = false;
 
 
 //  Add this piece of code to where you want to create a File Chooser
@@ -116,6 +128,7 @@ public class FileChooser extends JPanel
                 log.append("Opening: " + file.getName() + "." + newline);
                 
                //************** IMPORT BEHAVIORTREE FROM XML FILE **************
+                instance.isImport = true;
                 Services.readFileAndCallParser(file);
               //************************************************************
 
@@ -131,6 +144,7 @@ public class FileChooser extends JPanel
                 File file = fc.getSelectedFile();
                 
                 //************** EXPORT BEHAVIORTREE TO A FILE **************
+                instance.isImport = false;
 				Services.exportToFile(file);
 				//************************************************************
 
@@ -160,7 +174,10 @@ public class FileChooser extends JPanel
      * this method should be invoked from the
      * event dispatch thread.
      */
-    public static void createAndShowGUI() {
+    public static void createAndShowGUI(BehaviorTree behaviorTree) {
+    	FileChooser.instance = new FileChooser();
+    	FileChooser.instance.containerTree = behaviorTree;
+    	
         //Create and set up the window.
         JFrame frame = new JFrame("Choose a file to import");
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -172,5 +189,28 @@ public class FileChooser extends JPanel
         frame.pack();
         frame.setLocationRelativeTo(null);					//the window is placed in the CENTER of the screen
         frame.setVisible(true);
+        
+	    frame.addWindowListener(new WindowAdapter() {
+	        @Override
+	        public void windowClosing(WindowEvent e) {
+//	        	printList(AgentPlacer.instance.agentList);
+	        	try {
+		        	 TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(instance.containerTree);
+		        	    domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+		        	        @Override
+		        	        protected void doExecute() {
+		        	            // Implement your write operations here,
+		        	            // for example: set a new name
+		    		        	if(instance.isImport) {
+		    		        		Services.connectEntryPointToTree(behaviorTree);
+		    		        	}
+		        	        }
+		        	    });	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+	        }
+	      });
     }
 }

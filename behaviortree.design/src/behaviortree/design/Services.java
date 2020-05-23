@@ -71,6 +71,7 @@ public class Services {
     public static final String[] treeSkeletonChildTypes = {"ActionNode", "ConditionNode", "SequenceNode", "FallbackNode", "TreeSkeleton"};
     
     public static Node containerBehaviorTree;	//it is the behaviorTree which is our main container
+    public static Node globalEntryPoint;
     
     public String debugger(EObject self)
     {	
@@ -246,13 +247,6 @@ public class Services {
     
     
     // IMPORT AND EXPORT IMPLEMENTATION STARTS HERE *********************************************************************************
-    public void createDummyImportExportNode(Node container, EClass className) {
-    	print(container.getName());
-    	Node newNode = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(className);
-    	newNode.setName("Remove this node to complete import/export operation.");
-    	showImportExportModal(container);
-    	setChild(container, newNode);
-    }
     public void showImportExportModal(Node container) {
     	if (container.getClass().getName().equals("behaviortree.impl.BehaviorTreeImpl")) {
     		containerBehaviorTree = container;																	//This line is to set container behavior tree after a node creation
@@ -268,7 +262,7 @@ public class Services {
 			  public void run() {
 			      //Turn off metal's use of bold fonts
 			      UIManager.put("swing.boldMetal", Boolean.FALSE); 
-			      FileChooser.createAndShowGUI();
+			      FileChooser.createAndShowGUI((BehaviorTree)containerBehaviorTree);
 			  }
 	    });
     	print("createAndShowGUI is called.\n");
@@ -338,9 +332,13 @@ public class Services {
     		}
     	}
     	
-    	
-    	containerBehaviorTree.getChildren().add(entryPoint);
+    	globalEntryPoint = entryPoint;
+    	//containerBehaviorTree.getChildren().add(entryPoint);
     }
+    public static void connectEntryPointToTree(BehaviorTree behaviorTree) {
+    	behaviorTree.getChildren().add(globalEntryPoint);
+    }
+    
     public static void recursiveTreeCreator(Node parentNode, Element parentElement) {
     	NodeList childrenNodes = parentElement.getChildNodes();
     	for (int j=0; j<childrenNodes.getLength(); j++) {
@@ -362,7 +360,7 @@ public class Services {
     	String y = element.getAttribute("y");
     	switch(nodeType) {
     	case "behaviortree:EntryPoint":
-    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POINT);
+    		node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ENTRY_POÝNT);
     		((EntryPoint)node).setAgentName(element.getAttribute("agentName"));
     		((EntryPoint)node).setAgentPositions(element.getAttribute("agentPositions"));
     		((EntryPoint)node).setAgentCount(Integer.parseInt(element.getAttribute("agentCount")));
@@ -378,11 +376,11 @@ public class Services {
 			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.TREE_SKELETON);
 			break;
 		case "behaviortree:ActionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTION_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.ACTÝON_NODE);
 			((ActionNode)node).setActionName(element.getAttribute("actionName"));;
 			break;
 		case "behaviortree:ConditionNode":
-			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDITION_NODE);
+			node = (Node) behaviortree.BehaviortreeFactory.eINSTANCE.create(BehaviortreePackage.Literals.CONDÝTÝON_NODE);
 			((ConditionNode)node).setConditionName(element.getAttribute("conditionName"));;
 			break;
     	}
