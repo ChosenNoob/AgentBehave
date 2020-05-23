@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -36,7 +37,8 @@ public class Services {
 	public String generateGridCode(BehaviorTree behaviorTree) {
 		
 		PriorityDetector.setNodeCoors(behaviorTree);
-				
+
+		removeTreeSkeletons(behaviorTree);
 		String gridCode = "";
 
 		String projectName = getProjectName(behaviorTree);
@@ -338,6 +340,21 @@ public class Services {
 			}
 		}
 		return filteredChildren;
+	}
+	
+	public void removeTreeSkeletons(Node parent) {
+		int childCount = parent.getChildren().size();
+		int i = 0; 
+		while (i < childCount) {
+			Node child = parent.getChildren().get(i);
+			if (child.eClass().getName() == "TreeSkeleton") {
+				parent.getChildren().remove(child);
+				parent.getChildren().addAll(child.getChildren());
+				i--;
+			}
+			i++;
+			removeTreeSkeletons(child);
+		}
 	}
 	
 	public String getBaseClassName(EntryPoint entryPoint)
