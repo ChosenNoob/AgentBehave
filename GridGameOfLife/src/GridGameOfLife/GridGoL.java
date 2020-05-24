@@ -10,7 +10,7 @@ import repast.simphony.space.grid.GridBuilderParameters;
 import repast.simphony.space.grid.SimpleGridAdder;
 import repast.simphony.space.grid.WrapAroundBorders;
 
-public class GridGoL implements ContextBuilder<Object> {
+public class GridGoL extends GridBase implements ContextBuilder<Object> {
 
 	public static Grid instance = null;
 
@@ -23,6 +23,7 @@ public class GridGoL implements ContextBuilder<Object> {
 				new GridBuilderParameters<Object>(new WrapAroundBorders(),
 						new SimpleGridAdder<Object>(), false, 5, 5));
 		instance = grid;
+		super.build(context);
 
 		int[][] livingAgentPos = {
 			{2, 1},
@@ -57,7 +58,8 @@ public class GridGoL implements ContextBuilder<Object> {
 			{3, 4},
 			{4, 4},
 			{4, 2},
-			{3, 2}
+			{3, 2},
+			{2, 4}
 		};
 
 		for (int[] pos : deadAgentPos) {

@@ -22,6 +22,10 @@ public class Replacer {
 		return instance;
 	}
 	
+	public static void removeInstance() {
+		instance = null;
+	}
+	
 	public static void order(Agent oldAgent, Agent newAgent)
 	{
 		Replacer instance = Replacer.getInstance();
@@ -32,7 +36,7 @@ public class Replacer {
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
 	public void replace()
 	{
-		Grid grid = GridGoL.instance;
+		Grid<Object> grid = GridGoL.instance;
 		for (Agent[] order : orders) {
 			Agent oldAgent = order[0];
 			Agent newAgent = order[1];

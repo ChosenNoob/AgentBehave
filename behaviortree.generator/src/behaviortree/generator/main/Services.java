@@ -60,7 +60,7 @@ public class Services {
 		gridCode += "\n";
 		
 		// Class Body
-		gridCode += "public class GridGoL implements ContextBuilder<Object> {" + "\n";
+		gridCode += "public class GridGoL extends GridBase implements ContextBuilder<Object> {" + "\n";
 		gridCode += "\n";
 		
 		// Singleton Grid Instance		
@@ -80,6 +80,7 @@ public class Services {
 		gridCode += "				new GridBuilderParameters<Object>(new WrapAroundBorders()," + "\n";
 		gridCode += "						new SimpleGridAdder<Object>(), false, " + behaviorTree.getGridLength() + ", " + behaviorTree.getGridHeight() + "));" + "\n";
 		gridCode += "		instance = grid;" + "\n";
+		gridCode += "		super.build(context);" + "\n";
 		gridCode += "\n";
 		
 		for (EObject child: filter(behaviorTree, "EntryPoint")) {
