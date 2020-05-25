@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree">
-  <children xsi:type="behaviortree:EntryPoint" name="Robot" agentName="Living" agentPositions="37:11">
-    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 1">
-      <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 2">
+<behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree" gridLength="30" gridHeight="30">
+  <children xsi:type="behaviortree:EntryPoint" name="Robot" agentName="Living" agentPositions="13:8,22:23">
+    <children xsi:type="behaviortree:FallbackNode" name="Escape or Move">
+      <children xsi:type="behaviortree:SequenceNode" name="Escape Ghost">
         <children xsi:type="behaviortree:ActionNode" name="AvoidGhost" actionName="AvoidGhost"/>
         <children xsi:type="behaviortree:ConditionNode" name="GhostClose" conditionName="GhostClose"/>
       </children>
-      <children xsi:type="behaviortree:ActionNode" name="MoveRandomByOne" actionName="MoveRandomByOne"/>
+      <children xsi:type="behaviortree:ActionNode" name="MoveRandomOneUnit" actionName="MoveRandomOneUnit"/>
     </children>
   </children>
-  <children xsi:type="behaviortree:EntryPoint" name="Ghosy" agentName="Dead" agentPositions="20:23">
-    <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 2">
-      <children xsi:type="behaviortree:ActionNode" name="MoveRandom" actionName="MoveRandom"/>
+  <children xsi:type="behaviortree:EntryPoint" name="Ghost" agentName="Dead" agentPositions="4:18,0:3,19:0,29:26">
+    <children xsi:type="behaviortree:SequenceNode" name="Chase and Destroy">
+      <children xsi:type="behaviortree:FallbackNode" name="Chase or Move">
+        <children xsi:type="behaviortree:SequenceNode" name="Chase Nearby Robots">
+          <children xsi:type="behaviortree:ConditionNode" name="RobotClose" conditionName="RobotClose"/>
+          <children xsi:type="behaviortree:ActionNode" name="ApproachRobot" actionName="ApproachRobot"/>
+        </children>
+        <children xsi:type="behaviortree:ActionNode" name="MoveRandomTwoUnits" actionName="MoveRandomTwoUnits"/>
+      </children>
+      <children xsi:type="behaviortree:SequenceNode" name="Destroy Robot if Busted">
+        <children xsi:type="behaviortree:ConditionNode" name="RobotBusted" conditionName="RobotBusted"/>
+        <children xsi:type="behaviortree:ActionNode" name="DestroyRobot" actionName="DestroyRobot"/>
+      </children>
+      <children xsi:type="behaviortree:ConditionNode" name="AnyRobotLeft" conditionName="AnyRobotLeft"/>
     </children>
   </children>
 </behaviortree:BehaviorTree>

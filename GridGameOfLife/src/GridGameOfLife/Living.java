@@ -10,15 +10,15 @@ import repast.simphony.util.ContextUtils;
 public class Living extends LivingBase {
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
-	public TickReturn FallbackNode1() {
+	public TickReturn EscapeorMove() {
 		TickReturn tickResult;
 
-		tickResult = SequenceNode2();
+		tickResult = EscapeGhost();
 		if(tickResult != TickReturn.FAILURE) {
 			return tickResult;
 		}
 
-		tickResult = MoveRandomByOne();
+		tickResult = MoveRandomOneUnit();
 		if(tickResult != TickReturn.FAILURE) {
 			return tickResult;
 		}
@@ -26,7 +26,7 @@ public class Living extends LivingBase {
 		return TickReturn.FAILURE;
 	}
 
-	public TickReturn SequenceNode2() {
+	public TickReturn EscapeGhost() {
 		TickReturn tickResult;
 
 		tickResult = GhostClose();

@@ -21,12 +21,13 @@ public class GridGoL extends GridBase implements ContextBuilder<Object> {
 
 		Grid<Object> grid = gridFactory.createGrid("grid", context,
 				new GridBuilderParameters<Object>(new WrapAroundBorders(),
-						new SimpleGridAdder<Object>(), false, 50, 50));
+						new SimpleGridAdder<Object>(), false, 30, 30));
 		instance = grid;
 		super.build(context);
 
 		int[][] livingAgentPos = {
-			{37, 11}
+			{13, 8},
+			{22, 23}
 		};
 
 		for (int[] pos : livingAgentPos) {
@@ -36,7 +37,10 @@ public class GridGoL extends GridBase implements ContextBuilder<Object> {
 		}
 
 		int[][] deadAgentPos = {
-			{20, 23}
+			{4, 18},
+			{0, 3},
+			{19, 0},
+			{29, 26}
 		};
 
 		for (int[] pos : deadAgentPos) {
