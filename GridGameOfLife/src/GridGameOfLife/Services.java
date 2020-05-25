@@ -57,6 +57,10 @@ public class Services {
 		case 7:
 			moveResult = grid.moveByDisplacement(agent, -1, 1);
 			break;
+		default:
+			System.out.println("No Move");
+			System.out.println(direction);
+			break;
 		}
 		
 		if (moveResult != null) {
@@ -69,7 +73,7 @@ public class Services {
 	public static TickReturn MoveRandomByOne(Agent agent)
 	{
 		Random rand = new Random();
-		int direction = rand.nextInt() % 8;
+		int direction = Math.abs(rand.nextInt()) % 8;
 		return MoveByOne(agent, direction);
 	}
 

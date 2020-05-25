@@ -1,0 +1,6 @@
+#
+#Mon May 25 17:52:35 EET 2020
+incoming=tcp\://127.0.0.1\:5555
+outgoing=tcp\://127.0.0.1\:5556
+scenario=../GridGameOfLife.rs
+working.directory=../

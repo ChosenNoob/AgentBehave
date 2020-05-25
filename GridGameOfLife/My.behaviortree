@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviortree:BehaviorTree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree">
+  <children xsi:type="behaviortree:EntryPoint" name="Robot" agentName="Living" agentPositions="37:11">
+    <children xsi:type="behaviortree:FallbackNode" name="Fallback Node 1">
+      <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 2">
+        <children xsi:type="behaviortree:ActionNode" name="AvoidGhost" actionName="AvoidGhost"/>
+        <children xsi:type="behaviortree:ConditionNode" name="GhostClose" conditionName="GhostClose"/>
+      </children>
+      <children xsi:type="behaviortree:ActionNode" name="MoveRandomByOne" actionName="MoveRandomByOne"/>
+    </children>
+  </children>
+  <children xsi:type="behaviortree:EntryPoint" name="Ghosy" agentName="Dead" agentPositions="20:23">
+    <children xsi:type="behaviortree:SequenceNode" name="Sequence Node 2">
+      <children xsi:type="behaviortree:ActionNode" name="MoveRandom" actionName="MoveRandom"/>
+    </children>
+  </children>
+</behaviortree:BehaviorTree>

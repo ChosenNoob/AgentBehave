@@ -92,7 +92,8 @@ public class Generate extends AbstractAcceleoGenerator {
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
         BehaviorTree model = (BehaviorTree) this.model;
-        model.setProjectPath(targetFolder.getParentFile().getPath());
+//      model.setProjectPath(targetFolder.getParentFile().getPath());
+        model.setProjectPath(targetFolder.getParentFile().getParentFile().getPath());
     }
 
     /**

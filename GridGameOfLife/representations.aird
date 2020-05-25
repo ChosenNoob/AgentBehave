@@ -1,347 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviortree="http://www.example.org/behaviortree" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_Ic9bQJ6TEeqW5vdpelJyRg" selectedViews="_I4ikAJ6TEeqW5vdpelJyRg" version="14.1.0.201810161215">
-    <semanticResources>gameoflife.behaviortree</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" uid="_I4ikAJ6TEeqW5vdpelJyRg">
-      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_I7vB8J6TEeqW5vdpelJyRg" name="Tree Representation" repPath="#_I4_P8J6TEeqW5vdpelJyRg">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']"/>
-        <target xmi:type="behaviortree:BehaviorTree" href="gameoflife.behaviortree#/"/>
+  <viewpoint:DAnalysis uid="_2inUkJ6dEeqtRsJeeieRyw" selectedViews="_3A2IsJ6dEeqtRsJeeieRyw" version="14.1.0.201810161215">
+    <semanticResources>My.behaviortree</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_3A2IsJ6dEeqtRsJeeieRyw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_3H-rcJ6dEeqtRsJeeieRyw" name="Tree Representation" repPath="#_3Boy4J6dEeqtRsJeeieRyw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']"/>
+        <target xmi:type="behaviortree:BehaviorTree" href="My.behaviortree#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram uid="_I4_P8J6TEeqW5vdpelJyRg" name="Tree Representation">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_I7i0sJ6TEeqW5vdpelJyRg" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_I7jbwJ6TEeqW5vdpelJyRg"/>
+  <diagram:DSemanticDiagram uid="_3Boy4J6dEeqtRsJeeieRyw" name="Tree Representation">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_3H3WsJ6dEeqtRsJeeieRyw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_3H3WsZ6dEeqtRsJeeieRyw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_I8dasJ6TEeqW5vdpelJyRg" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_I8dasZ6TEeqW5vdpelJyRg" type="Sirius" element="_I4_P8J6TEeqW5vdpelJyRg" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_I8qPAJ6TEeqW5vdpelJyRg" type="2001" element="_I7ApMJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_I8xjwJ6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_I8xjwZ6TEeqW5vdpelJyRg" y="5"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_3IK4sJ6dEeqtRsJeeieRyw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_3IK4sZ6dEeqtRsJeeieRyw" type="Sirius" element="_3Boy4J6dEeqtRsJeeieRyw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_3IbXYJ6dEeqtRsJeeieRyw" type="2001" element="_3HjNoJ6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3IjTMJ6dEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3IjTMZ6dEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_I85fkJ6TEeqW5vdpelJyRg" type="3003" element="_I7HW4J6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_I85fkZ6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I85fkp6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_3ItrQJ6dEeqtRsJeeieRyw" type="3003" element="_3HotMJ6dEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_3ItrQZ6dEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3ItrQp6dEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_I8qPAZ6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8qPAp6TEeqW5vdpelJyRg" x="216" y="72" width="91" height="60"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3Ib-cJ6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Ib-cZ6dEeqtRsJeeieRyw" x="450" y="444" width="100" height="100"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_MSaC0J6TEeqW5vdpelJyRg" type="2001" element="_MSSuEZ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_MSbQ8J6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_MSbQ8Z6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_3IoywJ6dEeqtRsJeeieRyw" type="2001" element="_3HsXkJ6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3IpZ0J6dEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3IpZ0Z6dEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_MSdtMJ6TEeqW5vdpelJyRg" type="3003" element="_MST8MJ6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_MSdtMZ6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MSdtMp6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_3IuSUJ6dEeqtRsJeeieRyw" type="3003" element="_3Hs-oJ6dEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_3IuSUZ6dEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3IuSUp6dEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_MSaC0Z6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MSaC0p6TEeqW5vdpelJyRg" x="612" y="90" width="127" height="55"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3IoywZ6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Ioywp6dEeqtRsJeeieRyw" x="1013" y="324" width="100" height="100"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_PJeWkJ6TEeqW5vdpelJyRg" type="2001" element="_PJXo4J6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_PJe9oJ6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_PJe9oZ6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_3IqA4J6dEeqtRsJeeieRyw" type="2001" element="_3HtlsJ6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3IqA456dEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3IqA5J6dEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_PJfksJ6TEeqW5vdpelJyRg" type="3003" element="_PJY3AJ6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_PJfksZ6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PJfksp6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_3Iu5YJ6dEeqtRsJeeieRyw" type="3003" element="_3HtlsZ6dEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_3Iu5YZ6dEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Iu5Yp6dEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_PJeWkZ6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PJeWkp6TEeqW5vdpelJyRg" x="180" y="198" width="150" height="55"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3IqA4Z6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3IqA4p6dEeqtRsJeeieRyw" x="270" y="246" width="150" height="150"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_PcmG4J6TEeqW5vdpelJyRg" type="2001" element="_PcgAQZ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_Pcmt8J6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Pcmt8Z6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_3Iqn8J6dEeqtRsJeeieRyw" type="2001" element="_3Htls56dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3Iqn856dEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3Iqn9J6dEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Pcn8EJ6TEeqW5vdpelJyRg" type="3003" element="_PcgnUJ6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Pcn8EZ6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pcn8Ep6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_3IvgcJ6dEeqtRsJeeieRyw" type="3003" element="_3HtltJ6dEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_3IvgcZ6dEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Ivgcp6dEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_PcmG4Z6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PcmG4p6TEeqW5vdpelJyRg" x="612" y="198" width="150" height="55"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3Iqn8Z6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Iqn8p6dEeqtRsJeeieRyw" x="940" y="150" width="150" height="150"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_QXAgsJ6TEeqW5vdpelJyRg" type="2001" element="_QW5L8J6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_QXBHwJ6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_QXBHwZ6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_3IrPAJ6dEeqtRsJeeieRyw" type="2001" element="_3HuMwZ6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3Ir2EJ6dEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3Ir2EZ6dEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_QXBu0J6TEeqW5vdpelJyRg" type="3003" element="_QW5zAJ6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_QXBu0Z6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QXBu0p6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_3Ivgc56dEeqtRsJeeieRyw" type="3003" element="_3Huz0J6dEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_3IvgdJ6dEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3IvgdZ6dEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_QXAgsZ6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QXAgsp6TEeqW5vdpelJyRg" x="54" y="378" width="109" height="55"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3IrPAZ6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3IrPAp6dEeqtRsJeeieRyw" x="270" y="18" width="125" height="61"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_Qb614J6TEeqW5vdpelJyRg" type="2001" element="_QbzhIJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_Qb7c8J6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Qb7c8Z6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_3Ir2Ep6dEeqtRsJeeieRyw" type="2001" element="_3Huz0p6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3IsdIJ6dEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3IsdIZ6dEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Qb95MJ6TEeqW5vdpelJyRg" type="3003" element="_QbzhIZ6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Qb95MZ6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qb95Mp6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_3IwHgJ6dEeqtRsJeeieRyw" type="3003" element="_3Huz056dEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_3IwHgZ6dEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3IwHgp6dEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Qb614Z6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qb614p6TEeqW5vdpelJyRg" x="540" y="378" width="120" height="55"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3Ir2E56dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Ir2FJ6dEeqtRsJeeieRyw" x="990" y="60" width="59" height="49"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_Q4O-cJ6TEeqW5vdpelJyRg" type="2001" element="_Q4HCoJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_Q4QMkJ6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Q4QMkZ6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_DBfQEJ6eEeqtRsJeeieRyw" type="2001" element="_DBX7UZ6eEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_DBfQE56eEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_DBfQFJ6eEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Q4QMkp6TEeqW5vdpelJyRg" type="3003" element="_Q4HpsJ6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Q4QMk56TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q4QMlJ6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_DBhFQJ6eEeqtRsJeeieRyw" type="3003" element="_DBX7Up6eEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_DBhFQZ6eEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DBhFQp6eEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Q4O-cZ6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q4O-cp6TEeqW5vdpelJyRg" x="270" y="391" width="73" height="30"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_DBfQEZ6eEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DBfQEp6eEeqtRsJeeieRyw" x="144" y="423" width="163" height="100"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_Q8i2sJ6TEeqW5vdpelJyRg" type="2001" element="_Q8a64Z6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_Q8jdwJ6TEeqW5vdpelJyRg" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Q8jdwZ6TEeqW5vdpelJyRg" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_CHDysJ6fEeqtRsJeeieRyw" type="2001" element="_CHAIVJ6fEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_CHDys56fEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CHDytJ6fEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Q8kr4J6TEeqW5vdpelJyRg" type="3003" element="_Q8bh8J6TEeqW5vdpelJyRg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Q8kr4Z6TEeqW5vdpelJyRg" fontName="Noto Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q8kr4p6TEeqW5vdpelJyRg"/>
+          <children xmi:type="notation:Node" xmi:id="_CHDytZ6fEeqtRsJeeieRyw" type="3003" element="_CHAvYJ6fEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CHDytp6fEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CHDyt56fEeqtRsJeeieRyw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Q8i2sZ6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q8i2sp6TEeqW5vdpelJyRg" x="738" y="360" width="91" height="60"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CHDysZ6fEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="13"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CHDysp6fEeqtRsJeeieRyw" x="486" y="108" width="150" height="150"/>
         </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_I8dasp6TEeqW5vdpelJyRg"/>
-        <edges xmi:type="notation:Edge" xmi:id="_Rr1loJ6TEeqW5vdpelJyRg" type="4001" element="_RrxUMJ6TEeqW5vdpelJyRg" source="_I8qPAJ6TEeqW5vdpelJyRg" target="_PJeWkJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_Rr2MsJ6TEeqW5vdpelJyRg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rr2MsZ6TEeqW5vdpelJyRg" x="-4" y="-1"/>
+        <children xmi:type="notation:Node" xmi:id="_C5YngJ6fEeqtRsJeeieRyw" type="2001" element="_C5LMJJ6fEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_C5Yng56fEeqtRsJeeieRyw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_C5YnhJ6fEeqtRsJeeieRyw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Rr2zwJ6TEeqW5vdpelJyRg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rr2zwZ6TEeqW5vdpelJyRg" x="3" y="3"/>
+          <children xmi:type="notation:Node" xmi:id="_C5YnhZ6fEeqtRsJeeieRyw" type="3003" element="_C5LzMJ6fEeqtRsJeeieRyw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_C5Ynhp6fEeqtRsJeeieRyw" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C5Ynh56fEeqtRsJeeieRyw"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Rr3a0J6TEeqW5vdpelJyRg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rr3a0Z6TEeqW5vdpelJyRg" x="1" y="3"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_C5YngZ6fEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C5Yngp6fEeqtRsJeeieRyw" x="648" y="282" width="150" height="150"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_3IK4sp6dEeqtRsJeeieRyw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_3JQd0J6dEeqtRsJeeieRyw" type="4001" element="_3H06cJ6dEeqtRsJeeieRyw" source="_3IqA4J6dEeqtRsJeeieRyw" target="_3IbXYJ6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3JVWUJ6dEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JVWUZ6dEeqtRsJeeieRyw" x="-9" y="-5"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Rr1loZ6TEeqW5vdpelJyRg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_Rr1lop6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Rr1lo56TEeqW5vdpelJyRg" points="[0, 0, 36, -66]$[-36, 66, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Rr4o8J6TEeqW5vdpelJyRg" id="(0.5934065934065934,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Rr4o8Z6TEeqW5vdpelJyRg" id="(0.36,0.0)"/>
+          <children xmi:type="notation:Node" xmi:id="_3JXLgJ6dEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JXLgZ6dEeqtRsJeeieRyw" x="9" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_3JaO0J6dEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JaO0Z6dEeqtRsJeeieRyw" x="9" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_3JQd0Z6dEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_3JQd0p6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3JQd056dEeqtRsJeeieRyw" points="[75, 144, -80, -154]$[155, 298, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3JxbMJ6dEeqtRsJeeieRyw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3JxbMZ6dEeqtRsJeeieRyw" id="(0.5,1.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_R1X8IJ6TEeqW5vdpelJyRg" type="4001" element="_R1TqsJ6TEeqW5vdpelJyRg" source="_MSaC0J6TEeqW5vdpelJyRg" target="_PcmG4J6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_R1YjMJ6TEeqW5vdpelJyRg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R1YjMZ6TEeqW5vdpelJyRg" x="-2" y="-3"/>
+        <edges xmi:type="notation:Edge" xmi:id="_3JypUJ6dEeqtRsJeeieRyw" type="4001" element="_3H2Ikp6dEeqtRsJeeieRyw" source="_3Iqn8J6dEeqtRsJeeieRyw" target="_3IoywJ6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3JzQYJ6dEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JzQYZ6dEeqtRsJeeieRyw" x="-10" y="-2"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_R1YjMp6TEeqW5vdpelJyRg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R1YjM56TEeqW5vdpelJyRg" x="9" y="3"/>
+          <children xmi:type="notation:Node" xmi:id="_3JzQYp6dEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JzQY56dEeqtRsJeeieRyw" x="57"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_R1YjNJ6TEeqW5vdpelJyRg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R1ZKQJ6TEeqW5vdpelJyRg" x="-13" y="3"/>
+          <children xmi:type="notation:Node" xmi:id="_3JzQZJ6dEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JzQZZ6dEeqtRsJeeieRyw" x="17" y="-1"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_R1X8IZ6TEeqW5vdpelJyRg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_R1X8Ip6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_R1X8I56TEeqW5vdpelJyRg" points="[0, 0, 0, -53]$[0, 53, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_R1ZxUJ6TEeqW5vdpelJyRg" id="(0.5669291338582677,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_R1ZxUZ6TEeqW5vdpelJyRg" id="(0.48,0.0)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_3JypUZ6dEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_3JypUp6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3JypU56dEeqtRsJeeieRyw" points="[24, 150, -19, -114]$[43, 264, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3Jz3cJ6dEeqtRsJeeieRyw" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3Jz3cZ6dEeqtRsJeeieRyw" id="(0.5,1.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_SKmlQJ6TEeqW5vdpelJyRg" type="4001" element="_SKiT0J6TEeqW5vdpelJyRg" source="_PcmG4J6TEeqW5vdpelJyRg" target="_Qb614J6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_SKnMUJ6TEeqW5vdpelJyRg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SKnMUZ6TEeqW5vdpelJyRg" x="-2" y="2"/>
+        <edges xmi:type="notation:Edge" xmi:id="_3J1sop6dEeqtRsJeeieRyw" type="4001" element="_3H2vop6dEeqtRsJeeieRyw" source="_3Ir2Ep6dEeqtRsJeeieRyw" target="_3Iqn8J6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_3J1spp6dEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3J1sp56dEeqtRsJeeieRyw" x="-43"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_SKnMUp6TEeqW5vdpelJyRg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SKnMU56TEeqW5vdpelJyRg" x="1" y="3"/>
+          <children xmi:type="notation:Node" xmi:id="_3J1sqJ6dEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3J1sqZ6dEeqtRsJeeieRyw" x="10" y="1"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_SKnzYJ6TEeqW5vdpelJyRg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SKnzYZ6TEeqW5vdpelJyRg" x="-2" y="5"/>
+          <children xmi:type="notation:Node" xmi:id="_3J1sqp6dEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3J1sq56dEeqtRsJeeieRyw" x="10" y="1"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SKmlQZ6TEeqW5vdpelJyRg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_SKmlQp6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SKmlQ56TEeqW5vdpelJyRg" points="[0, 0, 18, -30]$[-18, 30, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SKnzYp6TEeqW5vdpelJyRg" id="(0.36,2.727272727272727)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SKnzY56TEeqW5vdpelJyRg" id="(0.675,0.0)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_3J1so56dEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_3J1spJ6dEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3J1spZ6dEeqtRsJeeieRyw" points="[3, 50, -16, -190]$[19, 240, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3J2TsJ6dEeqtRsJeeieRyw" id="(0.11689070718877849,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3J2TsZ6dEeqtRsJeeieRyw" id="(0.5,1.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_SWjWkJ6TEeqW5vdpelJyRg" type="4001" element="_SWeeGJ6TEeqW5vdpelJyRg" source="_PcmG4J6TEeqW5vdpelJyRg" target="_Q8i2sJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_SWj9oJ6TEeqW5vdpelJyRg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SWj9oZ6TEeqW5vdpelJyRg" x="-11" y="3"/>
+        <edges xmi:type="notation:Edge" xmi:id="_FSLgUJ6eEeqtRsJeeieRyw" type="4001" element="_FSJrKJ6eEeqtRsJeeieRyw" source="_3IqA4J6dEeqtRsJeeieRyw" target="_DBfQEJ6eEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_FSMHYJ6eEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FSMHYZ6eEeqtRsJeeieRyw" x="-6" y="9"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_SWj9op6TEeqW5vdpelJyRg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SWj9o56TEeqW5vdpelJyRg" x="55" y="8"/>
+          <children xmi:type="notation:Node" xmi:id="_FSMHYp6eEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FSMHY56eEeqtRsJeeieRyw" x="6" y="-7"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_SWj9pJ6TEeqW5vdpelJyRg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SWj9pZ6TEeqW5vdpelJyRg" x="10" y="-2"/>
+          <children xmi:type="notation:Node" xmi:id="_FSMHZJ6eEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FSMHZZ6eEeqtRsJeeieRyw" x="6" y="-7"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SWjWkZ6TEeqW5vdpelJyRg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_SWjWkp6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SWjWk56TEeqW5vdpelJyRg" points="[-71, -71, -47, -230]$[-15, 96, 9, -63]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SWkksJ6TEeqW5vdpelJyRg" id="(1.0,2.290909090909091)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SWkksZ6TEeqW5vdpelJyRg" id="(0.0,2.057142857142857)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_FSLgUZ6eEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_FSLgUp6eEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FSLgU56eEeqtRsJeeieRyw" points="[0, 0, 164, -86]$[-101, 52, 63, -34]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FSRm8J6eEeqtRsJeeieRyw" id="(0.92,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FSRm8Z6eEeqtRsJeeieRyw" id="(0.6134969325153374,0.59)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_Sf5f0J6TEeqW5vdpelJyRg" type="4001" element="_Sf1OZJ6TEeqW5vdpelJyRg" source="_PJeWkJ6TEeqW5vdpelJyRg" target="_QXAgsJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_Sf6G4J6TEeqW5vdpelJyRg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sf6G4Z6TEeqW5vdpelJyRg" x="-12" y="2"/>
+        <edges xmi:type="notation:Edge" xmi:id="_Dpgc4J6fEeqtRsJeeieRyw" type="4001" element="_DpcylJ6fEeqtRsJeeieRyw" source="_3IrPAJ6dEeqtRsJeeieRyw" target="_CHDysJ6fEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_DphD8J6fEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DphD8Z6fEeqtRsJeeieRyw" x="1" y="-7"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Sf6t8J6TEeqW5vdpelJyRg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sf6t8Z6TEeqW5vdpelJyRg" x="14"/>
+          <children xmi:type="notation:Node" xmi:id="_DphD8p6fEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DphD856fEeqtRsJeeieRyw" x="-3" y="8"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Sf6t8p6TEeqW5vdpelJyRg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sf6t856TEeqW5vdpelJyRg" x="16"/>
+          <children xmi:type="notation:Node" xmi:id="_DphrAJ6fEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DphrAZ6fEeqtRsJeeieRyw" x="-4" y="7"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Sf5f0Z6TEeqW5vdpelJyRg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_Sf5f0p6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Sf5f056TEeqW5vdpelJyRg" points="[0, 0, 144, -30]$[-144, 30, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Sf7VAJ6TEeqW5vdpelJyRg" id="(0.72,2.727272727272727)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Sf7VAZ6TEeqW5vdpelJyRg" id="(0.4644495412844037,0.0)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Dpgc4Z6fEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Dpgc4p6fEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Dpgc456fEeqtRsJeeieRyw" points="[0, 0, -108, -113]$[108, 113, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DphrAp6fEeqtRsJeeieRyw" id="(0.864,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DphrA56fEeqtRsJeeieRyw" id="(0.0,0.56)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_SsGIwJ6TEeqW5vdpelJyRg" type="4001" element="_SsB3UJ6TEeqW5vdpelJyRg" source="_PJeWkJ6TEeqW5vdpelJyRg" target="_Q4O-cJ6TEeqW5vdpelJyRg">
-          <children xmi:type="notation:Node" xmi:id="_SsGv0J6TEeqW5vdpelJyRg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SsGv0Z6TEeqW5vdpelJyRg" x="-47" y="4"/>
+        <edges xmi:type="notation:Edge" xmi:id="_EHUaQJ6fEeqtRsJeeieRyw" type="4001" element="_EHSlJJ6fEeqtRsJeeieRyw" source="_CHDysJ6fEeqtRsJeeieRyw" target="_3IqA4J6dEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_EHUaRJ6fEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EHUaRZ6fEeqtRsJeeieRyw" y="-10"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_SsGv0p6TEeqW5vdpelJyRg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SsGv056TEeqW5vdpelJyRg" x="10"/>
+          <children xmi:type="notation:Node" xmi:id="_EHUaRp6fEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EHVBUJ6fEeqtRsJeeieRyw" y="10"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_SsHW4J6TEeqW5vdpelJyRg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SsHW4Z6TEeqW5vdpelJyRg" x="10" y="-1"/>
+          <children xmi:type="notation:Node" xmi:id="_EHVBUZ6fEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EHVBUp6fEeqtRsJeeieRyw" y="10"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SsGIwZ6TEeqW5vdpelJyRg"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_SsGIwp6TEeqW5vdpelJyRg" fontName="Noto Sans" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SsGIw56TEeqW5vdpelJyRg" points="[-79, -64, -19, -193]$[-49, 104, 11, -25]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SsHW4p6TEeqW5vdpelJyRg" id="(1.0,2.1636363636363636)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SsHW456TEeqW5vdpelJyRg" id="(0.0,1.8571428571428572)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_EHUaQZ6fEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_EHUaQp6fEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EHUaQ56fEeqtRsJeeieRyw" points="[0, 0, 66, -90]$[-66, 90, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EHVBU56fEeqtRsJeeieRyw" id="(0.0,0.68)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EHVBVJ6fEeqtRsJeeieRyw" id="(1.0,0.36)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_ERK50J6fEeqtRsJeeieRyw" type="4001" element="_ERFaWJ6fEeqtRsJeeieRyw" source="_CHDysJ6fEeqtRsJeeieRyw" target="_C5YngJ6fEeqtRsJeeieRyw">
+          <children xmi:type="notation:Node" xmi:id="_ERLg4J6fEeqtRsJeeieRyw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERLg4Z6fEeqtRsJeeieRyw" x="4" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ERLg4p6fEeqtRsJeeieRyw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERLg456fEeqtRsJeeieRyw" x="-6" y="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ERLg5J6fEeqtRsJeeieRyw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERLg5Z6fEeqtRsJeeieRyw" x="-5" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_ERK50Z6fEeqtRsJeeieRyw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_ERK50p6fEeqtRsJeeieRyw" fontName="Noto Sans" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ERK5056fEeqtRsJeeieRyw" points="[0, 0, -126, -24]$[126, 24, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ERLg5p6fEeqtRsJeeieRyw" id="(0.6,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ERLg556fEeqtRsJeeieRyw" id="(0.4153846153846154,0.0)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_I7ApMJ6TEeqW5vdpelJyRg" name="Living" tooltipText="Living" outgoingEdges="_RrxUMJ6TEeqW5vdpelJyRg" width="6" height="6" resizeKind="NSEW">
-      <target xmi:type="behaviortree:EntryPoint" href="gameoflife.behaviortree#//@children.0"/>
-      <semanticElements xmi:type="behaviortree:EntryPoint" href="gameoflife.behaviortree#//@children.0"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3HjNoJ6dEeqtRsJeeieRyw" name="AvoidGhost" tooltipText="AvoidGhost" incomingEdges="_3H06cJ6dEeqtRsJeeieRyw" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="behaviortree:ActionNode" href="My.behaviortree#//@children.0/@children.0/@children.0/@children.0"/>
+      <semanticElements xmi:type="behaviortree:ActionNode" href="My.behaviortree#//@children.0/@children.0/@children.0/@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_I7HW4J6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_3HotMJ6dEeqtRsJeeieRyw" labelSize="12" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_MSSuEZ6TEeqW5vdpelJyRg" name="Dead" tooltipText="Dead" outgoingEdges="_R1TqsJ6TEeqW5vdpelJyRg" width="4" height="4" resizeKind="NSEW">
-      <target xmi:type="behaviortree:EntryPoint" href="gameoflife.behaviortree#//@children.1"/>
-      <semanticElements xmi:type="behaviortree:EntryPoint" href="gameoflife.behaviortree#//@children.1"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_C5LMJJ6fEeqtRsJeeieRyw" name="MoveRandomByOne" tooltipText="MoveRandomByOne" incomingEdges="_ERFaWJ6fEeqtRsJeeieRyw" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="behaviortree:ActionNode" href="My.behaviortree#//@children.0/@children.0/@children.1"/>
+      <semanticElements xmi:type="behaviortree:ActionNode" href="My.behaviortree#//@children.0/@children.0/@children.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_MST8MJ6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_C5LzMJ6fEeqtRsJeeieRyw" labelSize="12" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_PJXo4J6TEeqW5vdpelJyRg" name="Sequence Node 1" tooltipText="Sequence Node 1" outgoingEdges="_Sf1OZJ6TEeqW5vdpelJyRg _SsB3UJ6TEeqW5vdpelJyRg" incomingEdges="_RrxUMJ6TEeqW5vdpelJyRg" width="15" height="15" resizeKind="NSEW">
-      <target xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.0/@children.0"/>
-      <semanticElements xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.0/@children.0"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3HsXkJ6dEeqtRsJeeieRyw" name="MoveRandom" tooltipText="MoveRandom" incomingEdges="_3H2Ikp6dEeqtRsJeeieRyw" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="behaviortree:ActionNode" href="My.behaviortree#//@children.1/@children.0/@children.0"/>
+      <semanticElements xmi:type="behaviortree:ActionNode" href="My.behaviortree#//@children.1/@children.0/@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_PJY3AJ6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node" color="239,41,41">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_3Hs-oJ6dEeqtRsJeeieRyw" labelSize="12" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_PcgAQZ6TEeqW5vdpelJyRg" name="Sequence Node 2" tooltipText="Sequence Node 2" outgoingEdges="_SKiT0J6TEeqW5vdpelJyRg _SWeeGJ6TEeqW5vdpelJyRg" incomingEdges="_R1TqsJ6TEeqW5vdpelJyRg" width="15" height="15" resizeKind="NSEW">
-      <target xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.1/@children.0"/>
-      <semanticElements xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.1/@children.0"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3HtlsJ6dEeqtRsJeeieRyw" name="Sequence Node 2" tooltipText="Sequence Node 2" outgoingEdges="_3H06cJ6dEeqtRsJeeieRyw _FSJrKJ6eEeqtRsJeeieRyw" incomingEdges="_EHSlJJ6fEeqtRsJeeieRyw" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.0/@children.0/@children.0"/>
+      <semanticElements xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.0/@children.0/@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_PcgnUJ6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node" color="239,41,41">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_3HtlsZ6dEeqtRsJeeieRyw" labelSize="12" labelPosition="node" color="239,41,41">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_QW5L8J6TEeqW5vdpelJyRg" name="ShouldDie" tooltipText="ShouldDie" incomingEdges="_Sf1OZJ6TEeqW5vdpelJyRg" width="9" height="9" resizeKind="NSEW">
-      <target xmi:type="behaviortree:ConditionNode" href="gameoflife.behaviortree#//@children.0/@children.0/@children.0"/>
-      <semanticElements xmi:type="behaviortree:ConditionNode" href="gameoflife.behaviortree#//@children.0/@children.0/@children.0"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3Htls56dEeqtRsJeeieRyw" name="Sequence Node 2" tooltipText="Sequence Node 2" outgoingEdges="_3H2Ikp6dEeqtRsJeeieRyw" incomingEdges="_3H2vop6dEeqtRsJeeieRyw" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.1/@children.0"/>
+      <semanticElements xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.1/@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_QW5zAJ6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node" color="252,233,79">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_3HtltJ6dEeqtRsJeeieRyw" labelSize="12" labelPosition="node" color="239,41,41">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Sequence%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_QbzhIJ6TEeqW5vdpelJyRg" name="ShouldRevive" tooltipText="ShouldRevive" incomingEdges="_SKiT0J6TEeqW5vdpelJyRg" width="12" height="12" resizeKind="NSEW">
-      <target xmi:type="behaviortree:ConditionNode" href="gameoflife.behaviortree#//@children.1/@children.0/@children.0"/>
-      <semanticElements xmi:type="behaviortree:ConditionNode" href="gameoflife.behaviortree#//@children.1/@children.0/@children.0"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3HuMwZ6dEeqtRsJeeieRyw" name="Robot" tooltipText="Robot" outgoingEdges="_DpcylJ6fEeqtRsJeeieRyw" width="5" height="5" resizeKind="NSEW">
+      <target xmi:type="behaviortree:EntryPoint" href="My.behaviortree#//@children.0"/>
+      <semanticElements xmi:type="behaviortree:EntryPoint" href="My.behaviortree#//@children.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_QbzhIZ6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node" color="252,233,79">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_3Huz0J6dEeqtRsJeeieRyw" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Q4HCoJ6TEeqW5vdpelJyRg" name="Die" tooltipText="Die" incomingEdges="_SsB3UJ6TEeqW5vdpelJyRg" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="behaviortree:ActionNode" href="gameoflife.behaviortree#//@children.0/@children.0/@children.1"/>
-      <semanticElements xmi:type="behaviortree:ActionNode" href="gameoflife.behaviortree#//@children.0/@children.0/@children.1"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_3Huz0p6dEeqtRsJeeieRyw" name="Ghosy" tooltipText="Ghosy" outgoingEdges="_3H2vop6dEeqtRsJeeieRyw" width="5" height="5" resizeKind="NSEW">
+      <target xmi:type="behaviortree:EntryPoint" href="My.behaviortree#//@children.1"/>
+      <semanticElements xmi:type="behaviortree:EntryPoint" href="My.behaviortree#//@children.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_Q4HpsJ6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node" color="138,226,52">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_3Huz056dEeqtRsJeeieRyw" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Entry%20Point']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Q8a64Z6TEeqW5vdpelJyRg" name="Revive" tooltipText="Revive" incomingEdges="_SWeeGJ6TEeqW5vdpelJyRg" width="6" height="6" resizeKind="NSEW">
-      <target xmi:type="behaviortree:ActionNode" href="gameoflife.behaviortree#//@children.1/@children.0/@children.1"/>
-      <semanticElements xmi:type="behaviortree:ActionNode" href="gameoflife.behaviortree#//@children.1/@children.0/@children.1"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_3H06cJ6dEeqtRsJeeieRyw" sourceNode="_3HtlsJ6dEeqtRsJeeieRyw" targetNode="_3HjNoJ6dEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.0/@children.0/@children.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_3H1hgJ6dEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_3H1hgZ6dEeqtRsJeeieRyw" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_3H2Ikp6dEeqtRsJeeieRyw" sourceNode="_3Htls56dEeqtRsJeeieRyw" targetNode="_3HsXkJ6dEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.1/@children.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_3H2Ik56dEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_3H2IlJ6dEeqtRsJeeieRyw" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_3H2vop6dEeqtRsJeeieRyw" sourceNode="_3Huz0p6dEeqtRsJeeieRyw" targetNode="_3Htls56dEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:EntryPoint" href="My.behaviortree#//@children.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_3H2vo56dEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_3H2vpJ6dEeqtRsJeeieRyw" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_DBX7UZ6eEeqtRsJeeieRyw" name="GhostClose" tooltipText="GhostClose" incomingEdges="_FSJrKJ6eEeqtRsJeeieRyw" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="behaviortree:ConditionNode" href="My.behaviortree#//@children.0/@children.0/@children.0/@children.1"/>
+      <semanticElements xmi:type="behaviortree:ConditionNode" href="My.behaviortree#//@children.0/@children.0/@children.0/@children.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_Q8bh8J6TEeqW5vdpelJyRg" labelSize="12" labelPosition="node" color="138,226,52">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_DBX7Up6eEeqtRsJeeieRyw" labelSize="12" labelPosition="node" color="252,233,79">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Action%20Node']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Condition%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RrxUMJ6TEeqW5vdpelJyRg" sourceNode="_I7ApMJ6TEeqW5vdpelJyRg" targetNode="_PJXo4J6TEeqW5vdpelJyRg">
-      <target xmi:type="behaviortree:EntryPoint" href="gameoflife.behaviortree#//@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Rrx7QJ6TEeqW5vdpelJyRg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Rrx7QZ6TEeqW5vdpelJyRg" labelSize="12"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_FSJrKJ6eEeqtRsJeeieRyw" sourceNode="_3HtlsJ6dEeqtRsJeeieRyw" targetNode="_DBX7UZ6eEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:SequenceNode" href="My.behaviortree#//@children.0/@children.0/@children.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_FSKSMJ6eEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_FSKSMZ6eEeqtRsJeeieRyw" labelSize="12"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_R1TqsJ6TEeqW5vdpelJyRg" sourceNode="_MSSuEZ6TEeqW5vdpelJyRg" targetNode="_PcgAQZ6TEeqW5vdpelJyRg">
-      <target xmi:type="behaviortree:EntryPoint" href="gameoflife.behaviortree#//@children.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_R1TqsZ6TEeqW5vdpelJyRg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_R1Tqsp6TEeqW5vdpelJyRg" labelSize="12"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CHAIVJ6fEeqtRsJeeieRyw" name="Fallback Node 1" tooltipText="Fallback Node 1" outgoingEdges="_EHSlJJ6fEeqtRsJeeieRyw _ERFaWJ6fEeqtRsJeeieRyw" incomingEdges="_DpcylJ6fEeqtRsJeeieRyw" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="behaviortree:FallbackNode" href="My.behaviortree#//@children.0/@children.0"/>
+      <semanticElements xmi:type="behaviortree:FallbackNode" href="My.behaviortree#//@children.0/@children.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_CHAvYJ6fEeqtRsJeeieRyw" labelSize="13" labelPosition="node" color="114,159,207">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@nodeMappings[name='Fallback%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_SKiT0J6TEeqW5vdpelJyRg" sourceNode="_PcgAQZ6TEeqW5vdpelJyRg" targetNode="_QbzhIJ6TEeqW5vdpelJyRg">
-      <target xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.1/@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_SKi64J6TEeqW5vdpelJyRg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_SKi64Z6TEeqW5vdpelJyRg" labelSize="12"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_DpcylJ6fEeqtRsJeeieRyw" sourceNode="_3HuMwZ6dEeqtRsJeeieRyw" targetNode="_CHAIVJ6fEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:EntryPoint" href="My.behaviortree#//@children.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_DpdZkJ6fEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_DpdZkZ6fEeqtRsJeeieRyw" labelSize="12"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_SWeeGJ6TEeqW5vdpelJyRg" sourceNode="_PcgAQZ6TEeqW5vdpelJyRg" targetNode="_Q8a64Z6TEeqW5vdpelJyRg">
-      <target xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.1/@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_SWfFIJ6TEeqW5vdpelJyRg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_SWfFIZ6TEeqW5vdpelJyRg" labelSize="12"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_EHSlJJ6fEeqtRsJeeieRyw" sourceNode="_CHAIVJ6fEeqtRsJeeieRyw" targetNode="_3HtlsJ6dEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:FallbackNode" href="My.behaviortree#//@children.0/@children.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_EHTMIJ6fEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_EHTMIZ6fEeqtRsJeeieRyw" labelSize="12"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Sf1OZJ6TEeqW5vdpelJyRg" sourceNode="_PJXo4J6TEeqW5vdpelJyRg" targetNode="_QW5L8J6TEeqW5vdpelJyRg">
-      <target xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.0/@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Sf11cJ6TEeqW5vdpelJyRg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Sf11cZ6TEeqW5vdpelJyRg" labelSize="12"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ERFaWJ6fEeqtRsJeeieRyw" sourceNode="_CHAIVJ6fEeqtRsJeeieRyw" targetNode="_C5LMJJ6fEeqtRsJeeieRyw">
+      <target xmi:type="behaviortree:FallbackNode" href="My.behaviortree#//@children.0/@children.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ERGBUJ6fEeqtRsJeeieRyw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ERGBUZ6fEeqtRsJeeieRyw" labelSize="12"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_SsB3UJ6TEeqW5vdpelJyRg" sourceNode="_PJXo4J6TEeqW5vdpelJyRg" targetNode="_Q4HCoJ6TEeqW5vdpelJyRg">
-      <target xmi:type="behaviortree:SequenceNode" href="gameoflife.behaviortree#//@children.0/@children.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_SsB3UZ6TEeqW5vdpelJyRg" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_SsB3Up6TEeqW5vdpelJyRg" labelSize="12"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer/@edgeMappings[name='Children']"/>
-    </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_I5_8kJ6TEeqW5vdpelJyRg"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer"/>
-    <target xmi:type="behaviortree:BehaviorTree" href="gameoflife.behaviortree#/"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_3G8wsJ6dEeqtRsJeeieRyw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/behaviortree.design/description/behaviortree.odesign#//@ownedViewpoints[name='behaviortree']/@ownedRepresentations[name='Tree%20Representation']/@defaultLayer"/>
+    <target xmi:type="behaviortree:BehaviorTree" href="My.behaviortree#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

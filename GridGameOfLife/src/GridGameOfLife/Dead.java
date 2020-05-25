@@ -13,12 +13,7 @@ public class Dead extends DeadBase {
 	public TickReturn SequenceNode2() {
 		TickReturn tickResult;
 
-		tickResult = ShouldRevive();
-		if(tickResult != TickReturn.SUCCESS) {
-			return tickResult;
-		}
-
-		tickResult = Revive();
+		tickResult = MoveRandom();
 		if(tickResult != TickReturn.SUCCESS) {
 			return tickResult;
 		}

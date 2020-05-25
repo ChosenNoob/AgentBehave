@@ -4,18 +4,13 @@ import java.util.Random;
 
 public class DeadBase extends Agent{
 	
-	public TickReturn ShouldRevive()
+	public TickReturn MoveRight()
 	{
-		int livingNeighborCount = Services.getLivingNeighborCount(this);
-		if (livingNeighborCount == 3) {
-			return TickReturn.SUCCESS;
-		}
-		return TickReturn.RUNNING;
+		return Services.MoveByOne(this, 2);
 	}
 	
-	public TickReturn Revive()
+	public TickReturn MoveRandom()
 	{
-		Replacer.order(this, new Living());
-		return TickReturn.SUCCESS;
+		return Services.MoveRandomByOne(this);
 	}
 }
