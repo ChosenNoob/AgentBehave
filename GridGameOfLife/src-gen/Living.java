@@ -1,4 +1,4 @@
-package GridGameOfLife;
+package 49x-agentbehave;
 
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
@@ -10,15 +10,31 @@ import repast.simphony.util.ContextUtils;
 public class Living extends LivingBase {
 
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
-	public TickReturn SequenceNode1() {
+	public TickReturn EscapeorMove() {
 		TickReturn tickResult;
 
-		tickResult = ShouldDie();
+		tickResult = EscapeGhost();
+		if(tickResult != TickReturn.FAILURE) {
+			return tickResult;
+		}
+
+		tickResult = MoveRandomOneUnit();
+		if(tickResult != TickReturn.FAILURE) {
+			return tickResult;
+		}
+
+		return TickReturn.FAILURE;
+	}
+
+	public TickReturn EscapeGhost() {
+		TickReturn tickResult;
+
+		tickResult = AvoidGhost();
 		if(tickResult != TickReturn.SUCCESS) {
 			return tickResult;
 		}
 
-		tickResult = Die();
+		tickResult = GhostClose();
 		if(tickResult != TickReturn.SUCCESS) {
 			return tickResult;
 		}

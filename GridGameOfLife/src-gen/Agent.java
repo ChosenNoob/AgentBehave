@@ -1,4 +1,4 @@
-package GridGameOfLife;
+package 49x-agentbehave;
 
 import repast.simphony.context.Context;
 import repast.simphony.context.space.grid.GridFactory;
